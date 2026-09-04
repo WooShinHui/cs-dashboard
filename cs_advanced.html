@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="ko"><head><style id="qw-theme">:root {
+  --color-bg: #faf9fc;
+  --color-text: #131920;
+  --color-navbar-bg: #f9f9fb;
+  --color-bg-chat-view: #fcfcfd;
+  --color-bg-secondary: #fff;
+  --color-bg-tertiary: #f9fafb;
+  --color-bg-hover: #f3f4f6;
+  --color-surface: #f9fafb;
+  --color-surface-hover: #f3f4f6;
+  --color-surface-active: #e5e7eb;
+  --color-border: #0000001f;
+  --color-border-light: #0000000f;
+  --color-border-strong: #d1d5db;
+  --color-primary: #4200db;
+  --color-primary-dark: #35009e;
+  --color-primary-light: #8575ff;
+  --color-primary-bg: #e8e6ff;
+  --color-primary-hover-border: #35009e;
+  --color-nav-icon-active: #4200db;
+  --color-nav-hover-border: #4200db;
+  --color-primary-alpha-3: color-mix(in srgb, #4200db 3%, transparent);
+  --color-primary-alpha-5: color-mix(in srgb, #4200db 5%, transparent);
+  --color-primary-alpha-8: color-mix(in srgb, #4200db 8%, transparent);
+  --color-primary-alpha-12: color-mix(in srgb, #4200db 12%, transparent);
+  --color-primary-alpha-15: color-mix(in srgb, #4200db 15%, transparent);
+  --color-primary-alpha-20: color-mix(in srgb, #4200db 20%, transparent);
+  --color-primary-alpha-25: color-mix(in srgb, #4200db 25%, transparent);
+  --color-primary-alpha-30: color-mix(in srgb, #4200db 30%, transparent);
+  --color-primary-alpha-40: color-mix(in srgb, #4200db 40%, transparent);
+  --color-primary-alpha-50: color-mix(in srgb, #4200db 50%, transparent);
+  --color-primary-alpha-60: color-mix(in srgb, #4200db 60%, transparent);
+  --color-primary-subtle: color-mix(in srgb, #4200db 12%, transparent);
+  --color-primary-border: color-mix(in srgb, #4200db 30%, transparent);
+  --color-focus-ring: color-mix(in srgb, #4200db 50%, transparent);
+  --color-sidebar-hover: color-mix(in srgb, #4200db 12%, transparent);
+  --block-hover-outline: 1px dashed color-mix(in srgb, #4200db 50%, transparent);
+  --block-selected-outline: 1px solid #8575ff;
+  --block-selection-outline-offset: 2px;
+  --block-selected-halo: 0 0 8px color-mix(in srgb, #4200db 40%, transparent);
+  --color-accent: #4200db;
+  --color-accent-foreground: #4200db;
+  --color-accent-dark: #35009e;
+  --color-accent-light: #e8e6ff;
+  --color-accent-inverse: #fff;
+  --color-link: #4200db;
+  --color-primary-gradient-end: #e8e6ff;
+  --color-primary-bg-solid: #e8e6ff;
+  --color-user-bubble: #f3f3f7;
+  --color-user-bubble-text: #131920;
+  --color-text-secondary: #5e5e5e;
+  --color-text-tertiary: #656871;
+  --color-text-muted: #9ca3af;
+  --color-text-on-primary: #fff;
+  --color-success: #00802f;
+  --color-success-dark: #00471e;
+  --color-success-light: #d9ffd6;
+  --color-success-hover: #005c26;
+  --color-success-bg: #e6f5eb;
+  --color-success-border: #b3d9bf;
+  --color-success-foreground: #00802f;
+  --color-success-dark-foreground: #00471e;
+  --color-success-text: #00471e;
+  --color-error: #db0000;
+  --color-error-dark: #700000;
+  --color-error-light: #ffe0e0;
+  --color-error-hover: #ffe0e0;
+  --color-error-bg: #fceaea;
+  --color-error-border: #f2cccc;
+  --color-error-active-border: #db0000;
+  --color-error-foreground: #db0000;
+  --color-error-dark-foreground: #700000;
+  --color-error-inverse: #fff;
+  --color-error-text: #700000;
+  --color-warning: #f2b100;
+  --color-warning-dark: #573a00;
+  --color-warning-light: #fffbbd;
+  --color-warning-hover: #db9200;
+  --color-warning-bg: #fef7e6;
+  --color-warning-border: #f9dfa3;
+  --color-warning-foreground: #f2b100;
+  --color-warning-dark-foreground: #573a00;
+  --color-warning-inverse: #573a00;
+  --color-surface-warning: #fffbbd;
+  --color-text-warning: #573a00;
+  --color-info: #006ce0;
+  --color-info-dark: #002a66;
+  --color-info-light: #d1f1ff;
+  --color-info-hover: #003b8f;
+  --color-info-bg: #ebf3fc;
+  --color-info-border: #b3d1f0;
+  --color-info-foreground: #006ce0;
+  --color-info-dark-foreground: #002a66;
+  --color-info-inverse: #fff;
+  --color-overlay: #00000080;
+  --color-shadow: #00000014;
+  --color-hover: #0000000d;
+  --color-tooltip-bg: #000000d9;
+  --color-tooltip-text: #fff;
+  --color-voice-purple: #8575ff;
+  --color-voice-purple-dark: #4200db;
+  --color-voice-purple-light: #8575ff;
+  --color-voice-red: #db0000;
+  --color-voice-red-dark: #700000;
+  --color-voice-amber: #f2b100;
+  --color-voice-purple-glow: #4200db66;
+  --color-voice-red-glow: #db000066;
+  --font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "SF Mono", "Monaco", "Menlo", "Consolas", monospace;
+  --text-2xs: .5625rem;
+  --text-xs: .625rem;
+  --text-sm: .6875rem;
+  --text-base: .75rem;
+  --text-md: .8125rem;
+  --text-lg: .875rem;
+  --text-xl: 1rem;
+  --text-2xl: 1.125rem;
+  --text-3xl: 1.25rem;
+  --text-4xl: 1.5rem;
+  --text-5xl: 2rem;
+  --spacing-1: calc(.25rem * 1);
+  --spacing-1-5: calc(.25rem * 1.5);
+  --spacing-2: calc(.25rem * 2);
+  --spacing-3: calc(.25rem * 3);
+  --spacing-4: calc(.25rem * 4);
+  --spacing-5: calc(.25rem * 5);
+  --spacing-6: calc(.25rem * 6);
+  --spacing-7: calc(.25rem * 7);
+  --spacing-8: calc(.25rem * 8);
+  --spacing-9: calc(.25rem * 9);
+  --spacing-10: calc(.25rem * 10);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-card: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 8px;
+  --shadow-sm: 0 1px 2px #0000000d;
+  --shadow-md: 0 4px 12px #00000014;
+  --color-success-bg-solid: #d9ffd6;
+  --color-error-bg-solid: #ffe0e0;
+  --color-error-border-solid: #ffe0e0;
+  --color-warning-bg-solid: #fffbbd;
+  --color-warning-text: #573a00;
+  --color-info-bg-solid: #d1f1ff;
+  --color-info-bg-solid-alt: #d1f1ff;
+  --color-info-text: #002a66;
+  --color-info-text-alt: #002a66;
+  --color-emerald: #10b981;
+  --color-teal: #4ecdc4;
+  --color-code-bg: #f3f3f7;
+  --color-code-header-bg: #f1f3f5;
+  --color-code-text: #24292e;
+  --color-code-border: #e1e4e8;
+  --color-code-muted: #6a737d;
+  --color-inline-code-bg: #f3f3f7;
+  --color-inline-code-text: #24292e;
+  --color-inline-code-border: #e1e4e8;
+  --color-scrollbar-thumb: #d1d5db;
+  --color-scrollbar-track: transparent;
+  --color-graph-node-text: #333;
+  --color-graph-node-text-dim: #7f8c8d;
+  --color-graph-edge-default: #95a5a6;
+  --color-graph-edge-cross: #e67e22;
+  --color-graph-edge-text: #666;
+  --color-graph-edge-stroke: #fff;
+  --color-graph-highlight-bg: #ff6b6b;
+  --color-graph-highlight-border: #e74c3c;
+  --color-graph-search-bg: gold;
+  --color-graph-search-border: orange;
+  --color-graph-focus-border: #c0392b;
+  --color-graph-external-border: #95a5a6;
+  --color-graph-cat-file: #3498db;
+  --color-graph-cat-folder: #7f8c8d;
+  --color-graph-cat-file-aggregate: #2980b9;
+  --color-graph-cat-class: #9b59b6;
+  --color-graph-cat-function: #2ecc71;
+  --color-graph-cat-method: #1abc9c;
+  --color-graph-cat-variable: #f39c12;
+  --color-graph-cat-import: #d35400;
+  --color-graph-cat-module: #5b6abf;
+  --color-graph-cat-concept: #e74c3c;
+  --color-graph-cat-person: #ff6b6b;
+  --color-graph-cat-org: #4ecdc4;
+  --color-graph-cat-organization: #4ecdc4;
+  --color-graph-cat-product: #a29bfe;
+  --color-graph-cat-metric: #fd79a8;
+  --color-graph-cat-location: #34495e;
+  --color-graph-cat-date: #e056a0;
+  --color-graph-cat-code: #3498db;
+  --color-graph-cat-doc: #7f8c8d;
+  --color-graph-cat-url: #00b894;
+  --color-graph-cat-email: #6c5ce7;
+  --color-graph-cat-unknown: #bdc3c7;
+  --color-graph-rel-contains: #bdc3c7;
+  --color-graph-rel-extends: #9b59b6;
+  --color-graph-rel-implements: #3498db;
+  --color-graph-rel-imports: #e67e22;
+  --color-graph-rel-uses: #2ecc71;
+  --color-graph-rel-calls: #27ae60;
+  --color-graph-rel-references: #f39c12;
+  --color-graph-rel-related-to: #95a5a6;
+  --color-graph-rel-works-on: #e74c3c;
+  --color-graph-rel-owns: #1abc9c;
+  --color-graph-rel-depends-on: #e67e22;
+  --color-graph-rel-parent-of: #bdc3c7;
+  --qs-content: #fff;
+  --qs-main: #fff;
+  --qs-primary-foreground: #131920;
+  --qs-secondary-foreground: #656871;
+  --qs-tertiary-foreground: #9ca3af;
+  --qs-placeholder-foreground: #8c8c94;
+  --qs-divider: #dedee3;
+  --qs-default-border: #8c8c94;
+  --qs-neutral-soft: #b4b4bb;
+  --qs-neutral-gray-50: #f9fafb;
+  --qs-tertiary-background: #f9fafb;
+  --qs-action-hover: #f3f3f7;
+  --qs-primary-default: #4200db;
+  --qs-primary-dark: #35009e;
+  --qs-primary-light: #e8e6ff;
+  --qs-success-default: #00802f;
+  --qs-error-default: #db0000;
+  --qs-font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  --safe-top: 0px;
+  --safe-bottom: 0px;
+  --safe-left: 0px;
+  --safe-right: 0px;
+  --qs-font-family: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  --qs-font-base-letter-spacing: .15px;
+  --qs-shadow-sm: 0 0 2px 0 #00000029, 0 0 4px 0 #00000029;
+  --qs-shadow-md: 0 0 2px 0 #00000029, 0 2px 8px 1px #00000029;
+  --qs-shadow-lg: 0 4px 16px 4px #00000029, 0 2px 6px 1px #00000029;
+  --qs-shadow-xl: 0 4px 8px 2px #00000029, 0 6px 20px 4px #00000029;
+  --qs-width-modal-sm: 384px;
+  --qs-width-modal-md: 600px;
+  --qs-width-modal-lg: 1136px;
+  --qs-grid-gap: 16px;
+  --qs-grid-gap-xl: 24px;
+  --qs-primary-medium: #8575ff;
+  --qs-primary-inverse: #fff;
+  --qs-neutral-lightest: #f9f9fb;
+  --qs-neutral-light: #f3f3f7;
+  --qs-neutral-default: #dedee3;
+  --qs-neutral-medium: #8c8c94;
+  --qs-neutral-deep: #656871;
+  --qs-neutral-dark: #333843;
+  --qs-neutral-strong: #131920;
+  --qs-neutral-white: #fff;
+  --qs-neutral-black: #000;
+  --qs-success-medium: #005c26;
+  --qs-success-dark: #00471e;
+  --qs-success-light: #d9ffd6;
+  --qs-success-inverse: #fff;
+  --qs-info-default: #006ce0;
+  --qs-info-medium: #003b8f;
+  --qs-info-dark: #002a66;
+  --qs-info-light: #d1f1ff;
+  --qs-info-inverse: #fff;
+  --qs-warning-default: #f2b100;
+  --qs-warning-medium: #db9200;
+  --qs-warning-dark: #573a00;
+  --qs-warning-light: #fffbbd;
+  --qs-warning-inverse: #573a00;
+  --qs-warning-experimental: #f2b100;
+  --qs-warning-experimental-light: #fffbbd;
+  --qs-warning-experimental-light-foreground: #fffbbd;
+  --qs-error-medium: #900;
+  --qs-error-dark: #700000;
+  --qs-error-light: #ffe0e0;
+  --qs-error-inverse: #fff;
+  --qs-connection-default: #db3300;
+  --qs-connection-soft: #ff997a;
+  --qs-connection-light: #ffe0d6;
+  --qs-connection-dark: #661800;
+  --qs-automation-default: #b3008f;
+  --qs-automation-medium: #d600ba;
+  --qs-automation-soft: #ff94f1;
+  --qs-automation-light: #ffe0fb;
+  --qs-automation-dark: #660052;
+  --qs-insight-default: #a000b8;
+  --qs-insight-soft: #f299ff;
+  --qs-insight-light: #fce6ff;
+  --qs-insight-dark: #590066;
+  --qs-visualization-default: #7300e5;
+  --qs-visualization-soft: #d4a8ff;
+  --qs-visualization-light: #f2e5ff;
+  --qs-visualization-dark: #45008a;
+  --qs-spice: #ff9800;
+  --qs-coachmark: #006ce0;
+  --qs-brand: #fff;
+  --qs-brand-foreground: #131920;
+  --qs-brand-navbar: #131920;
+  --qs-brand-navbar-foreground: #fff;
+  --qs-brand-navbar-light: #dedee3;
+  --qs-brand-navbar-dark: #000;
+  --qs-application-navbar: #4200db;
+  --qs-application-navbar-foreground: #fff;
+  --qs-application-navbar-light: #e8e6ff;
+  --qs-application-navbar-dark: #35009e;
+  --qs-dimension: #4200db;
+  --qs-dimension-foreground: #fff;
+  --qs-dimension-experimental: #4200db;
+  --qs-dimension-experimental-foreground: #4200db;
+  --qs-measure: #00802f;
+  --qs-measure-foreground: #fff;
+  --qs-measure-experimental: #f2b100;
+  --qs-measure-experimental-foreground: #f2b100;
+  --qs-content-inverse: #333843;
+  --qs-content-inverse-active: #131920;
+  --qs-secondary: #dedee3;
+  --qs-disabled: #8c8c94;
+  --qs-divider-light: #f3f3f7;
+  --qs-hover-border: #333843;
+  --qs-active-border: #4200db;
+  --qs-disabled-border: #dedee3;
+  --qs-error-border: #ffe0e0;
+  --qs-error-active-border: #db0000;
+  --qs-disabled-foreground: #b4b4bb;
+  --qs-primary-inverse-foreground: #fff;
+  --qs-error-foreground: #db0000;
+  --qs-contrast-foreground: #131920;
+  --qs-main-foreground: #131920;
+  --qs-main-secondary-foreground: #656871;
+  --qs-action-disabled: #f3f3f7;
+  --qs-action-active: #e8e6ff;
+  --qs-default-badge: #dedee3;
+  --qs-tag-default: #dedee3;
+  --qs-tag-soft-border: #b4b4bb;
+  --qs-focus-offset: 1px;
+  --qs-toggle-tile-sm: calc(.25rem * 8);
+  --qs-toggle-tile-md: calc(.25rem * 12);
+  --qs-toggle-tile-lg: calc(.25rem * 15);
+  --qs-shadow-pin-right: inset 4px 0 4px -4px #00000029;
+  --qs-shadow-pin-left: inset -4px 0 4px -4px #00000029;
+  --react-pdf-text-layer: 1;
+  --highlight-bg-color: #b400aa;
+  --highlight-selected-bg-color: #006400;
+  --react-pdf-annotation-layer: 1;
+  --annotation-unfocused-field-background: url("data:image/svg+xml;charset=UTF-8,<svg width='1px' height='1px' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill:rgba(0, 54, 255, 0.13);'/></svg>");
+  --input-focus-border-color: Highlight;
+  --input-focus-outline: 1px solid Canvas;
+  --input-unfocused-border-color: transparent;
+  --input-disabled-border-color: transparent;
+  --input-hover-border-color: black;
+  --link-outline: none;
+  color-scheme: light;
+}
+body { background: var(--color-bg); color: var(--color-text); }
+a { color: var(--color-link, var(--color-primary)); }</style>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+/* ===== RESET & BASE ===== */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f1923; color: #e8e8e8; padding: 0; line-height: 1.6; }
+
+/* ===== TOP-LEVEL HEADER ===== */
+.main-header { text-align:center; padding:28px 20px 12px; }
+.main-header h1 {
+  font-size:30px; font-weight:800;
+  background: linear-gradient(135deg, #ffd700, #ff6b35, #b388ff);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  margin-bottom:4px;
+}
+.main-header .sub { color:#8899aa; font-size:13px; }
+
+/* ===== TOP-LEVEL TAB BAR ===== */
+.main-tabs { display:flex; justify-content:center; gap:0; margin:16px 20px 0; border-bottom:2px solid #2a3a4a; }
+.main-tab {
+  padding:10px 28px; cursor:pointer; font-size:14px; font-weight:600;
+  color:#8899aa; border-bottom:3px solid transparent; transition:all .2s;
+  user-select:none; position:relative; bottom:-2px;
+}
+.main-tab:hover { color:#ffd700; }
+.main-tab.active { color:#ffd700; border-bottom-color:#ffd700; }
+.main-tab .badge {
+  display:inline-block; font-size:10px; padding:1px 6px; border-radius:10px;
+  margin-left:6px; vertical-align:middle;
+}
+.main-tab:first-child .badge { background:#ff6b35; color:#fff; }
+.main-tab:last-child .badge { background:#b388ff; color:#fff; }
+
+/* ===== PANEL CONTAINER ===== */
+.main-panel { display:none; padding:20px; }
+.main-panel.active { display:block; }
+
+/* ===============================================
+   PANEL 1: CS 심화 (cs_advanced_dashboard)
+   All selectors scoped under #panel-advanced
+   =============================================== */
+#panel-advanced h1.adv-title {
+  text-align:center; font-size:28px; margin-bottom:8px;
+  background: linear-gradient(135deg, #ffd700, #ff6b35);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+}
+#panel-advanced .adv-subtitle { text-align:center; color:#8899aa; font-size:14px; margin-bottom:24px; }
+
+#panel-advanced .adv-tabs { display:flex; gap:6px; margin-bottom:20px; flex-wrap:wrap; justify-content:center; }
+#panel-advanced .adv-tab {
+  padding:8px 16px; border-radius:20px; border:1px solid #2a3a4a;
+  background:#1a2a3a; color:#8899aa; cursor:pointer; font-size:13px; transition:all .2s;
+}
+#panel-advanced .adv-tab:hover { border-color:#ffd700; color:#ffd700; }
+#panel-advanced .adv-tab.active {
+  background:linear-gradient(135deg,#ffd700,#ff6b35);
+  color:#0f1923; border-color:transparent; font-weight:600;
+}
+
+#panel-advanced .adv-chapter { display:none; }
+#panel-advanced .adv-chapter.active { display:block; }
+
+#panel-advanced .adv-card {
+  background:#1a2a3a; border:1px solid #2a3a4a;
+  border-radius:12px; padding:20px; margin-bottom:16px;
+}
+#panel-advanced .adv-card h2 { color:#ffd700; font-size:18px; margin-bottom:12px; display:flex; align-items:center; gap:8px; }
+#panel-advanced .adv-card h3 { color:#ff6b35; font-size:15px; margin:16px 0 8px; }
+
+#panel-advanced .game-box {
+  background:#0d2137; border-left:3px solid #ffd700; padding:12px 16px;
+  border-radius:0 8px 8px 0; margin:12px 0; font-size:13px;
+}
+#panel-advanced .game-box::before { content:'🎮 엘든링 비유'; display:block; color:#ffd700; font-weight:600; margin-bottom:6px; font-size:12px; }
+
+#panel-advanced .key-box {
+  background:#1a3a2a; border-left:3px solid #36b37e; padding:12px 16px;
+  border-radius:0 8px 8px 0; margin:12px 0; font-size:13px;
+}
+#panel-advanced .key-box::before { content:'💡 핵심'; display:block; color:#36b37e; font-weight:600; margin-bottom:6px; font-size:12px; }
+
+#panel-advanced .warn-box {
+  background:#3a2a1a; border-left:3px solid #ff6b35; padding:12px 16px;
+  border-radius:0 8px 8px 0; margin:12px 0; font-size:13px;
+}
+#panel-advanced .warn-box::before { content:'⚠️ 면접 주의'; display:block; color:#ff6b35; font-weight:600; margin-bottom:6px; font-size:12px; }
+
+#panel-advanced .interview-box {
+  background:#2a1a3a; border-left:3px solid #b388ff; padding:12px 16px;
+  border-radius:0 8px 8px 0; margin:12px 0; font-size:13px;
+}
+#panel-advanced .interview-box::before { content:'🎤 30초 답변'; display:block; color:#b388ff; font-weight:600; margin-bottom:6px; font-size:12px; }
+
+#panel-advanced table { width:100%; border-collapse:collapse; font-size:13px; margin:12px 0; }
+#panel-advanced th { background:#0d2137; color:#ffd700; padding:10px 12px; text-align:left; font-weight:600; border-bottom:2px solid #2a3a4a; }
+#panel-advanced td { padding:10px 12px; border-bottom:1px solid #2a3a4a; color:#ccc; }
+#panel-advanced tr:hover td { background:#0d2137; }
+
+#panel-advanced code { background:#0d2137; color:#ff6b35; padding:2px 6px; border-radius:4px; font-family:'SF Mono',Consolas,monospace; font-size:12px; }
+#panel-advanced pre { background:#0d2137; padding:14px; border-radius:8px; overflow-x:auto; font-family:'SF Mono',Consolas,monospace; font-size:12px; color:#e8e8e8; margin:12px 0; line-height:1.5; }
+
+#panel-advanced .diagram {
+  background:#0d2137; padding:16px; border-radius:8px;
+  font-family:'SF Mono',Consolas,monospace; font-size:12px;
+  color:#8899aa; margin:12px 0; white-space:pre; line-height:1.4; overflow-x:auto;
+}
+#panel-advanced .diagram .hl { color:#ffd700; font-weight:600; }
+#panel-advanced .diagram .gr { color:#36b37e; }
+#panel-advanced .diagram .rd { color:#ff6b35; }
+
+/* ===============================================
+   PANEL 2: 면접 대시보드 (게임회사_CS_면접_대시보드)
+   All selectors scoped under #panel-interview
+   CSS variables defined here for dark theme
+   =============================================== */
+#panel-interview {
+  --color-bg: #0f1923;
+  --color-bg-secondary: #1a2a3a;
+  --color-text: #e8e8e8;
+  --color-text-secondary: #aabbcc;
+  --color-text-muted: #8899aa;
+  --color-border: #2a3a4a;
+  --color-border-light: #2a3a4a;
+  --color-primary: #0065ff;
+  --color-error: #de350b;
+  --color-warning: #ff991f;
+  --color-info: #0065ff;
+  --color-surface-hover: rgba(255,255,255,0.05);
+  --radius-md: 12px;
+  --radius-sm: 8px;
+  --radius-pill: 20px;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'SF Mono', Consolas, monospace;
+}
+
+#panel-interview .iv-title {
+  font-size: 24px; font-weight: 700; margin-bottom: 6px; color: #e8e8e8;
+}
+#panel-interview .iv-subtitle { color: var(--color-text-muted); font-size: 13px; margin-bottom: 24px; }
+
+#panel-interview .iv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 16px; margin-bottom: 24px; }
+
+#panel-interview .iv-card {
+  background: var(--color-bg-secondary); border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md); padding: 20px;
+}
+#panel-interview .iv-card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+#panel-interview .iv-card-icon {
+  width: 36px; height: 36px; border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center; font-size: 16px; color: #fff;
+}
+#panel-interview .iv-card-title { font-size: 15px; font-weight: 600; }
+#panel-interview .iv-card-priority {
+  font-size: 11px; padding: 2px 8px; border-radius: var(--radius-pill); font-weight: 500;
+}
+#panel-interview .priority-high { background: var(--color-error); color: #fff; }
+#panel-interview .priority-mid { background: var(--color-warning); color: #fff; }
+#panel-interview .priority-low { background: var(--color-info); color: #fff; }
+
+#panel-interview .topic-list { list-style: none; }
+#panel-interview .topic-item {
+  padding: 8px 0; border-bottom: 1px solid var(--color-border-light);
+  display: flex; align-items: flex-start; gap: 8px; font-size: 13px; line-height: 1.5;
+}
+#panel-interview .topic-item:last-child { border-bottom: none; }
+#panel-interview .topic-bullet { color: var(--color-text-muted); margin-top: 2px; font-size: 11px; }
+#panel-interview .topic-keyword {
+  font-family: var(--font-mono); font-size: 12px;
+  background: var(--color-surface-hover); padding: 1px 5px; border-radius: 3px;
+  color: var(--color-primary);
+}
+
+#panel-interview .iv-section-title { font-size: 18px; font-weight: 600; margin-bottom: 16px; margin-top: 8px; }
+
+#panel-interview .importance-bar { height: 6px; border-radius: 3px; background: var(--color-border-light); margin-top: 6px; overflow: hidden; }
+#panel-interview .importance-fill { height: 100%; border-radius: 3px; }
+
+#panel-interview .iv-legend { display: flex; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+#panel-interview .iv-legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--color-text-secondary); }
+#panel-interview .iv-legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+#panel-interview .iv-tab-nav { display: flex; gap: 4px; margin-bottom: 16px; flex-wrap: wrap; }
+#panel-interview .iv-tab-btn {
+  padding: 6px 14px; border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border); background: transparent;
+  color: var(--color-text-secondary); font-size: 12px; cursor: pointer;
+  transition: all 0.15s ease; font-family: var(--font-sans);
+}
+#panel-interview .iv-tab-btn:hover { background: var(--color-surface-hover); }
+#panel-interview .iv-tab-btn.active { background: var(--color-primary); color: #fff; border-color: var(--color-primary); }
+
+#panel-interview .iv-detail-panel {
+  background: var(--color-bg-secondary); border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md); padding: 20px; min-height: 200px;
+}
+#panel-interview .iv-detail-title { font-size: 14px; font-weight: 600; margin-bottom: 12px; }
+#panel-interview .iv-detail-text { font-size: 13px; line-height: 1.7; color: var(--color-text-secondary); }
+#panel-interview .iv-detail-text code {
+  font-family: var(--font-mono); font-size: 12px;
+  background: var(--color-surface-hover); padding: 1px 5px; border-radius: 3px;
+}
+</style>
+</head>
+<body>
+
+<!-- ============================== MAIN HEADER ============================== -->
+<div class="main-header">
+  <h1>⚔️ CS 심화 — 면접 대비 &amp; 게임 수학</h1>
+  <div class="sub">게임수학 · AoS vs SoA · 상태패턴 · 핵심 면접 지식 통합 대시보드</div>
+</div>
+
+<!-- ============================== TOP-LEVEL TABS ============================== -->
+<div class="main-tabs">
+  <div class="main-tab active" onclick="mainSwitch(0)">🧠 CS 심화 <span class="badge">5 챕터</span></div>
+  <div class="main-tab" onclick="mainSwitch(1)">🎮 면접 대시보드 <span class="badge">9 분야</span></div>
+</div>
+
+<!-- ============================== PANEL 1: CS 심화 ============================== -->
+<div class="main-panel active" id="panel-advanced">
+
+<h1 class="adv-title">🧠 CS 심화 — 모의면접 약점 보강</h1>
+<p class="adv-subtitle">5차 모의면접에서 새로 배운 개념 + 우선순위 큐/힙 정리</p>
+
+<div class="adv-tabs">
+  <div class="adv-tab active" onclick="advShow(0)">우선순위 큐 &amp; 힙</div>
+  <div class="adv-tab" onclick="advShow(1)">게임 수학 (벡터 &amp; 내적)</div>
+  <div class="adv-tab" onclick="advShow(2)">캐시 효율 (AoS vs SoA)</div>
+  <div class="adv-tab" onclick="advShow(3)">상태 패턴 &amp; 터널링</div>
+  <div class="adv-tab" onclick="advShow(4)">면접 킬러 용어</div>
+</div>
+
+<!-- CH0: 우선순위 큐 & 힙 -->
+<div class="adv-chapter active" id="adv-ch0">
+
+<div class="adv-card">
+<h2>📌 우선순위 큐 (Priority Queue)</h2>
+
+<div class="game-box">
+보스가 독, 화상, 출혈 3개 디버프를 걸었어. 3초 후 독 데미지, 5초 후 화상, 8초 후 출혈.<br>
+<b>가장 급한 것(3초 독)부터 꺼내야 해.</b> 이게 우선순위 큐야.<br>
+"시간순으로 줄 세워놓고, 제일 빠른 거 먼저 처리"
+</div>
+
+<table>
+<tbody><tr><th>연산</th><th>비용</th><th>설명</th></tr>
+<tr><td><b>삽입 (push)</b></td><td><code>O(log n)</code></td><td>새 이벤트를 넣으면 자동으로 정렬 위치 찾아감</td></tr>
+<tr><td><b>꼭대기 확인 (top)</b></td><td><code>O(1)</code></td><td>가장 급한 게 뭔지 바로 확인</td></tr>
+<tr><td><b>꺼내기 (pop)</b></td><td><code>O(log n)</code></td><td>꼭대기를 빼고 재정렬</td></tr>
+</tbody></table>
+
+<h3>왜 배열 정렬이 아니라 우선순위 큐?</h3>
+<table>
+<tbody><tr><th>방식</th><th>삽입</th><th>최솟값 꺼내기</th><th>게임에서</th></tr>
+<tr><td>정렬된 배열</td><td><code>O(n)</code> (끼워넣기)</td><td><code>O(1)</code></td><td>삽입이 느림</td></tr>
+<tr><td>정렬 안 된 배열</td><td><code>O(1)</code></td><td><code>O(n)</code> (전부 뒤짐)</td><td>꺼내기가 느림</td></tr>
+<tr><td><b>우선순위 큐 (힙)</b></td><td><code>O(log n)</code></td><td><code>O(log n)</code></td><td><b>둘 다 빠름!</b></td></tr>
+</tbody></table>
+
+<div class="key-box">
+우선순위 큐 = "가장 급한 것부터 꺼내는 자료구조"<br>
+내부는 <b>Heap(힙)</b>으로 구현. 삽입/꺼내기 둘 다 <code>O(log n)</code>.
+</div>
+</div>
+
+<div class="adv-card">
+<h2>📌 힙 (Heap) — 우선순위 큐의 내부 구조</h2>
+
+<h3>힙이 뭐냐</h3>
+<p>"<b>부모가 자식보다 항상 작은(또는 큰) 이진 트리</b>"를 <b>배열</b>로 구현한 것.</p>
+
+<div class="diagram">
+          <span class="hl">3</span>  ← 꼭대기 (가장 작은 값 = 가장 급한 이벤트)
+        /     \
+      <span class="gr">5</span>       <span class="gr">8</span>
+     / \     / \
+   <span class="rd">10</span>  <span class="rd">15</span> <span class="rd">12</span>  <span class="rd">20</span>
+
+배열로 저장하면: [3, 5, 8, 10, 15, 12, 20]
+                  0  1  2   3   4   5   6
+
+부모 인덱스 = (자식 - 1) / 2
+왼쪽 자식  = 부모 × 2 + 1
+오른쪽 자식 = 부모 × 2 + 2
+</div>
+
+<div class="game-box">
+<b>엘든링 이벤트 스케줄러:</b><br>
+• 3초 후: 독 데미지 → 힙 꼭대기<br>
+• 5초 후: 화상 데미지<br>
+• 8초 후: 출혈 데미지<br>
+매 프레임 꼭대기만 확인 → "3초 됐나?" → 아직이면 아무것도 안 함 → O(1)<br>
+3초 지남 → pop → 독 처리 → 다음 꼭대기는 5초 화상
+</div>
+
+<h3>⚠️ "메모리 힙"과 다른 것!</h3>
+<table>
+<tbody><tr><th></th><th>자료구조 힙 (Heap)</th><th>메모리 힙 (Heap)</th></tr>
+<tr><td>정체</td><td>트리를 배열로 구현한 <b>자료구조</b></td><td>동적 메모리 할당 <b>영역</b></td></tr>
+<tr><td>관계</td><td>우선순위 큐의 내부</td><td><code>new</code>로 할당하는 RAM 영역</td></tr>
+<tr><td>이름만 같음</td><td colspan="2" style="text-align:center">✅ 완전히 다른 개념!</td></tr>
+</tbody></table>
+
+<h3>게임에서 우선순위 큐 쓰는 곳</h3>
+<table>
+<tbody><tr><th>용도</th><th>왜 우선순위 큐?</th></tr>
+<tr><td><b>A* 길찾기</b></td><td>가장 유망한(비용 낮은) 노드부터 탐색</td></tr>
+<tr><td><b>이벤트 스케줄러</b></td><td>3초 후 독, 5초 후 화상 → 시간순 처리</td></tr>
+<tr><td><b>AI 행동 우선순위</b></td><td>위협도 높은 적부터 처리</td></tr>
+<tr><td><b>네트워크 패킷</b></td><td>중요도 높은 패킷 먼저 전송</td></tr>
+</tbody></table>
+
+<div class="interview-box">
+"우선순위 큐는 <b>가장 급한 것부터 꺼내는 자료구조</b>입니다. 내부는 <b>힙(Heap)</b>으로 구현되며, 삽입과 꺼내기 모두 <code>O(log n)</code>입니다. 게임에서는 <b>A* 길찾기</b>에서 가장 유망한 노드를 꺼내거나, <b>이벤트 스케줄러</b>에서 시간순으로 디버프를 처리할 때 사용합니다. 메모리 Heap과는 이름만 같고 전혀 다른 개념입니다."
+</div>
+</div>
+</div>
+
+<!-- CH1: 게임 수학 -->
+<div class="adv-chapter" id="adv-ch1">
+
+<div class="adv-card">
+<h2>📌 벡터 연산 — 4단계</h2>
+
+<h3>STEP 1. 방향 벡터 (어디에 있냐)</h3>
+<pre>적 위치 - 내 위치 = 방향 벡터
+
+(8, 6) - (2, 3) = (6, 3)  → "적이 오른쪽 위에 있다"</pre>
+
+<h3>STEP 2. Magnitude / 길이 (얼마나 멀리)</h3>
+<pre>길이 = √(x² + y²) = √(36 + 9) = √45 ≈ 6.7</pre>
+
+<h3>STEP 3. 정규화 / Normalize (순수 방향만)</h3>
+<pre>각 성분 ÷ 길이 = (6/6.7, 3/6.7) ≈ (0.89, 0.45)
+
+→ 길이가 1인 순수 방향 벡터</pre>
+
+<h3>STEP 4. 내적 / Dot Product (앞이냐 뒤냐)</h3>
+<pre>내적 = Forward · 적방향
+     = Fx×Dx + Fy×Dy + Fz×Dz
+     = 숫자 하나!
+
+양수 → 앞 | 0 → 옆 | 음수 → 뒤</pre>
+</div>
+
+<div class="adv-card">
+<h2>📌 내적 결과 판별표</h2>
+<table>
+<tbody><tr><th>내적 값</th><th>각도</th><th>의미</th><th>게임 예시</th></tr>
+<tr><td><b>1.0</b></td><td>0°</td><td>완전 정면</td><td>정면 헤드샷</td></tr>
+<tr><td><b>0.87</b></td><td>30°</td><td>거의 정면</td><td>패리 판정 범위</td></tr>
+<tr><td><b>0.5</b></td><td>60°</td><td>시야각 경계</td><td>시야각 120° 판정</td></tr>
+<tr><td><b>0</b></td><td>90°</td><td>정확히 옆</td><td>시야 밖 경계</td></tr>
+<tr><td><b>-0.5</b></td><td>120°</td><td>뒤쪽</td><td>백스탭 범위</td></tr>
+<tr><td><b>-1.0</b></td><td>180°</td><td>완전 뒤</td><td>정확히 등 뒤</td></tr>
+</tbody></table>
+
+<h3>🎮 락온 vs 뒤잡 — 기준만 바뀜</h3>
+<table>
+<tbody><tr><th>판정</th><th>Forward 기준</th><th>방향 벡터</th><th>조건</th></tr>
+<tr><td><b>락온</b> (적이 내 앞?)</td><td><b>나</b>의 Forward</td><td>적 위치 - 내 위치</td><td>내적 &gt; 0</td></tr>
+<tr><td><b>뒤잡</b> (내가 적 뒤?)</td><td><b>적</b>의 Forward</td><td>내 위치 - 적 위치</td><td>내적 &lt; 0</td></tr>
+</tbody></table>
+
+<div class="key-box">
+공식은 똑같아. <b>Forward를 누구 걸로 쓰냐</b>만 다름!
+</div>
+
+<div class="interview-box">
+"적까지 <b>방향 벡터</b>를 구해서 <b>정규화</b>하고, 플레이어의 <b>Forward 벡터와 내적</b>합니다. 양수면 앞, 음수면 뒤입니다. 시야각 판정, 락온, 백스탭 등에 활용합니다."
+</div>
+</div>
+
+<div class="adv-card">
+<h2>📌 유클리드 거리 — 색상에도 쓰임!</h2>
+<table>
+<tbody><tr><th>용도</th><th>공식</th><th>성분</th></tr>
+<tr><td>3D 거리</td><td><code>√(x² + y² + z²)</code></td><td>위치</td></tr>
+<tr><td><b>색상 거리</b></td><td><code>√(R² + G² + B²)</code></td><td>RGB</td></tr>
+</tbody></table>
+<p style="color:#8899aa; font-size:13px; margin-top:8px;">명화 퍼즐에서 고유색 매핑의 tolerance 판정 = 두 색의 유클리드 거리가 임계값 이내인지 확인</p>
+</div>
+</div>
+
+<!-- CH2: AoS vs SoA -->
+<div class="adv-chapter" id="adv-ch2">
+
+<div class="adv-card">
+<h2>📌 AoS vs SoA — 캐시 효율의 핵심</h2>
+
+<h3>AoS (Array of Structs) — 구조체 배열</h3>
+<div class="diagram">
+메모리: [<span class="rd">x,y,z,hp,atk,alive</span>] [<span class="rd">x,y,z,hp,atk,alive</span>] [<span class="rd">x,y,z,hp,atk,alive</span>]
+         ←── Enemy 1 (100B) ──→  ←── Enemy 2 (100B) ──→
+
+캐시 라인 (64바이트) 읽으면:
+[x, y, z, <span class="hl">hp</span>, atk, alive, ...]  ← hp 4바이트만 필요한데 60바이트 낭비!
+</div>
+
+<h3>SoA (Struct of Arrays) — 배열의 구조체</h3>
+<div class="diagram">
+메모리: [<span class="hl">hp</span>][<span class="hl">hp</span>][<span class="hl">hp</span>][<span class="hl">hp</span>][<span class="hl">hp</span>][<span class="hl">hp</span>][<span class="hl">hp</span>][<span class="hl">hp</span>][<span class="hl">hp</span>][<span class="hl">hp</span>][<span class="hl">hp</span>][<span class="hl">hp</span>][<span class="hl">hp</span>][<span class="hl">hp</span>][<span class="hl">hp</span>][<span class="hl">hp</span>]
+         ←── 캐시 라인 하나에 HP 16개! 낭비 0! ──→
+</div>
+
+<table>
+<tbody><tr><th></th><th>AoS (구조체 배열)</th><th>SoA (배열의 구조체)</th></tr>
+<tr><td>캐시 라인 1회</td><td>HP <b>1개</b> + 쓸데없는 데이터</td><td>HP <b>16개</b></td></tr>
+<tr><td>HP만 순회 시</td><td>캐시 미스 많음</td><td><b>캐시 히트 연속</b></td></tr>
+<tr><td>한 객체 전체 접근</td><td><b>빠름</b> (다 모여있으니까)</td><td>느림 (흩어져 있으니까)</td></tr>
+<tr><td>게임 사용</td><td>일반적인 OOP</td><td><b>ECS (Entity Component System)</b></td></tr>
+</tbody></table>
+
+<div class="key-box">
+"하나의 필드만 순회할 때는 SoA가 압도적으로 빠르다" = 캐시 라인을 100% 활용<br>
+<b>ECS가 빠른 이유</b> 중 하나가 이 SoA 구조.
+</div>
+
+<div class="interview-box">
+"구조체 배열(AoS)은 HP를 읽을 때 불필요한 데이터까지 캐시에 올라와서 <b>캐시 낭비</b>가 발생합니다. HP만 따로 배열(SoA)로 두면 캐시 라인 하나에 HP 16개가 들어가서 <b>공간적 지역성이 극대화</b>됩니다."
+</div>
+</div>
+</div>
+
+<!-- CH3: 상태 패턴 & 터널링 -->
+<div class="adv-chapter" id="adv-ch3">
+
+<div class="adv-card">
+<h2>📌 상태 패턴 (State Pattern) — if-else 지옥 탈출</h2>
+
+<h3>❌ Before: if-else 체인</h3>
+<pre>void Update() {
+    if (state == "Idle") { /* ... */ }
+    else if (state == "Run") { /* ... */ }
+    else if (state == "Attack") { /* ... */ }
+    // 상태 추가할 때마다 여기 수정... 💥
+}</pre>
+
+<h3>✅ After: 상태 패턴</h3>
+<pre>class IState {
+    virtual void Enter() = 0;
+    virtual void Update() = 0;
+    virtual void Exit() = 0;
+};
+
+class IdleState : public IState { /* ... */ };
+class RunState : public IState { /* ... */ };
+
+// Player는 현재 상태만 들고 있음
+class Player {
+    IState* currentState;
+    void Update() {
+        currentState-&gt;Update();  // if문 없음!
+    }
+};</pre>
+
+<table>
+<tbody><tr><th></th><th>if-else</th><th>상태 패턴</th></tr>
+<tr><td>상태 추가</td><td>Update() 수정</td><td><b>클래스 하나만 추가</b></td></tr>
+<tr><td>Update() 크기</td><td>수백 줄</td><td><b>한 줄</b></td></tr>
+<tr><td>디버깅</td><td>전체를 봐야 함</td><td><b>해당 상태 클래스만</b></td></tr>
+</tbody></table>
+
+<div class="warn-box">
+상태 패턴도 상태 15개+ 되면 클래스 폭발 가능. 동시 상태(걸으면서 공격)는 <b>레이어드 FSM</b> 또는 <b>컴포넌트 분리</b>로 해결.
+</div>
+</div>
+
+<div class="adv-card">
+<h2>📌 터널링 (Tunneling) — 벽 뚫기 버그</h2>
+
+<div class="diagram">
+프레임 1:  캐릭터 [<span class="gr">■</span>]        |<span class="rd">벽</span>|
+                    ←── 속도 빠름 ──→
+프레임 2:              |<span class="rd">벽</span>|        [<span class="gr">■</span>]  ← 벽을 뚫고 지나감!
+
+→ 프레임 사이에 충돌 검사가 없어서 벽을 "터널처럼" 통과
+</div>
+
+<h3>해결 방법</h3>
+<table>
+<tbody><tr><th>방법</th><th>설명</th><th>언리얼에서</th></tr>
+<tr><td><b>CCD</b></td><td>프레임 사이 궤적을 연속 검사</td><td><code>Sweep</code></td></tr>
+<tr><td><b>레이캐스트</b></td><td>이동 전에 앞에 벽 있는지 검사</td><td><code>LineTrace</code></td></tr>
+<tr><td><b>속도 제한</b></td><td>1프레임 이동 &lt; 콜라이더 두께</td><td>Max Speed 설정</td></tr>
+<tr><td><b>벽 두껍게</b></td><td>응급 처치</td><td>콜라이더 크기 조절</td></tr>
+</tbody></table>
+
+<div class="interview-box">
+"<b>터널링</b> 현상을 의심합니다. 속도가 빨라서 한 프레임에 콜라이더를 넘어가버리는 겁니다. <b>CCD(Continuous Collision Detection)</b>로 프레임 사이 궤적을 연속 검사하거나, <b>레이캐스트</b>로 앞에 벽이 있는지 먼저 확인합니다."
+</div>
+</div>
+</div>
+
+<!-- CH4: 면접 킬러 용어 -->
+<div class="adv-chapter" id="adv-ch4">
+
+<div class="adv-card">
+<h2>📌 D-4 외울 것 — 10개 총정리</h2>
+
+<table>
+<tbody><tr><th>#</th><th>키워드</th><th>한 줄 암기</th><th>상태</th></tr>
+<tr><td>1</td><td><b>std::move</b></td><td>안 옮김. lvalue→rvalue 캐스팅만. 이동 생성자가 O(1)로 실제 이동.</td><td>✅</td></tr>
+<tr><td>2</td><td><b>QuadTree</b></td><td>공간 재귀 4등분. 근처만 탐색. O(n)→O(log n+k).</td><td>✅</td></tr>
+<tr><td>3</td><td><b>reserve / emplace_back</b></td><td>reserve=미리 공간 확보. emplace_back=제자리 생성.</td><td>✅</td></tr>
+<tr><td>4</td><td><b>Head-of-Line Blocking</b></td><td>TCP에서 앞 패킷 유실 → 뒤 전부 대기. 그래서 게임은 UDP.</td><td>✅</td></tr>
+<tr><td>5</td><td><b>클래스 폭발</b></td><td>조합을 상속으로 → 클래스 곱셈. 컴포넌트로 해결.</td><td>✅</td></tr>
+<tr><td>6</td><td><b>포인터 vs 참조</b></td><td>포인터=null 가능+재할당. 참조=null 불가+못 바꿈.</td><td>✅</td></tr>
+<tr><td>7</td><td><b>프로세스 vs 스레드</b></td><td>프로세스=메모리 독립. 스레드=메모리 공유 → 동기화 필요.</td><td>✅</td></tr>
+<tr><td>8</td><td><b>터널링</b></td><td>빠르면 콜라이더 뚫음. CCD/Sweep으로 해결.</td><td>🔴 새로</td></tr>
+<tr><td>9</td><td><b>상태 패턴</b></td><td>각 상태를 클래스로 분리. if-else 제거. OCP 준수.</td><td>🔴 새로</td></tr>
+<tr><td>10</td><td><b>유클리드 거리</b></td><td>√(R²+G²+B²). 3D 거리와 같은 공식. 색상 tolerance 판정.</td><td>🔴 새로</td></tr>
+</tbody></table>
+</div>
+
+<div class="adv-card">
+<h2>📌 모의면접 점수 변화</h2>
+<table>
+<tbody><tr><th>영역</th><th>1차</th><th>4차</th><th>5차</th></tr>
+<tr><td>CS 기초</td><td>⭐⭐⭐☆☆</td><td>⭐⭐⭐⭐☆</td><td><b>⭐⭐⭐⭐☆</b> (난이도↑ 유지)</td></tr>
+<tr><td>설계 사고</td><td>⭐⭐⭐⭐☆</td><td>⭐⭐⭐⭐⭐</td><td><b>⭐⭐⭐⭐⭐</b></td></tr>
+<tr><td>문제 해결</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td><td><b>⭐⭐⭐⭐⭐</b></td></tr>
+<tr><td>코드 읽기</td><td>⭐⭐☆☆☆</td><td>⭐⭐⭐⭐☆</td><td><b>⭐⭐⭐⭐☆</b></td></tr>
+<tr><td>게임 수학</td><td>—</td><td>—</td><td><b>⭐⭐⭐☆☆</b> (새로 배움)</td></tr>
+<tr><td>인성/경험</td><td>—</td><td>⭐⭐⭐⭐⭐</td><td><b>⭐⭐⭐⭐⭐</b></td></tr>
+</tbody></table>
+</div>
+</div>
+
+</div>
+
+<!-- ============================== PANEL 2: 면접 대시보드 ============================== -->
+<div class="main-panel" id="panel-interview">
+
+<h1 class="iv-title"><i class="fa-solid fa-gamepad"></i> 게임회사 CS 면접 핵심 지식</h1>
+<p class="iv-subtitle">네카라쿠배 · 크래프톤 · 시프트업 · 넥슨 · NC 등 주요 게임사 출제 빈도 기반 정리</p>
+
+<div class="iv-legend">
+  <div class="iv-legend-item"><div class="iv-legend-dot" style="background:#de350b"></div> 최빈출 (거의 매번)</div>
+  <div class="iv-legend-item"><div class="iv-legend-dot" style="background:#ff991f"></div> 자주 출제</div>
+  <div class="iv-legend-item"><div class="iv-legend-dot" style="background:#0065ff"></div> 가끔 출제</div>
+</div>
+
+<div class="iv-grid">
+  <!-- 자료구조 -->
+  <div class="iv-card">
+    <div class="iv-card-header">
+      <div class="iv-card-icon" style="background:#de350b"><i class="fa-solid fa-cubes"></i></div>
+      <div><div class="iv-card-title">자료구조</div></div>
+      <span class="iv-card-priority priority-high" style="margin-left:auto">최빈출</span>
+    </div>
+    <ul class="topic-list">
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">Array vs LinkedList</span> — 메모리 레이아웃, 캐시 친화성, 삽입/삭제 O(n) vs O(1)</span></li>
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">HashMap</span> — 해시 충돌 해결(체이닝, 오픈 어드레싱), 리사이징, O(1) 평균</span></li>
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">Tree (BST, Red-Black, B-Tree)</span> — 균형 트리, 탐색 O(log n)</span></li>
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">Graph</span> — BFS/DFS, 다익스트라, A* (길찾기에 직결)</span></li>
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">Heap / Priority Queue</span> — AI 의사결정, 이벤트 스케줄링</span></li>
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">Spatial: QuadTree, Octree, KD-Tree</span> — 충돌 감지, 월드 파티셔닝</span></li>
+    </ul>
+    <div class="importance-bar"><div class="importance-fill" style="width:95%; background:#de350b"></div></div>
+  </div>
+
+  <!-- 알고리즘 -->
+  <div class="iv-card">
+    <div class="iv-card-header">
+      <div class="iv-card-icon" style="background:#de350b"><i class="fa-solid fa-code"></i></div>
+      <div><div class="iv-card-title">알고리즘</div></div>
+      <span class="iv-card-priority priority-high" style="margin-left:auto">최빈출</span>
+    </div>
+    <ul class="topic-list">
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">정렬</span> — Quick, Merge, Radix. 시간/공간 복잡도, 안정성</span></li>
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">탐색</span> — 이분 탐색, A*, 네비메시 기반 길찾기</span></li>
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">DP (동적 프로그래밍)</span> — 메모이제이션, 탑다운/바텀업</span></li>
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">그리디 / 분할정복</span> — 최적화 문제 접근법</span></li>
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">시간복잡도 분석</span> — Big-O, amortized analysis</span></li>
+    </ul>
+    <div class="importance-bar"><div class="importance-fill" style="width:90%; background:#de350b"></div></div>
+  </div>
+
+  <!-- OS -->
+  <div class="iv-card">
+    <div class="iv-card-header">
+      <div class="iv-card-icon" style="background:#de350b"><i class="fa-solid fa-server"></i></div>
+      <div><div class="iv-card-title">운영체제 (OS)</div></div>
+      <span class="iv-card-priority priority-high" style="margin-left:auto">최빈출</span>
+    </div>
+    <ul class="topic-list">
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">Process vs Thread</span> — 컨텍스트 스위칭, PCB, TCB</span></li>
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">동기화</span> — Mutex, Semaphore, SpinLock, 데드락 조건 4가지</span></li>
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">메모리 관리</span> — 가상 메모리, 페이징, TLB, 페이지 폴트</span></li>
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">캐시</span> — L1/L2/L3, 캐시 라인, False Sharing, 지역성</span></li>
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">스케줄링</span> — 선점/비선점, RR, Priority, 게임 루프와의 관계</span></li>
+    </ul>
+    <div class="importance-bar"><div class="importance-fill" style="width:92%; background:#de350b"></div></div>
+  </div>
+
+  <!-- 네트워크 -->
+  <div class="iv-card">
+    <div class="iv-card-header">
+      <div class="iv-card-icon" style="background:#de350b"><i class="fa-solid fa-network-wired"></i></div>
+      <div><div class="iv-card-title">네트워크</div></div>
+      <span class="iv-card-priority priority-high" style="margin-left:auto">최빈출</span>
+    </div>
+    <ul class="topic-list">
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">TCP vs UDP</span> — 게임은 왜 UDP? 신뢰성 vs 속도 트레이드오프</span></li>
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">소켓 프로그래밍</span> — select/epoll/IOCP, 논블로킹 I/O</span></li>
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">동기화 모델</span> — Lockstep, Client-Side Prediction, Server Reconciliation</span></li>
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">직렬화</span> — Protobuf, FlatBuffers, 패킷 설계</span></li>
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">레이턴시 보상</span> — Interpolation, Extrapolation, Lag Compensation</span></li>
+    </ul>
+    <div class="importance-bar"><div class="importance-fill" style="width:88%; background:#de350b"></div></div>
+  </div>
+
+  <!-- 메모리 / C++ -->
+  <div class="iv-card">
+    <div class="iv-card-header">
+      <div class="iv-card-icon" style="background:#ff991f"><i class="fa-solid fa-memory"></i></div>
+      <div><div class="iv-card-title">C++ &amp; 메모리</div></div>
+      <span class="iv-card-priority priority-mid" style="margin-left:auto">자주 출제</span>
+    </div>
+    <ul class="topic-list">
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">스마트 포인터</span> — unique_ptr, shared_ptr, weak_ptr, RAII</span></li>
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">Move Semantics</span> — rvalue reference, std::move, 복사 vs 이동</span></li>
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">메모리 풀 / 커스텀 Allocator</span> — 프래그멘테이션 방지</span></li>
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">가상함수 / vtable</span> — 다형성 비용, devirtualization</span></li>
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">템플릿 메타프로그래밍</span> — CRTP, SFINAE, constexpr</span></li>
+    </ul>
+    <div class="importance-bar"><div class="importance-fill" style="width:80%; background:#ff991f"></div></div>
+  </div>
+
+  <!-- 디자인 패턴 -->
+  <div class="iv-card">
+    <div class="iv-card-header">
+      <div class="iv-card-icon" style="background:#ff991f"><i class="fa-solid fa-puzzle-piece"></i></div>
+      <div><div class="iv-card-title">디자인 패턴</div></div>
+      <span class="iv-card-priority priority-mid" style="margin-left:auto">자주 출제</span>
+    </div>
+    <ul class="topic-list">
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">Singleton</span> — 매니저 클래스, 스레드 안전한 구현</span></li>
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">Observer</span> — 이벤트 시스템, Delegate (UE4/5)</span></li>
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">Component (ECS)</span> — 엔티티-컴포넌트-시스템, 데이터 지향 설계</span></li>
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">State / FSM</span> — 캐릭터 상태 머신, Behavior Tree</span></li>
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">Object Pool</span> — 총알, 파티클 등 빈번 생성/삭제 최적화</span></li>
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">Command</span> — 입력 버퍼링, 되돌리기(Undo)</span></li>
+    </ul>
+    <div class="importance-bar"><div class="importance-fill" style="width:75%; background:#ff991f"></div></div>
+  </div>
+
+  <!-- 그래픽스 / 렌더링 -->
+  <div class="iv-card">
+    <div class="iv-card-header">
+      <div class="iv-card-icon" style="background:#ff991f"><i class="fa-solid fa-image"></i></div>
+      <div><div class="iv-card-title">그래픽스 &amp; 렌더링</div></div>
+      <span class="iv-card-priority priority-mid" style="margin-left:auto">자주 출제</span>
+    </div>
+    <ul class="topic-list">
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">렌더링 파이프라인</span> — Vertex → Rasterize → Fragment → Framebuffer</span></li>
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">공간 변환</span> — Model → View → Projection (MVP)</span></li>
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">Frustum Culling / Occlusion Culling</span> — 드로우콜 최적화</span></li>
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">셰이더</span> — Vertex/Pixel Shader, PBR 기초</span></li>
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">배칭 &amp; 인스턴싱</span> — Draw Call 줄이기, GPU Instancing</span></li>
+    </ul>
+    <div class="importance-bar"><div class="importance-fill" style="width:70%; background:#ff991f"></div></div>
+  </div>
+
+  <!-- 수학/물리 -->
+  <div class="iv-card">
+    <div class="iv-card-header">
+      <div class="iv-card-icon" style="background:#0065ff"><i class="fa-solid fa-calculator"></i></div>
+      <div><div class="iv-card-title">게임 수학 &amp; 물리</div></div>
+      <span class="iv-card-priority priority-low" style="margin-left:auto">가끔 출제</span>
+    </div>
+    <ul class="topic-list">
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">벡터 / 행렬 연산</span> — 내적(각도), 외적(법선), 변환 행렬</span></li>
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">쿼터니언</span> — 짐벌락 회피, Slerp 보간</span></li>
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">충돌 감지</span> — AABB, OBB, GJK, SAT</span></li>
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">물리 시뮬레이션</span> — 고정 타임스텝, Verlet Integration</span></li>
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">보간</span> — Lerp, Ease In/Out, Bezier Curve</span></li>
+    </ul>
+    <div class="importance-bar"><div class="importance-fill" style="width:55%; background:#0065ff"></div></div>
+  </div>
+
+  <!-- DB -->
+  <div class="iv-card">
+    <div class="iv-card-header">
+      <div class="iv-card-icon" style="background:#0065ff"><i class="fa-solid fa-database"></i></div>
+      <div><div class="iv-card-title">데이터베이스</div></div>
+      <span class="iv-card-priority priority-low" style="margin-left:auto">가끔 출제</span>
+    </div>
+    <ul class="topic-list">
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">인덱스</span> — B-Tree 인덱스, 클러스터/논클러스터, 쿼리 최적화</span></li>
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">트랜잭션</span> — ACID, 격리 수준, 락 종류</span></li>
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">NoSQL</span> — Redis(인메모리 캐시), MongoDB, 게임 세션 저장</span></li>
+      <li class="topic-item"><span class="topic-bullet">▸</span><span><span class="topic-keyword">샤딩 &amp; 레플리케이션</span> — 대규모 동접 대응</span></li>
+    </ul>
+    <div class="importance-bar"><div class="importance-fill" style="width:50%; background:#0065ff"></div></div>
+  </div>
+</div>
+
+<!-- 상세 설명 탭 -->
+<div class="iv-section-title"><i class="fa-solid fa-magnifying-glass"></i> 면접 빈출 질문 예시</div>
+<div class="iv-tab-nav">
+  <button class="iv-tab-btn active" onclick="ivShowTab('ds')">자료구조</button>
+  <button class="iv-tab-btn" onclick="ivShowTab('os')">OS</button>
+  <button class="iv-tab-btn" onclick="ivShowTab('net')">네트워크</button>
+  <button class="iv-tab-btn" onclick="ivShowTab('cpp')">C++</button>
+  <button class="iv-tab-btn" onclick="ivShowTab('pattern')">패턴</button>
+  <button class="iv-tab-btn" onclick="ivShowTab('gfx')">그래픽스</button>
+</div>
+
+<div class="iv-detail-panel" id="iv-detail-panel">
+  <div id="iv-tab-ds">
+    <div class="iv-detail-title">🗂️ 자료구조 빈출 질문</div>
+    <div class="iv-detail-text">
+      <p>• <code>std::vector</code>와 <code>std::list</code>의 차이와, 게임에서 어떤 상황에 각각을 쓰는가?</p>
+      <p>• HashMap에서 해시 충돌이 발생하면 어떻게 처리하나? 로드 팩터란?</p>
+      <p>• A* 알고리즘의 시간복잡도와 Heuristic 함수의 역할은?</p>
+      <p>• QuadTree로 2D 충돌 감지를 최적화하는 원리를 설명하라.</p>
+      <p>• Priority Queue가 게임 AI에서 어떻게 활용되는가?</p>
+    </div>
+  </div>
+  <div id="iv-tab-os" style="display:none">
+    <div class="iv-detail-title">⚙️ 운영체제 빈출 질문</div>
+    <div class="iv-detail-text">
+      <p>• 멀티스레드 게임 서버에서 데드락을 방지하려면?</p>
+      <p>• False Sharing이 뭔지, 게임 엔진에서 어떻게 회피하나?</p>
+      <p>• 게임 루프에서 고정 타임스텝 vs 가변 타임스텝의 차이?</p>
+      <p>• 가상 메모리와 물리 메모리의 관계, TLB Miss가 성능에 미치는 영향?</p>
+      <p>• 컨텍스트 스위칭 비용을 줄이기 위한 전략은?</p>
+    </div>
+  </div>
+  <div id="iv-tab-net" style="display:none">
+    <div class="iv-detail-title">🌐 네트워크 빈출 질문</div>
+    <div class="iv-detail-text">
+      <p>• FPS 게임에서 TCP 대신 UDP를 쓰는 이유와 신뢰성 보장 방법?</p>
+      <p>• Client-Side Prediction과 Server Reconciliation을 설명하라.</p>
+      <p>• 100ms 레이턴시 환경에서 공격 판정을 어떻게 처리할 것인가?</p>
+      <p>• Lockstep 동기화의 장단점과 적합한 장르는?</p>
+      <p>• IOCP와 epoll의 차이점, 각각의 적합한 사용처?</p>
+    </div>
+  </div>
+  <div id="iv-tab-cpp" style="display:none">
+    <div class="iv-detail-title">💻 C++ &amp; 메모리 빈출 질문</div>
+    <div class="iv-detail-text">
+      <p>• <code>shared_ptr</code>의 순환 참조 문제와 <code>weak_ptr</code>로의 해결?</p>
+      <p>• Move Semantics가 게임 엔진에서 성능에 미치는 영향?</p>
+      <p>• 커스텀 메모리 풀을 만드는 이유와 구현 방식?</p>
+      <p>• vtable의 메모리 레이아웃과 virtual 호출의 오버헤드?</p>
+      <p>• <code>constexpr</code>과 <code>template</code>을 활용한 컴파일 타임 최적화 예시?</p>
+    </div>
+  </div>
+  <div id="iv-tab-pattern" style="display:none">
+    <div class="iv-detail-title">🧩 디자인 패턴 빈출 질문</div>
+    <div class="iv-detail-text">
+      <p>• ECS 패턴이 전통 OOP 상속보다 게임에서 유리한 점은?</p>
+      <p>• Object Pool 패턴의 구현과 메모리 단편화 방지?</p>
+      <p>• FSM과 Behavior Tree 중 어떤 상황에 무엇을 쓰나?</p>
+      <p>• 싱글톤의 단점과 게임에서의 대안 (Service Locator 등)?</p>
+      <p>• Command 패턴으로 입력 리플레이 시스템을 어떻게 구현하나?</p>
+    </div>
+  </div>
+  <div id="iv-tab-gfx" style="display:none">
+    <div class="iv-detail-title">🖼️ 그래픽스 빈출 질문</div>
+    <div class="iv-detail-text">
+      <p>• Forward Rendering vs Deferred Rendering의 장단점?</p>
+      <p>• Draw Call이 많으면 왜 느려지나? 해결 전략은?</p>
+      <p>• LOD(Level of Detail)와 Frustum Culling의 원리?</p>
+      <p>• PBR의 핵심 파라미터(Metallic, Roughness)와 에너지 보존?</p>
+      <p>• GPU 파이프라인에서 병목이 발생하는 주요 지점은?</p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- ============================== SCRIPTS ============================== -->
+<script>
+// === Top-level tab switching ===
+function mainSwitch(idx) {
+  document.querySelectorAll('.main-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.main-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.main-panel')[idx].classList.add('active');
+  document.querySelectorAll('.main-tab')[idx].classList.add('active');
+}
+
+// === Panel 1: CS 심화 내부 탭 ===
+function advShow(idx) {
+  document.querySelectorAll('#panel-advanced .adv-chapter').forEach(c => c.classList.remove('active'));
+  document.querySelectorAll('#panel-advanced .adv-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('adv-ch' + idx).classList.add('active');
+  document.querySelectorAll('#panel-advanced .adv-tab')[idx].classList.add('active');
+}
+
+// === Panel 2: 면접 대시보드 내부 탭 ===
+function ivShowTab(id) {
+  var tabs = ['ds','os','net','cpp','pattern','gfx'];
+  tabs.forEach(function(t) {
+    document.getElementById('iv-tab-' + t).style.display = (t === id) ? 'block' : 'none';
+  });
+  document.querySelectorAll('#panel-interview .iv-tab-btn').forEach(function(btn, i) {
+    btn.classList.toggle('active', tabs[i] === id);
+  });
+}
+</script>
+
+
+</body></html>
