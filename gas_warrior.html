@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="ko"><head><style id="qw-theme">:root {
+  --color-bg: #faf9fc;
+  --color-text: #131920;
+  --color-navbar-bg: #f9f9fb;
+  --color-bg-chat-view: #fcfcfd;
+  --color-bg-secondary: #fff;
+  --color-bg-tertiary: #f9fafb;
+  --color-bg-hover: #f3f4f6;
+  --color-surface: #f9fafb;
+  --color-surface-hover: #f3f4f6;
+  --color-surface-active: #e5e7eb;
+  --color-border: #0000001f;
+  --color-border-light: #0000000f;
+  --color-border-strong: #d1d5db;
+  --color-primary: #4200db;
+  --color-primary-dark: #35009e;
+  --color-primary-light: #8575ff;
+  --color-primary-bg: #e8e6ff;
+  --color-primary-hover-border: #35009e;
+  --color-nav-icon-active: #4200db;
+  --color-nav-hover-border: #4200db;
+  --color-primary-alpha-3: color-mix(in srgb, #4200db 3%, transparent);
+  --color-primary-alpha-5: color-mix(in srgb, #4200db 5%, transparent);
+  --color-primary-alpha-8: color-mix(in srgb, #4200db 8%, transparent);
+  --color-primary-alpha-12: color-mix(in srgb, #4200db 12%, transparent);
+  --color-primary-alpha-15: color-mix(in srgb, #4200db 15%, transparent);
+  --color-primary-alpha-20: color-mix(in srgb, #4200db 20%, transparent);
+  --color-primary-alpha-25: color-mix(in srgb, #4200db 25%, transparent);
+  --color-primary-alpha-30: color-mix(in srgb, #4200db 30%, transparent);
+  --color-primary-alpha-40: color-mix(in srgb, #4200db 40%, transparent);
+  --color-primary-alpha-50: color-mix(in srgb, #4200db 50%, transparent);
+  --color-primary-alpha-60: color-mix(in srgb, #4200db 60%, transparent);
+  --color-primary-subtle: color-mix(in srgb, #4200db 12%, transparent);
+  --color-primary-border: color-mix(in srgb, #4200db 30%, transparent);
+  --color-focus-ring: color-mix(in srgb, #4200db 50%, transparent);
+  --color-sidebar-hover: color-mix(in srgb, #4200db 12%, transparent);
+  --block-hover-outline: 1px dashed color-mix(in srgb, #4200db 50%, transparent);
+  --block-selected-outline: 1px solid #8575ff;
+  --block-selection-outline-offset: 2px;
+  --block-selected-halo: 0 0 8px color-mix(in srgb, #4200db 40%, transparent);
+  --color-accent: #4200db;
+  --color-accent-foreground: #4200db;
+  --color-accent-dark: #35009e;
+  --color-accent-light: #e8e6ff;
+  --color-accent-inverse: #fff;
+  --color-link: #4200db;
+  --color-primary-gradient-end: #e8e6ff;
+  --color-primary-bg-solid: #e8e6ff;
+  --color-user-bubble: #f3f3f7;
+  --color-user-bubble-text: #131920;
+  --color-text-secondary: #5e5e5e;
+  --color-text-tertiary: #656871;
+  --color-text-muted: #9ca3af;
+  --color-text-on-primary: #fff;
+  --color-success: #00802f;
+  --color-success-dark: #00471e;
+  --color-success-light: #d9ffd6;
+  --color-success-hover: #005c26;
+  --color-success-bg: #e6f5eb;
+  --color-success-border: #b3d9bf;
+  --color-success-foreground: #00802f;
+  --color-success-dark-foreground: #00471e;
+  --color-success-text: #00471e;
+  --color-error: #db0000;
+  --color-error-dark: #700000;
+  --color-error-light: #ffe0e0;
+  --color-error-hover: #ffe0e0;
+  --color-error-bg: #fceaea;
+  --color-error-border: #f2cccc;
+  --color-error-active-border: #db0000;
+  --color-error-foreground: #db0000;
+  --color-error-dark-foreground: #700000;
+  --color-error-inverse: #fff;
+  --color-error-text: #700000;
+  --color-warning: #f2b100;
+  --color-warning-dark: #573a00;
+  --color-warning-light: #fffbbd;
+  --color-warning-hover: #db9200;
+  --color-warning-bg: #fef7e6;
+  --color-warning-border: #f9dfa3;
+  --color-warning-foreground: #f2b100;
+  --color-warning-dark-foreground: #573a00;
+  --color-warning-inverse: #573a00;
+  --color-surface-warning: #fffbbd;
+  --color-text-warning: #573a00;
+  --color-info: #006ce0;
+  --color-info-dark: #002a66;
+  --color-info-light: #d1f1ff;
+  --color-info-hover: #003b8f;
+  --color-info-bg: #ebf3fc;
+  --color-info-border: #b3d1f0;
+  --color-info-foreground: #006ce0;
+  --color-info-dark-foreground: #002a66;
+  --color-info-inverse: #fff;
+  --color-overlay: #00000080;
+  --color-shadow: #00000014;
+  --color-hover: #0000000d;
+  --color-tooltip-bg: #000000d9;
+  --color-tooltip-text: #fff;
+  --color-voice-purple: #8575ff;
+  --color-voice-purple-dark: #4200db;
+  --color-voice-purple-light: #8575ff;
+  --color-voice-red: #db0000;
+  --color-voice-red-dark: #700000;
+  --color-voice-amber: #f2b100;
+  --color-voice-purple-glow: #4200db66;
+  --color-voice-red-glow: #db000066;
+  --font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "SF Mono", "Monaco", "Menlo", "Consolas", monospace;
+  --text-2xs: .5625rem;
+  --text-xs: .625rem;
+  --text-sm: .6875rem;
+  --text-base: .75rem;
+  --text-md: .8125rem;
+  --text-lg: .875rem;
+  --text-xl: 1rem;
+  --text-2xl: 1.125rem;
+  --text-3xl: 1.25rem;
+  --text-4xl: 1.5rem;
+  --text-5xl: 2rem;
+  --spacing-1: calc(.25rem * 1);
+  --spacing-1-5: calc(.25rem * 1.5);
+  --spacing-2: calc(.25rem * 2);
+  --spacing-3: calc(.25rem * 3);
+  --spacing-4: calc(.25rem * 4);
+  --spacing-5: calc(.25rem * 5);
+  --spacing-6: calc(.25rem * 6);
+  --spacing-7: calc(.25rem * 7);
+  --spacing-8: calc(.25rem * 8);
+  --spacing-9: calc(.25rem * 9);
+  --spacing-10: calc(.25rem * 10);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-card: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 8px;
+  --shadow-sm: 0 1px 2px #0000000d;
+  --shadow-md: 0 4px 12px #00000014;
+  --color-success-bg-solid: #d9ffd6;
+  --color-error-bg-solid: #ffe0e0;
+  --color-error-border-solid: #ffe0e0;
+  --color-warning-bg-solid: #fffbbd;
+  --color-warning-text: #573a00;
+  --color-info-bg-solid: #d1f1ff;
+  --color-info-bg-solid-alt: #d1f1ff;
+  --color-info-text: #002a66;
+  --color-info-text-alt: #002a66;
+  --color-emerald: #10b981;
+  --color-teal: #4ecdc4;
+  --color-code-bg: #f3f3f7;
+  --color-code-header-bg: #f1f3f5;
+  --color-code-text: #24292e;
+  --color-code-border: #e1e4e8;
+  --color-code-muted: #6a737d;
+  --color-inline-code-bg: #f3f3f7;
+  --color-inline-code-text: #24292e;
+  --color-inline-code-border: #e1e4e8;
+  --color-scrollbar-thumb: #d1d5db;
+  --color-scrollbar-track: transparent;
+  --color-graph-node-text: #333;
+  --color-graph-node-text-dim: #7f8c8d;
+  --color-graph-edge-default: #95a5a6;
+  --color-graph-edge-cross: #e67e22;
+  --color-graph-edge-text: #666;
+  --color-graph-edge-stroke: #fff;
+  --color-graph-highlight-bg: #ff6b6b;
+  --color-graph-highlight-border: #e74c3c;
+  --color-graph-search-bg: gold;
+  --color-graph-search-border: orange;
+  --color-graph-focus-border: #c0392b;
+  --color-graph-external-border: #95a5a6;
+  --color-graph-cat-file: #3498db;
+  --color-graph-cat-folder: #7f8c8d;
+  --color-graph-cat-file-aggregate: #2980b9;
+  --color-graph-cat-class: #9b59b6;
+  --color-graph-cat-function: #2ecc71;
+  --color-graph-cat-method: #1abc9c;
+  --color-graph-cat-variable: #f39c12;
+  --color-graph-cat-import: #d35400;
+  --color-graph-cat-module: #5b6abf;
+  --color-graph-cat-concept: #e74c3c;
+  --color-graph-cat-person: #ff6b6b;
+  --color-graph-cat-org: #4ecdc4;
+  --color-graph-cat-organization: #4ecdc4;
+  --color-graph-cat-product: #a29bfe;
+  --color-graph-cat-metric: #fd79a8;
+  --color-graph-cat-location: #34495e;
+  --color-graph-cat-date: #e056a0;
+  --color-graph-cat-code: #3498db;
+  --color-graph-cat-doc: #7f8c8d;
+  --color-graph-cat-url: #00b894;
+  --color-graph-cat-email: #6c5ce7;
+  --color-graph-cat-unknown: #bdc3c7;
+  --color-graph-rel-contains: #bdc3c7;
+  --color-graph-rel-extends: #9b59b6;
+  --color-graph-rel-implements: #3498db;
+  --color-graph-rel-imports: #e67e22;
+  --color-graph-rel-uses: #2ecc71;
+  --color-graph-rel-calls: #27ae60;
+  --color-graph-rel-references: #f39c12;
+  --color-graph-rel-related-to: #95a5a6;
+  --color-graph-rel-works-on: #e74c3c;
+  --color-graph-rel-owns: #1abc9c;
+  --color-graph-rel-depends-on: #e67e22;
+  --color-graph-rel-parent-of: #bdc3c7;
+  --qs-content: #fff;
+  --qs-main: #fff;
+  --qs-primary-foreground: #131920;
+  --qs-secondary-foreground: #656871;
+  --qs-tertiary-foreground: #9ca3af;
+  --qs-placeholder-foreground: #8c8c94;
+  --qs-divider: #dedee3;
+  --qs-default-border: #8c8c94;
+  --qs-neutral-soft: #b4b4bb;
+  --qs-neutral-gray-50: #f9fafb;
+  --qs-tertiary-background: #f9fafb;
+  --qs-action-hover: #f3f3f7;
+  --qs-primary-default: #4200db;
+  --qs-primary-dark: #35009e;
+  --qs-primary-light: #e8e6ff;
+  --qs-success-default: #00802f;
+  --qs-error-default: #db0000;
+  --qs-font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  --safe-top: 0px;
+  --safe-bottom: 0px;
+  --safe-left: 0px;
+  --safe-right: 0px;
+  --qs-font-family: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  --qs-font-base-letter-spacing: .15px;
+  --qs-shadow-sm: 0 0 2px 0 #00000029, 0 0 4px 0 #00000029;
+  --qs-shadow-md: 0 0 2px 0 #00000029, 0 2px 8px 1px #00000029;
+  --qs-shadow-lg: 0 4px 16px 4px #00000029, 0 2px 6px 1px #00000029;
+  --qs-shadow-xl: 0 4px 8px 2px #00000029, 0 6px 20px 4px #00000029;
+  --qs-width-modal-sm: 384px;
+  --qs-width-modal-md: 600px;
+  --qs-width-modal-lg: 1136px;
+  --qs-grid-gap: 16px;
+  --qs-grid-gap-xl: 24px;
+  --qs-primary-medium: #8575ff;
+  --qs-primary-inverse: #fff;
+  --qs-neutral-lightest: #f9f9fb;
+  --qs-neutral-light: #f3f3f7;
+  --qs-neutral-default: #dedee3;
+  --qs-neutral-medium: #8c8c94;
+  --qs-neutral-deep: #656871;
+  --qs-neutral-dark: #333843;
+  --qs-neutral-strong: #131920;
+  --qs-neutral-white: #fff;
+  --qs-neutral-black: #000;
+  --qs-success-medium: #005c26;
+  --qs-success-dark: #00471e;
+  --qs-success-light: #d9ffd6;
+  --qs-success-inverse: #fff;
+  --qs-info-default: #006ce0;
+  --qs-info-medium: #003b8f;
+  --qs-info-dark: #002a66;
+  --qs-info-light: #d1f1ff;
+  --qs-info-inverse: #fff;
+  --qs-warning-default: #f2b100;
+  --qs-warning-medium: #db9200;
+  --qs-warning-dark: #573a00;
+  --qs-warning-light: #fffbbd;
+  --qs-warning-inverse: #573a00;
+  --qs-warning-experimental: #f2b100;
+  --qs-warning-experimental-light: #fffbbd;
+  --qs-warning-experimental-light-foreground: #fffbbd;
+  --qs-error-medium: #900;
+  --qs-error-dark: #700000;
+  --qs-error-light: #ffe0e0;
+  --qs-error-inverse: #fff;
+  --qs-connection-default: #db3300;
+  --qs-connection-soft: #ff997a;
+  --qs-connection-light: #ffe0d6;
+  --qs-connection-dark: #661800;
+  --qs-automation-default: #b3008f;
+  --qs-automation-medium: #d600ba;
+  --qs-automation-soft: #ff94f1;
+  --qs-automation-light: #ffe0fb;
+  --qs-automation-dark: #660052;
+  --qs-insight-default: #a000b8;
+  --qs-insight-soft: #f299ff;
+  --qs-insight-light: #fce6ff;
+  --qs-insight-dark: #590066;
+  --qs-visualization-default: #7300e5;
+  --qs-visualization-soft: #d4a8ff;
+  --qs-visualization-light: #f2e5ff;
+  --qs-visualization-dark: #45008a;
+  --qs-spice: #ff9800;
+  --qs-coachmark: #006ce0;
+  --qs-brand: #fff;
+  --qs-brand-foreground: #131920;
+  --qs-brand-navbar: #131920;
+  --qs-brand-navbar-foreground: #fff;
+  --qs-brand-navbar-light: #dedee3;
+  --qs-brand-navbar-dark: #000;
+  --qs-application-navbar: #4200db;
+  --qs-application-navbar-foreground: #fff;
+  --qs-application-navbar-light: #e8e6ff;
+  --qs-application-navbar-dark: #35009e;
+  --qs-dimension: #4200db;
+  --qs-dimension-foreground: #fff;
+  --qs-dimension-experimental: #4200db;
+  --qs-dimension-experimental-foreground: #4200db;
+  --qs-measure: #00802f;
+  --qs-measure-foreground: #fff;
+  --qs-measure-experimental: #f2b100;
+  --qs-measure-experimental-foreground: #f2b100;
+  --qs-content-inverse: #333843;
+  --qs-content-inverse-active: #131920;
+  --qs-secondary: #dedee3;
+  --qs-disabled: #8c8c94;
+  --qs-divider-light: #f3f3f7;
+  --qs-hover-border: #333843;
+  --qs-active-border: #4200db;
+  --qs-disabled-border: #dedee3;
+  --qs-error-border: #ffe0e0;
+  --qs-error-active-border: #db0000;
+  --qs-disabled-foreground: #b4b4bb;
+  --qs-primary-inverse-foreground: #fff;
+  --qs-error-foreground: #db0000;
+  --qs-contrast-foreground: #131920;
+  --qs-main-foreground: #131920;
+  --qs-main-secondary-foreground: #656871;
+  --qs-action-disabled: #f3f3f7;
+  --qs-action-active: #e8e6ff;
+  --qs-default-badge: #dedee3;
+  --qs-tag-default: #dedee3;
+  --qs-tag-soft-border: #b4b4bb;
+  --qs-focus-offset: 1px;
+  --qs-toggle-tile-sm: calc(.25rem * 8);
+  --qs-toggle-tile-md: calc(.25rem * 12);
+  --qs-toggle-tile-lg: calc(.25rem * 15);
+  --qs-shadow-pin-right: inset 4px 0 4px -4px #00000029;
+  --qs-shadow-pin-left: inset -4px 0 4px -4px #00000029;
+  --react-pdf-text-layer: 1;
+  --highlight-bg-color: #b400aa;
+  --highlight-selected-bg-color: #006400;
+  --react-pdf-annotation-layer: 1;
+  --annotation-unfocused-field-background: url("data:image/svg+xml;charset=UTF-8,<svg width='1px' height='1px' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill:rgba(0, 54, 255, 0.13);'/></svg>");
+  --input-focus-border-color: Highlight;
+  --input-focus-outline: 1px solid Canvas;
+  --input-unfocused-border-color: transparent;
+  --input-disabled-border-color: transparent;
+  --input-hover-border-color: black;
+  --link-outline: none;
+  color-scheme: light;
+}
+body { background: var(--color-bg); color: var(--color-text); }
+a { color: var(--color-link, var(--color-primary)); }</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>⚔️ GAS Warrior — 프로젝트 아키텍처</title>
+<style>
+/* ===== GLOBAL RESET & MASTER TABS ===== */
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:#0f1117;
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  color:#e1e4e8;
+  min-height:100vh;
+}
+
+/* Master header */
+.master-header{
+  text-align:center;
+  padding:28px 24px 0;
+  background:linear-gradient(180deg,#161b22 0%,#0f1117 100%);
+  border-bottom:1px solid #21262d;
+}
+.master-header h1{
+  font-size:28px;font-weight:800;
+  background:linear-gradient(135deg,#FFD54F,#FF9800,#FF5722);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+  margin-bottom:6px;
+}
+.master-header p{
+  font-size:13px;color:#8b949e;margin-bottom:18px;
+}
+.master-stats{
+  display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:18px;
+}
+.master-stats .ms{
+  background:#161b22;border:1px solid #30363d;border-radius:100px;
+  padding:5px 14px;font-size:12px;font-family:'SF Mono',Consolas,monospace;color:#8b949e;
+}
+.master-stats .ms b{color:#58a6ff;}
+
+/* Master tab bar */
+.master-tabs{
+  display:flex;justify-content:center;gap:2px;
+}
+.master-tab{
+  padding:12px 24px;font-size:14px;font-weight:600;
+  cursor:pointer;border:none;background:none;
+  color:#8b949e;border-bottom:3px solid transparent;
+  transition:all .2s;border-radius:6px 6px 0 0;
+  white-space:nowrap;
+}
+.master-tab:hover{color:#c9d1d9;background:rgba(255,255,255,.04);}
+.master-tab.active{
+  color:#58a6ff;border-bottom-color:#58a6ff;
+  background:rgba(88,166,255,.06);
+}
+
+/* Master panels */
+.master-panel{display:none;min-height:70vh;}
+.master-panel.active{display:block;}
+
+/* ===== PANEL 1: FULL BLUEPRINT ===== */
+#p-blueprint{background:#f8f9fa;color:#172b4d;}
+#p-blueprint h1{font-size:20px;font-weight:700;text-align:center;margin-bottom:3px;color:#172b4d;}
+#p-blueprint .sub{text-align:center;font-size:12px;color:#8993a4;margin-bottom:8px;}
+#p-blueprint .bp-legend{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;margin-bottom:10px;font-size:12px;color:#44546f;}
+#p-blueprint .bp-legend .legend-item{display:flex;align-items:center;gap:6px;}
+#p-blueprint .bp-map-wrap{overflow:auto;border:1px solid #ebecf0;border-radius:8px;background:#fff;}
+#p-blueprint svg text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;}
+#p-blueprint .bp-node{cursor:pointer;transition:filter .12s;}
+#p-blueprint .bp-node:hover{filter:brightness(.88) drop-shadow(0 3px 10px rgba(0,0,0,.2));}
+#p-blueprint .bp-tooltip{position:fixed;background:#1a1a2e;color:#fff;padding:14px 18px;border-radius:8px;font-size:12.5px;line-height:1.7;max-width:400px;pointer-events:none;opacity:0;transition:opacity .15s;z-index:9999;box-shadow:0 4px 24px rgba(0,0,0,.35);}
+#p-blueprint .bp-tooltip.show{opacity:1;}
+#p-blueprint .bp-tooltip h4{font-size:14px;font-weight:700;margin-bottom:5px;color:#90CAF9;}
+#p-blueprint .bp-tooltip .tf{font-size:11px;color:#80CBC4;margin-bottom:7px;font-family:monospace;}
+#p-blueprint .bp-tooltip code{font-family:monospace;font-size:11.5px;background:rgba(255,255,255,.12);padding:1px 6px;border-radius:3px;}
+#p-blueprint .bp-tooltip .tc{font-weight:600;color:#FFD54F;font-size:11px;text-transform:uppercase;margin-top:7px;display:block;letter-spacing:.04em;}
+#p-blueprint .bp-inner{padding:12px;}
+
+/* ===== PANEL 2: ARCHITECTURE ===== */
+#p-architecture{background:#f8f9fa;color:#172b4d;}
+#p-architecture .arch-inner{padding:24px;}
+#p-architecture .arch-header{text-align:center;margin-bottom:28px;}
+#p-architecture .arch-header h2{font-size:22px;font-weight:700;margin-bottom:6px;color:#172b4d;}
+#p-architecture .arch-header p{color:#44546f;font-size:14px;}
+#p-architecture .arch-stats-row{display:flex;gap:12px;justify-content:center;margin-top:14px;flex-wrap:wrap;}
+#p-architecture .arch-stat-badge{background:#f4f5f7;border:1px solid #ebecf0;border-radius:100px;padding:6px 16px;font-size:13px;font-family:'SF Mono',Consolas,monospace;}
+#p-architecture .arch-stat-badge b{color:#0052CC;}
+
+/* Architecture inner tabs */
+#p-architecture .arch-tabs{display:flex;gap:4px;margin-bottom:20px;flex-wrap:wrap;border-bottom:2px solid #ebecf0;padding-bottom:0;}
+#p-architecture .arch-tab{padding:10px 18px;font-size:13px;font-weight:600;cursor:pointer;border:none;background:none;color:#8993a4;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .15s;border-radius:4px 4px 0 0;}
+#p-architecture .arch-tab:hover{color:#172b4d;background:rgba(0,0,0,.04);}
+#p-architecture .arch-tab.active{color:#0052CC;border-bottom-color:#0052CC;}
+#p-architecture .arch-panel{display:none;}
+#p-architecture .arch-panel.active{display:block;}
+
+/* Architecture content styles */
+#p-architecture .card{background:#f4f5f7;border:1px solid #ebecf0;border-radius:8px;padding:20px;margin-bottom:16px;}
+#p-architecture .card h3{font-size:15px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px;color:#172b4d;}
+#p-architecture .card h3 .icon{font-size:18px;}
+#p-architecture .tree{font-family:Consolas,monospace;font-size:13px;line-height:1.9;padding:16px;background:#fff;border-radius:4px;border:1px solid #ebecf0;overflow-x:auto;white-space:pre-wrap;color:#172b4d;}
+#p-architecture .tree .ue{color:#8993a4;}
+#p-architecture .tree .custom{color:#0052CC;font-weight:600;}
+#p-architecture .tree .iface{color:#6554C0;font-style:italic;}
+#p-architecture .tree .struct{color:#00875A;}
+#p-architecture .tree .enum{color:#FF991F;}
+#p-architecture .flow{display:flex;flex-direction:column;gap:2px;}
+#p-architecture .flow-step{display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#fff;border:1px solid #ebecf0;border-radius:4px;position:relative;}
+#p-architecture .flow-step:not(:last-child)::after{content:'';position:absolute;left:25px;bottom:-3px;width:2px;height:6px;background:#0052CC;}
+#p-architecture .step-num{min-width:28px;height:28px;border-radius:50%;background:#0052CC;color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+#p-architecture .step-content{flex:1;}
+#p-architecture .step-title{font-weight:700;font-size:14px;margin-bottom:3px;color:#172b4d;}
+#p-architecture .step-detail{font-size:12.5px;color:#44546f;line-height:1.5;}
+#p-architecture .step-code{font-family:Consolas,monospace;font-size:11.5px;background:#f4f5f7;padding:4px 8px;border-radius:4px;margin-top:4px;display:inline-block;color:#172b4d;word-break:break-all;}
+#p-architecture .step-file{font-size:11px;color:#8993a4;font-family:Consolas,monospace;margin-top:2px;}
+#p-architecture table{width:100%;border-collapse:collapse;font-size:13px;}
+#p-architecture th{text-align:left;color:#8993a4;font-weight:600;padding:8px 12px;border-bottom:2px solid #dfe1e6;font-size:12px;text-transform:uppercase;letter-spacing:.04em;}
+#p-architecture td{padding:8px 12px;border-bottom:1px solid #ebecf0;color:#172b4d;}
+#p-architecture tr:hover td{background:rgba(0,0,0,.04);}
+#p-architecture .tag{font-family:Consolas,monospace;font-size:12px;padding:2px 8px;border-radius:100px;white-space:nowrap;}
+#p-architecture .tag.input{background:#E8F5E9;color:#1B5E20;}
+#p-architecture .tag.ability{background:#E3F2FD;color:#0D47A1;}
+#p-architecture .tag.weapon{background:#FFF3E0;color:#E65100;}
+#p-architecture .tag.event{background:#F3E5F5;color:#6A1B9A;}
+#p-architecture .dep-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;}
+#p-architecture .dep-card{background:#fff;border:1px solid #ebecf0;border-radius:4px;padding:14px;}
+#p-architecture .dep-card h4{font-size:13px;font-weight:700;color:#0052CC;margin-bottom:6px;}
+#p-architecture .dep-card .deps{font-size:12px;color:#44546f;line-height:1.7;font-family:Consolas,monospace;}
+#p-architecture .dep-card .deps span{display:inline-block;background:#f4f5f7;padding:1px 6px;border-radius:3px;margin:1px 0;}
+#p-architecture .section-label{font-size:12px;font-weight:700;color:#8993a4;text-transform:uppercase;letter-spacing:.06em;margin:20px 0 10px;}
+#p-architecture .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+@media(max-width:700px){#p-architecture .two-col{grid-template-columns:1fr;}}
+#p-architecture .note{font-size:12px;color:#8993a4;line-height:1.6;padding:10px 14px;background:#fff;border-left:3px solid #0052CC;border-radius:0 4px 4px 0;margin-top:12px;}
+#p-architecture .note b{color:#172b4d;}
+#p-architecture .anim-layer-box{padding:14px;border-radius:4px;margin-bottom:8px;}
+#p-architecture .anim-layer-box.base{background:#E8EAF6;border:1px solid #C5CAE9;}
+#p-architecture .anim-layer-box.hero{background:#E3F2FD;border:1px solid #BBDEFB;}
+#p-architecture .anim-layer-box.linked{background:#FFF3E0;border:1px solid #FFE0B2;}
+#p-architecture .anim-layer-box h4{font-size:14px;font-weight:700;margin-bottom:4px;color:#172b4d;}
+#p-architecture .anim-layer-box .props{font-size:12px;color:#44546f;font-family:Consolas,monospace;line-height:1.7;}
+#p-architecture .arrow-down{text-align:center;font-size:18px;color:#8993a4;margin:4px 0;}
+
+/* ===== PANEL 3: CLASS TREE ===== */
+#p-classtree{background:#f8f9fa;color:#172b4d;}
+#p-classtree .ct-inner{padding:20px 24px;}
+#p-classtree h2{font-size:22px;font-weight:700;text-align:center;margin-bottom:4px;color:#172b4d;}
+#p-classtree .ct-subtitle{text-align:center;font-size:13px;color:#44546f;margin-bottom:16px;}
+#p-classtree .ct-legend{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-bottom:14px;font-size:12px;color:#44546f;}
+#p-classtree .ct-legend-item{display:flex;align-items:center;gap:5px;}
+#p-classtree .ct-legend-box{width:14px;height:14px;border-radius:3px;border:1.5px solid;}
+#p-classtree .ct-legend-box.ue{background:#E8EAF6;border-color:#9FA8DA;}
+#p-classtree .ct-legend-box.custom{background:#E3F2FD;border-color:#64B5F6;}
+#p-classtree .ct-legend-box.combat{background:#E8F5E9;border-color:#81C784;}
+#p-classtree .ct-legend-box.weapon{background:#FCE4EC;border-color:#F48FB1;}
+#p-classtree .ct-legend-box.anim{background:#F3E5F5;border-color:#CE93D8;}
+#p-classtree .ct-legend-box.data{background:#E0F7FA;border-color:#4DD0E1;}
+
+/* Class tree inner tabs */
+#p-classtree .ct-tabs{display:flex;gap:4px;margin-bottom:18px;flex-wrap:wrap;border-bottom:2px solid #ebecf0;}
+#p-classtree .ct-tab{padding:9px 16px;font-size:13px;font-weight:600;cursor:pointer;border:none;background:none;color:#8993a4;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .15s;border-radius:4px 4px 0 0;}
+#p-classtree .ct-tab:hover{color:#172b4d;background:rgba(0,0,0,.04);}
+#p-classtree .ct-tab.active{color:#0052CC;border-bottom-color:#0052CC;}
+#p-classtree .ct-panel{display:none;}
+#p-classtree .ct-panel.active{display:block;}
+
+/* Class tree SVG */
+#p-classtree .ct-tree-wrap{overflow-x:auto;padding:10px 0;}
+#p-classtree .ct-tree-svg{display:block;margin:0 auto;}
+#p-classtree .node-ue rect{fill:#E8EAF6;stroke:#9FA8DA;rx:6;ry:6;}
+#p-classtree .node-custom rect{fill:#E3F2FD;stroke:#64B5F6;rx:6;ry:6;}
+#p-classtree .node-hero rect{fill:#FFF3E0;stroke:#FFB74D;rx:6;ry:6;}
+#p-classtree .node-combat rect{fill:#E8F5E9;stroke:#81C784;rx:6;ry:6;}
+#p-classtree .node-weapon rect{fill:#FCE4EC;stroke:#F48FB1;rx:6;ry:6;}
+#p-classtree .node-anim rect{fill:#F3E5F5;stroke:#CE93D8;rx:6;ry:6;}
+#p-classtree .node-data rect{fill:#E0F7FA;stroke:#4DD0E1;rx:6;ry:6;}
+#p-classtree .node-input rect{fill:#FFF8E1;stroke:#FFD54F;rx:6;ry:6;}
+#p-classtree .node-struct rect{fill:#F1F8E9;stroke:#AED581;rx:6;ry:6;stroke-dasharray:5,3;}
+#p-classtree .node-enum rect{fill:#FFF3E0;stroke:#FF8A65;rx:6;ry:6;stroke-dasharray:5,3;}
+#p-classtree .node-iface rect{fill:#EDE7F6;stroke:#B39DDB;rx:6;ry:6;stroke-dasharray:8,4;}
+#p-classtree .ct-node text.name{font-size:12px;font-weight:700;fill:#172b4d;}
+#p-classtree .ct-node text.type-label{font-size:9.5px;fill:#8993a4;font-weight:600;text-transform:uppercase;letter-spacing:.05em;}
+#p-classtree .ct-node{cursor:pointer;transition:opacity .15s;}
+#p-classtree .ct-node:hover rect{stroke-width:2.5;}
+#p-classtree .edge{fill:none;stroke:#B0BEC5;stroke-width:1.5;}
+#p-classtree .edge.impl{stroke-dasharray:6,3;stroke:#B39DDB;}
+#p-classtree .ct-detail{background:#f4f5f7;border:1px solid #ebecf0;border-radius:8px;padding:18px;margin-top:14px;display:none;}
+#p-classtree .ct-detail.show{display:block;}
+#p-classtree .ct-detail h3{font-size:15px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px;color:#172b4d;}
+#p-classtree .ct-detail .badge{font-size:11px;padding:2px 8px;border-radius:100px;font-weight:600;}
+#p-classtree .badge-ue{background:#E8EAF6;color:#3949AB;}
+#p-classtree .badge-custom{background:#E3F2FD;color:#1565C0;}
+#p-classtree .badge-struct{background:#F1F8E9;color:#558B2F;}
+#p-classtree .ct-detail .file{font-size:12px;color:#8993a4;font-family:Consolas,monospace;margin-bottom:8px;}
+#p-classtree .ct-detail .members{font-size:12.5px;line-height:1.8;color:#172b4d;}
+#p-classtree .ct-detail .members code{font-family:Consolas,monospace;font-size:12px;background:#fff;padding:1px 6px;border-radius:3px;border:1px solid #ebecf0;}
+#p-classtree .ct-detail .members .cat{font-weight:700;color:#8993a4;font-size:11px;text-transform:uppercase;letter-spacing:.04em;margin-top:8px;display:block;}
+
+/* ===== PANEL 4: LIFECYCLE ===== */
+#p-lifecycle{background:#f8f9fa;color:#172b4d;}
+#p-lifecycle .lc-inner{padding:20px 28px;max-width:1000px;margin:0 auto;}
+#p-lifecycle h2{font-size:22px;font-weight:700;text-align:center;margin-bottom:4px;color:#172b4d;}
+#p-lifecycle .lc-sub{text-align:center;font-size:12px;color:#8993a4;margin-bottom:20px;}
+#p-lifecycle .phase{margin-bottom:32px;}
+#p-lifecycle .phase-header{display:flex;align-items:center;gap:12px;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid #ebecf0;}
+#p-lifecycle .phase-num{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:#fff;flex-shrink:0;}
+#p-lifecycle .phase-title{font-size:17px;font-weight:700;color:#172b4d;}
+#p-lifecycle .phase-when{font-size:11px;color:#8993a4;margin-top:2px;}
+#p-lifecycle .step{display:flex;gap:14px;margin-bottom:6px;padding:10px 14px;border-radius:8px;position:relative;}
+#p-lifecycle .step:hover{background:rgba(0,0,0,.02);}
+#p-lifecycle .step-dot{width:12px;height:12px;border-radius:50%;border:2.5px solid;flex-shrink:0;margin-top:4px;}
+#p-lifecycle .step-body{flex:1;min-width:0;}
+#p-lifecycle .step-what{font-size:13.5px;font-weight:600;line-height:1.5;color:#172b4d;}
+#p-lifecycle .step-how{font-size:12px;color:#44546f;line-height:1.6;margin-top:3px;}
+#p-lifecycle .step-code{font-family:Consolas,monospace;font-size:11.5px;background:#f4f5f7;padding:6px 10px;border-radius:5px;margin-top:5px;line-height:1.5;overflow-x:auto;border:1px solid #ebecf0;color:#172b4d;}
+#p-lifecycle .step-file{font-size:10.5px;color:#8993a4;font-family:Consolas,monospace;margin-top:3px;}
+#p-lifecycle .step-warn{font-size:11.5px;color:#E65100;background:#FFF3E0;padding:5px 10px;border-radius:5px;margin-top:5px;border-left:3px solid #FF9800;}
+#p-lifecycle .step-ok{font-size:11.5px;color:#2E7D32;background:#E8F5E9;padding:5px 10px;border-radius:5px;margin-top:5px;border-left:3px solid #4CAF50;}
+#p-lifecycle .step-elden{font-size:11.5px;color:#1565C0;background:#E3F2FD;padding:5px 10px;border-radius:5px;margin-top:5px;border-left:3px solid #42A5F5;}
+#p-lifecycle .p0 .phase-num{background:#9E9E9E;} #p-lifecycle .p0 .step-dot{border-color:#9E9E9E;}
+#p-lifecycle .p1 .phase-num{background:#1565C0;} #p-lifecycle .p1 .step-dot{border-color:#1565C0;}
+#p-lifecycle .p2 .phase-num{background:#E65100;} #p-lifecycle .p2 .step-dot{border-color:#E65100;}
+#p-lifecycle .p3 .phase-num{background:#2E7D32;} #p-lifecycle .p3 .step-dot{border-color:#2E7D32;}
+#p-lifecycle .p4 .phase-num{background:#7B1FA2;} #p-lifecycle .p4 .step-dot{border-color:#7B1FA2;}
+#p-lifecycle .p5 .phase-num{background:#C62828;} #p-lifecycle .p5 .step-dot{border-color:#C62828;}
+#p-lifecycle .p6 .phase-num{background:#00695C;} #p-lifecycle .p6 .step-dot{border-color:#00695C;}
+#p-lifecycle .summary-box{background:#f4f5f7;border:1px solid #ebecf0;border-radius:10px;padding:18px;margin-top:24px;}
+#p-lifecycle .summary-box h3{font-size:15px;font-weight:700;margin-bottom:10px;color:#172b4d;}
+#p-lifecycle .timeline{font-family:Consolas,monospace;font-size:12px;line-height:2;color:#44546f;}
+#p-lifecycle .timeline b{color:#172b4d;}
+#p-lifecycle .timeline .t-phase{color:#fff;padding:2px 8px;border-radius:100px;font-size:10.5px;font-weight:700;margin-right:4px;}
+</style>
+</head>
+<body>
+
+<!-- ========== MASTER HEADER ========== -->
+<div class="master-header">
+  <h1>⚔️ GAS Warrior — 프로젝트 아키텍처</h1>
+  <p>Source/Warrior 전체 소스코드 분석 · 50 files · 24 classes · 13 GameplayTags · 61 #include</p>
+  <div class="master-stats">
+    <div class="ms">📁 <b>50</b> files</div>
+    <div class="ms">🏛️ <b>24</b> classes</div>
+    <div class="ms">🔗 <b>61</b> #include</div>
+    <div class="ms">🏷️ <b>13</b> tags</div>
+  </div>
+  <div class="master-tabs" id="masterTabs">
+    <button class="master-tab active" data-master="blueprint">🗺️ 전체 설계도</button>
+    <button class="master-tab" data-master="architecture">🏗️ 아키텍처 흐름</button>
+    <button class="master-tab" data-master="classtree">🌳 클래스 트리</button>
+    <button class="master-tab" data-master="lifecycle">⏱️ 생명주기</button>
+  </div>
+</div>
+
+<!-- ========== PANEL 1: FULL BLUEPRINT (SVG) ========== -->
+<div class="master-panel active" id="p-blueprint">
+<div class="bp-inner">
+<h1>⚔️ GAS Warrior — 전체 설계도</h1>
+<p class="sub">HeroCharacter 중심 방사형 · 노드 호버 → 상세정보 · 1920×1200 풀사이즈</p>
+<div class="bp-legend">
+  <div class="legend-item"><svg width="32" height="8"><line x1="0" y1="4" x2="32" y2="4" stroke="#1565C0" stroke-width="2.5"></line></svg> 상속 (IS-A)</div>
+  <div class="legend-item"><svg width="32" height="8"><line x1="0" y1="4" x2="32" y2="4" stroke="#2E7D32" stroke-width="2" stroke-dasharray="8,4"></line></svg> 소유 (HAS-A)</div>
+  <div class="legend-item"><svg width="32" height="8"><line x1="0" y1="4" x2="32" y2="4" stroke="#E65100" stroke-width="1.5" stroke-dasharray="4,4"></line></svg> 데이터 참조</div>
+  <div class="legend-item"><svg width="32" height="8"><line x1="0" y1="4" x2="32" y2="4" stroke="#7B1FA2" stroke-width="2"></line></svg> Tag 연결</div>
+</div>
+<div class="bp-map-wrap">
+<svg width="1920" height="1200" viewBox="0 0 1920 1200">
+<defs>
+  <marker id="bp-ai" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7" fill="none" stroke="#1565C0" stroke-width="1.5"></path></marker>
+  <marker id="bp-ah" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7" fill="none" stroke="#2E7D32" stroke-width="1.5"></path></marker>
+  <marker id="bp-ad" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7" fill="none" stroke="#E65100" stroke-width="1.5"></path></marker>
+  <marker id="bp-at" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7" fill="none" stroke="#7B1FA2" stroke-width="1.5"></path></marker>
+</defs>
+
+<!-- EDGES -->
+<path d="M960.0,135 L960.0,285" stroke="#1565C0" stroke-width="2.5" fill="none" marker-end="url(#bp-ai)"></path>
+<path d="M1410.0,430 L1420.0,460" stroke="#1565C0" stroke-width="2.5" fill="none" marker-end="url(#bp-ai)"></path>
+<path d="M500.0,405 L510.0,440" stroke="#1565C0" stroke-width="2.5" fill="none" marker-end="url(#bp-ai)"></path>
+<path d="M535.0,660 L565.0,700" stroke="#1565C0" stroke-width="2.5" fill="none" marker-end="url(#bp-ai)"></path>
+<path d="M960.0,650 L970.0,690" stroke="#1565C0" stroke-width="2.5" fill="none" marker-end="url(#bp-ai)"></path>
+<path d="M1360.0,675 L1365.0,710" stroke="#1565C0" stroke-width="2.5" fill="none" marker-end="url(#bp-ai)"></path>
+<path d="M1110,97.5 L1210,100.0" stroke="#2E7D32" stroke-width="2" stroke-dasharray="8,4" fill="none" marker-end="url(#bp-ah)"></path>
+<path d="M1110,70 L1130,70 L1130,40 L1680.0,40 L1680.0,70" stroke="#2E7D32" stroke-width="2" stroke-dasharray="8,4" fill="none" marker-end="url(#bp-ah)"></path>
+<path d="M790,340.0 L640,367.5" stroke="#2E7D32" stroke-width="2" stroke-dasharray="8,4" fill="none" marker-end="url(#bp-ah)"></path>
+<path d="M1130,375 L1230,375 L1230,827.5 L1250,827.5" stroke="#2E7D32" stroke-width="2" stroke-dasharray="8,4" fill="none" marker-end="url(#bp-ah)"></path>
+<path d="M380,405 L380,625.0 L410,625.0" stroke="#2E7D32" stroke-width="2" stroke-dasharray="8,4" fill="none" marker-end="url(#bp-ah)"></path>
+<path d="M565.0,770 L600.0,810" stroke="#2E7D32" stroke-width="2" stroke-dasharray="8,4" fill="none" marker-end="url(#bp-ah)"></path>
+<path d="M960.0,60 L960.0,30 L1860,30 L1860,647.5 L1480,647.5" stroke="#E65100" stroke-width="1.5" stroke-dasharray="4,4" fill="none" marker-end="url(#bp-ad)"></path>
+<path d="M1365.0,145 L1365.0,200 L1410.0,200 L1410.0,350" stroke="#E65100" stroke-width="1.5" stroke-dasharray="4,4" fill="none" marker-end="url(#bp-ad)"></path>
+<path d="M740,855.0 L860,822.5" stroke="#E65100" stroke-width="1.5" stroke-dasharray="4,4" fill="none" marker-end="url(#bp-ad)"></path>
+<path d="M600.0,900 L620.0,940" stroke="#E65100" stroke-width="1.5" stroke-dasharray="4,4" fill="none" marker-end="url(#bp-ad)"></path>
+<path d="M200,1010 L200,40 L1365.0,40 L1365.0,55" stroke="#7B1FA2" stroke-width="2" fill="none" marker-end="url(#bp-at)"></path>
+<path d="M780,1010 L780,410 L960.0,410 L960.0,395" stroke="#7B1FA2" stroke-width="2" fill="none" marker-end="url(#bp-at)"></path>
+<path d="M340,1010 L340,377.5 L360,377.5" stroke="#7B1FA2" stroke-width="2" fill="none" marker-end="url(#bp-at)"></path>
+
+<!-- NODES -->
+<g class="bp-node" data-id="herochar">
+<rect x="790" y="285" width="340" height="110" rx="10" fill="#FFF3E0" stroke="#E65100" stroke-width="2.5"></rect>
+<text x="960.0" y="305" text-anchor="middle" font-size="11" fill="#E65100" font-weight="700">PLAYER CHARACTER ★ 프로젝트의 중심</text>
+<text x="960.0" y="322" text-anchor="middle" font-size="16" fill="#BF360C" font-weight="700">AWarriorHeroCharacter</text>
+<text x="960.0" y="339" text-anchor="middle" font-size="11" fill="#E65100" font-weight="400">Camera · HeroCombat · InputConfig</text>
+<text x="960.0" y="356" text-anchor="middle" font-size="11" fill="#E65100" font-weight="400">Input_Move · Input_Look</text>
+<text x="960.0" y="373" text-anchor="middle" font-size="11" fill="#E65100" font-weight="400">Input_AbilityPressed → ASC에 Tag 전달</text>
+<text x="960.0" y="390" text-anchor="middle" font-size="10" fill="#BF360C" font-weight="600">8개 헤더 참조 — 모든 시스템의 허브</text>
+</g>
+<g class="bp-node" data-id="basechar">
+<rect x="810" y="60" width="300" height="75" rx="10" fill="#BBDEFB" stroke="#1565C0" stroke-width="2"></rect>
+<text x="960.0" y="80" text-anchor="middle" font-size="10" fill="#1565C0" font-weight="700">BASE CHARACTER</text>
+<text x="960.0" y="97" text-anchor="middle" font-size="15" fill="#0D47A1" font-weight="700">AWarriorBaseCharacter</text>
+<text x="960.0" y="114" text-anchor="middle" font-size="11" fill="#1565C0" font-weight="400">ACharacter + IAbilitySystemInterface</text>
+</g>
+<g class="bp-node" data-id="asc">
+<rect x="1210" y="55" width="310" height="90" rx="10" fill="#C8E6C9" stroke="#2E7D32" stroke-width="2"></rect>
+<text x="1365.0" y="75" text-anchor="middle" font-size="10" fill="#2E7D32" font-weight="700">ABILITY SYSTEM COMPONENT</text>
+<text x="1365.0" y="92" text-anchor="middle" font-size="14" fill="#1B5E20" font-weight="700">UWarriorAbilitySystemComponent</text>
+<text x="1365.0" y="109" text-anchor="middle" font-size="11" fill="#2E7D32" font-weight="400">OnAbilityInputPressed(Tag)</text>
+<text x="1365.0" y="126" text-anchor="middle" font-size="11" fill="#2E7D32" font-weight="400">Grant / Remove 무기 어빌리티</text>
+</g>
+<g class="bp-node" data-id="attrset">
+<rect x="1580" y="70" width="200" height="50" rx="10" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1.5"></rect>
+<text x="1680.0" y="90" text-anchor="middle" font-size="11" fill="#1B5E20" font-weight="700">UWarriorAttributeSet</text>
+<text x="1680.0" y="107" text-anchor="middle" font-size="10" fill="#F44336" font-weight="400">⚠️ 빈 상태 (확장 예정)</text>
+</g>
+<g class="bp-node" data-id="warrior_ga">
+<rect x="1260" y="350" width="300" height="80" rx="10" fill="#D1C4E9" stroke="#7E57C2" stroke-width="2"></rect>
+<text x="1410.0" y="370" text-anchor="middle" font-size="10" fill="#7E57C2" font-weight="700">BASE GAMEPLAY ABILITY</text>
+<text x="1410.0" y="387" text-anchor="middle" font-size="14" fill="#4527A0" font-weight="700">UWarriorGameplayAbility</text>
+<text x="1410.0" y="404" text-anchor="middle" font-size="11" fill="#7E57C2" font-weight="400">Policy: OnTriggered | OnGiven</text>
+<text x="1410.0" y="421" text-anchor="middle" font-size="11" fill="#7E57C2" font-weight="400">GetPawnCombat · GetASC 헬퍼</text>
+</g>
+<g class="bp-node" data-id="hero_ga">
+<rect x="1290" y="460" width="260" height="65" rx="10" fill="#D1C4E9" stroke="#B39DDB" stroke-width="1.5"></rect>
+<text x="1420.0" y="480" text-anchor="middle" font-size="10" fill="#7E57C2" font-weight="600">HERO GAMEPLAY ABILITY</text>
+<text x="1420.0" y="497" text-anchor="middle" font-size="13" fill="#4527A0" font-weight="700">UWarriorHeroGameplayAbility</text>
+<text x="1420.0" y="514" text-anchor="middle" font-size="11" fill="#7E57C2" font-weight="400">TWeakObjectPtr 캐싱 패턴</text>
+</g>
+<g class="bp-node" data-id="enum_policy">
+<rect x="1610" y="370" width="230" height="50" rx="10" fill="#FFF8E1" stroke="#FFC107" stroke-width="1" stroke-dasharray="5,3"></rect>
+<text x="1725.0" y="390" text-anchor="middle" font-size="10" fill="#F57F17" font-weight="700">enum ActivitionPolicy</text>
+<text x="1725.0" y="407" text-anchor="middle" font-size="11" fill="#E65100" font-weight="400">OnTriggered · OnGiven</text>
+</g>
+<g class="bp-node" data-id="pawn_combat">
+<rect x="360" y="330" width="280" height="75" rx="10" fill="#FFE0B2" stroke="#FB8C00" stroke-width="2"></rect>
+<text x="500.0" y="350" text-anchor="middle" font-size="10" fill="#E65100" font-weight="700">COMBAT COMPONENT</text>
+<text x="500.0" y="367" text-anchor="middle" font-size="13" fill="#BF360C" font-weight="700">UPawnCombatComponent</text>
+<text x="500.0" y="384" text-anchor="middle" font-size="11" fill="#E65100" font-weight="400">TMap<tag, weapon*=""> 무기 등록/조회</tag,></text>
+</g>
+<g class="bp-node" data-id="hero_combat">
+<rect x="390" y="440" width="240" height="55" rx="10" fill="#FFE0B2" stroke="#FFCC80" stroke-width="1.5"></rect>
+<text x="510.0" y="460" text-anchor="middle" font-size="10" fill="#E65100" font-weight="600">HERO COMBAT</text>
+<text x="510.0" y="477" text-anchor="middle" font-size="13" fill="#BF360C" font-weight="700">UHeroCombatComponent</text>
+</g>
+<g class="bp-node" data-id="weapon_base">
+<rect x="410" y="590" width="250" height="70" rx="10" fill="#F8BBD0" stroke="#E91E63" stroke-width="2"></rect>
+<text x="535.0" y="610" text-anchor="middle" font-size="10" fill="#C2185B" font-weight="700">WEAPON BASE</text>
+<text x="535.0" y="627" text-anchor="middle" font-size="13" fill="#880E4F" font-weight="700">AWarriorWeaponBase</text>
+<text x="535.0" y="644" text-anchor="middle" font-size="11" fill="#C2185B" font-weight="400">Mesh + CollisionBox</text>
+</g>
+<g class="bp-node" data-id="hero_weapon">
+<rect x="440" y="700" width="250" height="70" rx="10" fill="#F8BBD0" stroke="#F48FB1" stroke-width="1.5"></rect>
+<text x="565.0" y="720" text-anchor="middle" font-size="10" fill="#C2185B" font-weight="600">HERO WEAPON</text>
+<text x="565.0" y="737" text-anchor="middle" font-size="13" fill="#880E4F" font-weight="700">AWarriorHeroWeapon</text>
+<text x="565.0" y="754" text-anchor="middle" font-size="11" fill="#C2185B" font-weight="400">WeaponData + GrantedHandles</text>
+</g>
+<g class="bp-node" data-id="weapon_data">
+<rect x="460" y="810" width="280" height="90" rx="10" fill="#FFF8E1" stroke="#FFC107" stroke-width="1.5" stroke-dasharray="5,3"></rect>
+<text x="600.0" y="830" text-anchor="middle" font-size="10" fill="#F57F17" font-weight="700">STRUCT — 무기의 모든 데이터</text>
+<text x="600.0" y="847" text-anchor="middle" font-size="14" fill="#E65100" font-weight="700">FWarriorHeroWeaponData</text>
+<text x="600.0" y="864" text-anchor="middle" font-size="11" fill="#F57F17" font-weight="400">AnimLayerToLink</text>
+<text x="600.0" y="881" text-anchor="middle" font-size="11" fill="#F57F17" font-weight="400">InputMappingCtx + Abilities[]</text>
+</g>
+<g class="bp-node" data-id="mapping_ctx">
+<rect x="520" y="940" width="200" height="40" rx="10" fill="#F5F5F5" stroke="#9E9E9E" stroke-width="1" stroke-dasharray="4,3"></rect>
+<text x="620.0" y="960" text-anchor="middle" font-size="10" fill="#757575" font-weight="600">UE5 UInputMappingContext</text>
+</g>
+<g class="bp-node" data-id="char_anim">
+<rect x="820" y="590" width="280" height="60" rx="10" fill="#E1BEE7" stroke="#AB47BC" stroke-width="2"></rect>
+<text x="960.0" y="610" text-anchor="middle" font-size="10" fill="#7B1FA2" font-weight="700">🦵 하체 로코모션</text>
+<text x="960.0" y="627" text-anchor="middle" font-size="13" fill="#4A148C" font-weight="700">UWarriorCharacterAnimInstance</text>
+<text x="960.0" y="644" text-anchor="middle" font-size="10" fill="#7B1FA2" font-weight="400">GroundSpeed + bHasAcceleration</text>
+</g>
+<g class="bp-node" data-id="hero_anim">
+<rect x="840" y="690" width="260" height="55" rx="10" fill="#E1BEE7" stroke="#CE93D8" stroke-width="1.5"></rect>
+<text x="970.0" y="710" text-anchor="middle" font-size="10" fill="#7B1FA2" font-weight="600">🧑 히어로 (5초 → 릴렉스)</text>
+<text x="970.0" y="727" text-anchor="middle" font-size="13" fill="#4A148C" font-weight="700">UWarriorHeroAnimInstance</text>
+</g>
+<g class="bp-node" data-id="linked_anim">
+<rect x="860" y="790" width="280" height="65" rx="10" fill="#FFE0B2" stroke="#FF9800" stroke-width="2"></rect>
+<text x="1000.0" y="810" text-anchor="middle" font-size="10" fill="#E65100" font-weight="700">🗡️ 무기별 상체 (동적 교체)</text>
+<text x="1000.0" y="827" text-anchor="middle" font-size="13" fill="#BF360C" font-weight="700">UWarriorHeroLinkedAnimLayer</text>
+<text x="1000.0" y="844" text-anchor="middle" font-size="10" fill="#E65100" font-weight="400">LinkAnimClassLayers() 런타임 교체</text>
+</g>
+<g class="bp-node" data-id="startup_base">
+<rect x="1240" y="620" width="240" height="55" rx="10" fill="#B2EBF2" stroke="#00ACC1" stroke-width="1.5"></rect>
+<text x="1360.0" y="640" text-anchor="middle" font-size="10" fill="#006064" font-weight="700">시작 데이터</text>
+<text x="1360.0" y="657" text-anchor="middle" font-size="12" fill="#00695C" font-weight="700">UDataAsset_StartUpDataBase</text>
+</g>
+<g class="bp-node" data-id="hero_startup">
+<rect x="1250" y="710" width="230" height="55" rx="10" fill="#B2EBF2" stroke="#80DEEA" stroke-width="1.5"></rect>
+<text x="1365.0" y="730" text-anchor="middle" font-size="10" fill="#006064" font-weight="600">히어로 시작 데이터</text>
+<text x="1365.0" y="747" text-anchor="middle" font-size="12" fill="#00695C" font-weight="700">UDataAsset_HeroStartUpData</text>
+</g>
+<g class="bp-node" data-id="input_config">
+<rect x="1250" y="800" width="230" height="55" rx="10" fill="#B2EBF2" stroke="#00ACC1" stroke-width="1.5"></rect>
+<text x="1365.0" y="820" text-anchor="middle" font-size="10" fill="#006064" font-weight="700">입력 설정</text>
+<text x="1365.0" y="837" text-anchor="middle" font-size="12" fill="#00695C" font-weight="700">UDataAsset_InputConfig</text>
+</g>
+<g class="bp-node" data-id="tags">
+<rect x="100" y="1010" width="1720" height="160" rx="12" fill="#EDE7F6" stroke="#7E57C2" stroke-width="2"></rect>
+<text x="960" y="1042" text-anchor="middle" font-size="16" fill="#4527A0" font-weight="700">🏷️ WarriorGameplayTags (13개) — 시스템 간 느슨한 연결 고리</text>
+<text x="960" y="1064" text-anchor="middle" font-size="12" fill="#7B1FA2">독립적으로 정의됨 — 이벤트와 매칭으로만 시스템과 연결</text>
+<rect x="130" y="1080" width="440" height="75" rx="6" fill="#E8F5E9" stroke="#A5D6A7" stroke-width="1"></rect>
+<text x="145" y="1100" font-size="11" fill="#2E7D32" font-weight="700">INPUT TAGS (6개)</text>
+<text x="145" y="1118" font-size="11" fill="#1B5E20" font-family="monospace">InputTag.Move · Look · EquipAxe · UnequipAxe</text>
+<text x="145" y="1136" font-size="11" fill="#1B5E20" font-family="monospace">InputTag.LightAttack.Axe · HeavyAttack.Axe</text>
+<rect x="600" y="1080" width="440" height="75" rx="6" fill="#E3F2FD" stroke="#90CAF9" stroke-width="1"></rect>
+<text x="615" y="1100" font-size="11" fill="#1565C0" font-weight="700">ABILITY (4) + WEAPON (1) + EVENT (2)</text>
+<text x="615" y="1118" font-size="11" fill="#0D47A1" font-family="monospace">Player.Ability.Equip/Unequip/Attack.Axe</text>
+<text x="615" y="1136" font-size="11" fill="#0D47A1" font-family="monospace">Player.Weapon.Axe · Player.Event.Equip/Unequip</text>
+<rect x="1070" y="1080" width="530" height="75" rx="6" fill="#FFF8E1" stroke="#FFE082" stroke-width="1"></rect>
+<text x="1085" y="1100" font-size="11" fill="#F57F17" font-weight="700">TAG의 3가지 역할</text>
+<text x="1085" y="1118" font-size="11" fill="#E65100">1. 입력 바인딩 — BindAbilityInputAction의 페이로드로 전달</text>
+<text x="1085" y="1136" font-size="11" fill="#E65100">2. 어빌리티 매칭 — ASC의 DynamicAbilityTags에서 Tag 검색 → TryActivate</text>
+<text x="1085" y="1152" font-size="11" fill="#E65100">3. 무기 식별 — CombatComponent TMap&lt;Tag, Weapon*&gt;의 키</text>
+</g>
+<text x="360" y="423" font-size="10" fill="#8993a4">↑ UPawnExtensionComponentBase 상속 (내가 만든 것)</text>
+</svg>
+</div>
+<div class="bp-tooltip" id="bpTooltip"></div>
+</div>
+</div>
+
+<!-- ========== PANEL 2: ARCHITECTURE ========== -->
+<div class="master-panel" id="p-architecture">
+<div class="arch-inner">
+
+<div class="arch-header">
+  <h2>⚔️ GAS Warrior — 프로젝트 아키텍처</h2>
+  <p>Source/Warrior 전체 소스코드 분석 (50 files, 24 classes, 13 GameplayTags)</p>
+  <div class="arch-stats-row">
+    <div class="arch-stat-badge">📁 <b>50</b> files</div>
+    <div class="arch-stat-badge">🏛️ <b>24</b> classes</div>
+    <div class="arch-stat-badge">🔗 <b>61</b> #include</div>
+    <div class="arch-stat-badge">🏷️ <b>13</b> tags</div>
+  </div>
+</div>
+
+<div class="arch-tabs" id="archTabs">
+  <button class="arch-tab active" data-arch="hierarchy">🏛️ 클래스 상속</button>
+  <button class="arch-tab" data-arch="input">🎮 입력 흐름</button>
+  <button class="arch-tab" data-arch="weapon">⚔️ 무기 시스템</button>
+  <button class="arch-tab" data-arch="combo">💥 콤보 공격</button>
+  <button class="arch-tab" data-arch="anim">🎭 애니메이션</button>
+  <button class="arch-tab" data-arch="tags">🏷️ GameplayTags</button>
+  <button class="arch-tab" data-arch="deps">📦 의존 관계</button>
+</div>
+
+<!-- ARCH TAB 1: 클래스 상속 -->
+<div class="arch-panel active" id="arch-hierarchy">
+  <div class="two-col">
+    <div class="card">
+      <h3><span class="icon">🧑‍🦰</span> Character 계층</h3>
+      <div class="tree">
+<span class="ue">ACharacter</span> + <span class="iface">IAbilitySystemInterface</span>
+└── <span class="custom">AWarriorBaseCharacter</span>
+    ├── ASC, AttributeSet, StartUpData
+    └── <span class="custom">AWarriorHeroCharacter</span>
+        ├── CameraBoom, FollowCamera
+        ├── HeroCombatComponent
+        ├── InputConfigDataAsset
+        └── Input_Move/Look/Ability
+      </div>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon">⚡</span> GAS 계층</h3>
+      <div class="tree">
+<span class="ue">UAbilitySystemComponent</span>
+└── <span class="custom">UWarriorAbilitySystemComponent</span>
+    ├── OnAbilityInputPressed/Released
+    ├── GrantHeroWeaponAbilities
+    └── RemovedGrantHeroWeaponAbilities
+
+<span class="ue">UGameplayAbility</span>
+└── <span class="custom">UWarriorGameplayAbility</span>
+    ├── <span class="enum">EWarriorAbilityActivitionPolicy</span>
+    │   (OnTriggered / OnGiven)
+    └── <span class="custom">UWarriorHeroGameplayAbility</span>
+        ├── GetHeroCharacter (TWeakObjectPtr 캐싱)
+        ├── GetHeroController (TWeakObjectPtr 캐싱)
+        └── GetHeroCombatComponent
+
+<span class="ue">UAttributeSet</span>
+└── <span class="custom">UWarriorAttributeSet</span> (빈 상태 — 확장 대기)
+      </div>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon">🗡️</span> Combat &amp; Weapon 계층</h3>
+      <div class="tree">
+<span class="ue">UActorComponent</span>
+└── <span class="custom">UPawnExtensionComponentBase</span>
+    ├── GetOwningPawn&lt;T&gt;() 템플릿 헬퍼
+    └── <span class="custom">UPawnCombatComponent</span>
+        ├── CharacterCarriedWeaponMap (TMap)
+        ├── RegisterSpawnedWeapon
+        ├── GetCurrentEquippedWeapon
+        └── <span class="custom">UHeroCombatComponent</span>
+            └── GetHeroCarriedWeaponByTag
+
+<span class="ue">AActor</span>
+└── <span class="custom">AWarriorWeaponBase</span>
+    ├── WeaponMesh (UStaticMeshComponent)
+    ├── WeaponCollisionBox (UBoxComponent)
+    └── <span class="custom">AWarriorHeroWeapon</span>
+        ├── HeroWeaponData (<span class="struct">FWarriorHeroWeaponData</span>)
+        └── GrantedAbilitySpecHandles
+      </div>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon">🎬</span> Animation &amp; Data 계층</h3>
+      <div class="tree">
+<span class="ue">UAnimInstance</span>
+└── <span class="custom">UWarriorBaseAnimInstances</span>
+    ├── <span class="custom">UWarriorCharacterAnimInstance</span>
+    │   ├── GroundSpeed, bHasAcceleration
+    │   └── <span class="custom">UWarriorHeroAnimInstance</span>
+    │       └── bShouldEnterRelaxState (5초 후)
+    └── <span class="custom">UWarriorHeroLinkedAnimLayer</span>
+        └── GetHeroAnimInstance() (무기별 동적 레이어)
+
+<span class="ue">UEnhancedInputComponent</span>
+└── <span class="custom">UWarriorInputComponent</span>
+    ├── BindNativeInputAction (템플릿)
+    └── BindAbilityInputAction (템플릿)
+
+<span class="ue">UDataAsset</span>
+├── <span class="custom">UDataAsset_InputConfig</span>
+│   ├── DefaultMappingContext
+│   ├── NativeInputActions
+│   └── AbilityInputActions
+└── <span class="custom">UDataAsset_StartUpDataBase</span>
+    ├── ActivateOnGivenAbilities
+    ├── ReactiveAbilities
+    └── <span class="custom">UDataAsset_HeroStartUpData</span>
+        └── HeroStartUpAbilitySets
+
+<b>Structs:</b>
+<span class="struct">FWarriorInputActionConfig</span> { InputTag, InputAction }
+<span class="struct">FWarriorHeroAbilitySet</span> { InputTag, AbilityToGrant }
+<span class="struct">FWarriorHeroWeaponData</span> { AnimLayer, InputCtx, Abilities }
+      </div>
+    </div>
+  </div>
+  <div class="note">💡 <b>설계 특징:</b> UE5 엔진 클래스를 상속해서 Warrior 커스텀 클래스를 만들고, 구체적 로직은 Blueprint에서 구현하는 <b>C++ 프레임워크 + BP 구현</b> 하이브리드 구조. TWeakObjectPtr로 캐싱, FORCEINLINE Getter, 템플릿 헬퍼 등 <b>성능을 의식한 코드</b>가 눈에 띔.</div>
+</div>
+
+<!-- ARCH TAB 2: 입력 흐름 -->
+<div class="arch-panel" id="arch-input">
+  <div class="card">
+    <h3><span class="icon">🎮</span> Enhanced Input → GAS Ability 파이프라인</h3>
+    <div class="flow">
+      <div class="flow-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">InputMappingContext 등록</div><div class="step-detail">SetupPlayerInputComponent()에서 EnhancedInput Subsystem에 DefaultMappingContext 등록</div><div class="step-code">Subsystem→AddMappingContext(InputConfigDataAsset→DefaultMappingContext, 0)</div><div class="step-file">📄 WarriorHeroCharacter.cpp</div></div></div>
+      <div class="flow-step"><div class="step-num">2</div><div class="step-content"><div class="step-title">Native Input 바인딩 (Move/Look)</div><div class="step-detail">WarriorInputComponent의 템플릿 함수로 InputTag → C++ 함수 직접 바인딩</div><div class="step-code">BindNativeInputAction(Config, InputTag_Move, Triggered, this, &amp;Input_Move)</div><div class="step-file">📄 WarriorInputComponent.h (인라인 템플릿)</div></div></div>
+      <div class="flow-step"><div class="step-num">3</div><div class="step-content"><div class="step-title">Ability Input 바인딩 (장비/공격)</div><div class="step-detail">AbilityInputActions 배열 순회 → Started/Completed에 InputPressed/Released 바인딩. InputTag를 페이로드로 전달</div><div class="step-code">BindAction(Config.InputAction, Started, this, InputPressedFunc, Config.InputTag)</div><div class="step-file">📄 WarriorInputComponent.h (인라인 템플릿)</div></div></div>
+      <div class="flow-step"><div class="step-num">4</div><div class="step-content"><div class="step-title">Character → ASC 전달</div><div class="step-detail">Input_AbilityInputPressed()가 호출되면 WarriorASC→OnAbilityInputPressed(InInputTag)로 태그 전달</div><div class="step-code">WarriorAbilitySystemComponent→OnAbilityInputPressed(InInputTag)</div><div class="step-file">📄 WarriorHeroCharacter.cpp</div></div></div>
+      <div class="flow-step"><div class="step-num">5</div><div class="step-content"><div class="step-title">Tag 기반 Ability 탐색 &amp; 활성화</div><div class="step-detail">활성 가능한 모든 어빌리티 순회 → DynamicAbilityTags에 해당 InputTag가 있으면 TryActivateAbility()</div><div class="step-code">if (!Spec.DynamicAbilityTags.HasTagExact(InInputTag)) continue;<br>TryActivateAbility(Spec.Handle)</div><div class="step-file">📄 WarriorAbilitySystemComponent.cpp</div></div></div>
+    </div>
+    <div class="note">💡 <b>핵심:</b> InputAction과 GameplayAbility를 <b>GameplayTag 하나로 연결</b>. 새 스킬 추가 시 C++ 코드 수정 없이 DataAsset에서 Tag-Ability 쌍만 추가하면 됨. → <b>"데이터 드리븐 입력 시스템"</b></div>
+  </div>
+</div>
+
+<!-- ARCH TAB 3: 무기 시스템 -->
+<div class="arch-panel" id="arch-weapon">
+  <div class="card">
+    <h3><span class="icon">⚔️</span> 무기 장착/해제 파이프라인</h3>
+    <div class="flow">
+      <div class="flow-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">무기 데이터 정의 (FWarriorHeroWeaponData)</div><div class="step-detail">AWarriorHeroWeapon의 HeroWeaponData에 3가지 정보 정의</div><div class="step-code">WeaponAnimLayerToLink — 무기별 애니메이션 레이어<br>WeaponInputMappingContext — 무기별 입력 매핑<br>DefaultWeaponAbilities — 무기 기본 어빌리티 세트</div><div class="step-file">📄 WarriorStructTypes.h</div></div></div>
+      <div class="flow-step"><div class="step-num">2</div><div class="step-content"><div class="step-title">무기 스폰 &amp; CombatComponent 등록</div><div class="step-detail">RegisterSpawnedWeapon()으로 CharacterCarriedWeaponMap에 GameplayTag 키로 등록. TMap&lt;FGameplayTag, AWarriorWeaponBase*&gt; 사용</div><div class="step-code">CharacterCarriedWeaponMap.Emplace(InWeaponTag, InWeapon)</div><div class="step-file">📄 PawnCombatComponent.cpp</div></div></div>
+      <div class="flow-step"><div class="step-num">3</div><div class="step-content"><div class="step-title">장착 어빌리티 활성화</div><div class="step-detail">InputTag.EquipAxe → OnAbilityInputPressed → Player.Ability.Equip.Axe 태그를 가진 GA 실행 (BP 구현)</div><div class="step-code">InputTag.EquipAxe → Player.Ability.Equip.Axe</div></div></div>
+      <div class="flow-step"><div class="step-num">4</div><div class="step-content"><div class="step-title">무기 어빌리티 부여 (GrantHeroWeaponAbilities)</div><div class="step-detail">DefaultWeaponAbilities를 ASC에 GiveAbility(). 각 Spec에 InputTag를 DynamicAbilityTags로 할당 → 무기의 공격 어빌리티가 입력과 연결됨</div><div class="step-code">AbilitySpec.DynamicAbilityTags.AddTag(AbilitySet.InputTag)<br>OutGrantedHandles.AddUnique(GiveAbility(AbilitySpec))</div><div class="step-file">📄 WarriorAbilitySystemComponent.cpp</div></div></div>
+      <div class="flow-step"><div class="step-num">5</div><div class="step-content"><div class="step-title">AnimLayer 동적 링크</div><div class="step-detail">WeaponAnimLayerToLink를 통해 무기별 UWarriorHeroLinkedAnimLayer를 캐릭터 AnimInstance에 동적 연결 (BP에서 LinkAnimClassLayers 호출)</div><div class="step-code">LinkAnimClassLayers(HeroWeaponData.WeaponAnimLayerToLink)</div></div></div>
+      <div class="flow-step"><div class="step-num">6</div><div class="step-content"><div class="step-title">해제 흐름 (역순)</div><div class="step-detail">InputTag.UnequipAxe → Player.Ability.Unequip.Axe GA 실행 → RemovedGrantHeroWeaponAbilities()로 어빌리티 제거 → AnimLayer 언링크 → 무기 숨김/파괴</div><div class="step-code">ClearAbility(SpecHandle) → InSpecHandlesToRemove.Empty()</div><div class="step-file">📄 WarriorAbilitySystemComponent.cpp</div></div></div>
+    </div>
+    <div class="note">💡 <b>설계 포인트:</b> 무기 = <b>데이터 덩어리</b>(어빌리티+애니메이션+입력). 장착하면 무기 데이터가 캐릭터에 "주입"되고, 해제하면 "뽑힘". 새 무기 추가 시 C++ 코드 수정 없이 <b>DataAsset만 만들면 됨</b>.</div>
+  </div>
+</div>
+
+<!-- ARCH TAB 4: 콤보 공격 -->
+<div class="arch-panel" id="arch-combo">
+  <div class="card">
+    <h3><span class="icon">💥</span> 콤보 공격 시스템</h3>
+    <div class="flow">
+      <div class="flow-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">공격 입력 수신</div><div class="step-detail">InputTag.LightAttack.Axe 또는 InputTag.HeavyAttack.Axe 입력 → OnAbilityInputPressed()로 전달</div><div class="step-code">InputTag.LightAttack.Axe → OnAbilityInputPressed()</div></div></div>
+      <div class="flow-step"><div class="step-num">2</div><div class="step-content"><div class="step-title">공격 어빌리티 활성화</div><div class="step-detail">DynamicAbilityTags에 매칭되는 GA가 TryActivateAbility()로 실행. 무기 장착 시 부여된 어빌리티 중 하나</div><div class="step-code">Player.Ability.Attack.Light.Axe → TryActivateAbility()</div></div></div>
+      <div class="flow-step"><div class="step-num">3</div><div class="step-content"><div class="step-title">AnimMontage 재생 (Blueprint)</div><div class="step-detail">GA 내에서 PlayMontageAndWait로 공격 몽타주 재생. 콤보 인덱스에 따라 다음 섹션으로 점프하는 패턴</div><div class="step-code">PlayMontageAndWait → JumpToSection(NextCombo)</div></div></div>
+      <div class="flow-step"><div class="step-num">4</div><div class="step-content"><div class="step-title">콤보 윈도우 &amp; 다음 입력 감지</div><div class="step-detail">AnimNotify 또는 WaitGameplayEvent로 "콤보 입력 가능 구간" 관리. 구간 내 재입력 시 다음 콤보 단계로 이행</div><div class="step-code">AnimNotify(ComboWindowOpen) → 재입력 대기 → 다음 콤보</div></div></div>
+      <div class="flow-step"><div class="step-num">5</div><div class="step-content"><div class="step-title">무기 히트 감지</div><div class="step-detail">AWarriorWeaponBase의 WeaponCollisionBox를 공격 시 활성화/비활성화. 기본 NoCollision → 공격 중 Enable → 공격 끝 Disable</div><div class="step-code">WeaponCollisionBox→SetCollisionEnabled(QueryOnly) → 히트 → (NoCollision)</div><div class="step-file">📄 WarriorWeaponBase.cpp</div></div></div>
+    </div>
+    <div class="note">💡 <b>C++ vs Blueprint 역할 분담:</b> C++은 "입력→태그→어빌리티 활성화"와 "무기 콜라이더 구조"만 제공. 실제 콤보 로직(몽타주 순서, 콤보 윈도우 타이밍, 섹션 점프)은 <b>전부 Blueprint에서 구현</b>. 이렇게 하면 디자이너가 콤보 타이밍을 C++ 재컴파일 없이 조정 가능.</div>
+  </div>
+</div>
+
+<!-- ARCH TAB 5: 애니메이션 -->
+<div class="arch-panel" id="arch-anim">
+  <div class="card">
+    <h3><span class="icon">🎭</span> 상하체 분리 애니메이션 구조</h3>
+    <div class="anim-layer-box base">
+      <h4>🦵 Base Layer — UWarriorCharacterAnimInstance</h4>
+      <div class="step-detail" style="margin-bottom:6px">모든 캐릭터의 기본 로코모션. 하체 이동 애니메이션 담당.</div>
+      <div class="props">GroundSpeed (z축 제외 속도 = Size2D())<br>bHasAcceleration (가속도 존재 여부)<br>→ NativeThreadSafeUpdateAnimation() 워커스레드 안전</div>
+    </div>
+    <div class="arrow-down">⬇️ 상속</div>
+    <div class="anim-layer-box hero">
+      <h4>🧑‍🦰 Hero Layer — UWarriorHeroAnimInstance</h4>
+      <div class="step-detail" style="margin-bottom:6px">히어로 전용. Idle 상태에서 5초 후 릴렉스 자세로 전환.</div>
+      <div class="props">bShouldEnterRelaxState (릴렉스 상태 여부)<br>IdleElpasedTime (유휴 시간 추적)<br>EnterRelaxStateThreshold = 5.0f (기준 시간)<br>→ 입력 받으면 IdleElpasedTime = 0, 릴렉스 해제</div>
+    </div>
+    <div class="arrow-down">⬇️ 동적 링크</div>
+    <div class="anim-layer-box linked">
+      <h4>🗡️ Weapon Linked Layer — UWarriorHeroLinkedAnimLayer</h4>
+      <div class="step-detail" style="margin-bottom:6px">무기별 상체 애니메이션. 장착 시 LinkAnimClassLayers()로 동적 연결, 해제 시 언링크.</div>
+      <div class="props">GetHeroAnimInstance() → 메인 AnimInstance 접근<br>FWarriorHeroWeaponData.WeaponAnimLayerToLink에서 참조<br>→ 도끼 장착 시 도끼 전용 상체 애니메이션 교체<br>→ 검 장착 시 검 전용 상체 애니메이션 교체</div>
+    </div>
+    <div class="note">💡 <b>동작 원리:</b> 하체(locomotion)는 항상 Base/Hero Layer가 재생. 상체(공격/장비)는 무기별 Linked Layer가 <b>동적으로 덮어씀</b>. LinkAnimClassLayers() = 런타임에 애니메이션 레이어를 교체하는 UE5 기능. 새 무기 추가 = 새 AnimBP 만들어서 DataAsset에 연결하면 끝.</div>
+  </div>
+  <div class="card">
+    <h3><span class="icon">📐</span> 상속 구조 한눈에</h3>
+    <div class="tree">
+<span class="ue">UAnimInstance</span>
+└── <span class="custom">UWarriorBaseAnimInstances</span> (빈 베이스)
+    ├── <span class="custom">UWarriorCharacterAnimInstance</span> ← <b>하체 로코모션</b>
+    │   └── <span class="custom">UWarriorHeroAnimInstance</span> ← <b>릴렉스 상태</b>
+    │       (메인 AnimBP 체인)
+    │
+    └── <span class="custom">UWarriorHeroLinkedAnimLayer</span> ← <b>무기별 상체</b>
+        (동적 링크, 메인 체인과 별개)
+    </div>
+  </div>
+</div>
+
+<!-- ARCH TAB 6: GameplayTags -->
+<div class="arch-panel" id="arch-tags">
+  <div class="card">
+    <h3><span class="icon">🏷️</span> GameplayTag 전체 맵</h3>
+    <div class="section-label">Input Tags (6개) — 플레이어 입력과 매핑</div>
+    <table>
+      <tbody><tr><th>변수명</th><th>태그 문자열</th><th>용도</th></tr>
+      <tr><td>InputTag_Move</td><td><span class="tag input">InputTag.Move</span></td><td>이동 (Native 바인딩)</td></tr>
+      <tr><td>InputTag_Look</td><td><span class="tag input">InputTag.Look</span></td><td>카메라 회전 (Native 바인딩)</td></tr>
+      <tr><td>InputTag_EquipAxe</td><td><span class="tag input">InputTag.EquipAxe</span></td><td>도끼 장착 (Ability 바인딩)</td></tr>
+      <tr><td>InputTag_UnequipAxe</td><td><span class="tag input">InputTag.UnequipAxe</span></td><td>도끼 해제 (Ability 바인딩)</td></tr>
+      <tr><td>InputTag_LightAttack_Axe</td><td><span class="tag input">InputTag.LightAttack.Axe</span></td><td>약공격 (Ability 바인딩)</td></tr>
+      <tr><td>InputTag_HeavyAttack_Axe</td><td><span class="tag input">InputTag.HeavyAttack.Axe</span></td><td>강공격 (Ability 바인딩)</td></tr>
+    </tbody></table>
+    <div class="section-label">Ability Tags (4개) — GA와 매핑</div>
+    <table>
+      <tbody><tr><th>변수명</th><th>태그 문자열</th></tr>
+      <tr><td>Player_Ability_Equip_Axe</td><td><span class="tag ability">Player.Ability.Equip.Axe</span></td></tr>
+      <tr><td>Player_Ability_Unequip_Axe</td><td><span class="tag ability">Player.Ability.Unequip.Axe</span></td></tr>
+      <tr><td>Player_Ability_Attack_Light_Axe</td><td><span class="tag ability">Player.Ability.Attack.Light.Axe</span></td></tr>
+      <tr><td>Player_Ability_Attack_Heavy_Axe</td><td><span class="tag ability">Player.Ability.Attack.Heavy.Axe</span></td></tr>
+    </tbody></table>
+    <div class="section-label">Weapon &amp; Event Tags (3개)</div>
+    <table>
+      <tbody><tr><th>변수명</th><th>태그 문자열</th><th>용도</th></tr>
+      <tr><td>Player_Weapon_Axe</td><td><span class="tag weapon">Player.Weapon.Axe</span></td><td>무기 식별 (CombatComponent의 TMap 키)</td></tr>
+      <tr><td>Player_Event_Equip_Axe</td><td><span class="tag event">Player.Event.Equip.Axe</span></td><td>장착 이벤트 (BP에서 사용)</td></tr>
+      <tr><td>Player_Event_Unequip_Axe</td><td><span class="tag event">Player.Event.Unequip.Axe</span></td><td>해제 이벤트 (BP에서 사용)</td></tr>
+    </tbody></table>
+    <div class="note">💡 <b>네이밍 컨벤션:</b> <code>카테고리.서브카테고리.디테일</code> 패턴. Input → Ability 매핑은 <b>DataAsset(FWarriorHeroAbilitySet)</b>에서 InputTag와 AbilityToGrant를 짝지어서 설정. 하드코딩 아닌 데이터 드리븐.</div>
+  </div>
+</div>
+
+<!-- ARCH TAB 7: 의존 관계 -->
+<div class="arch-panel" id="arch-deps">
+  <div class="card">
+    <h3><span class="icon">📦</span> 핵심 파일별 #include 관계</h3>
+    <div class="dep-grid">
+      <div class="dep-card"><h4>WarriorHeroCharacter.cpp (허브)</h4><div class="deps"><span>WarriorHeroCharacter.h</span> <span>DataAsset_InputConfig.h</span> <span>WarriorInputComponent.h</span> <span>WarriorGameplayTags.h</span> <span>WarriorAbilitySystemComponent.h</span> <span>DataAsset_HeroStartUpData.h</span> <span>HeroCombatComponent.h</span> <span>WarriorDebugHelper.h</span></div></div>
+      <div class="dep-card"><h4>WarriorGameplayAbility.cpp</h4><div class="deps"><span>WarriorGameplayAbility.h</span> <span>WarriorAbilitySystemComponent.h</span> <span>PawnCombatComponent.h</span></div></div>
+      <div class="dep-card"><h4>WarriorAbilitySystemComponent.cpp</h4><div class="deps"><span>WarriorAbilitySystemComponent.h</span> <span>WarriorGameplayAbility.h</span></div></div>
+      <div class="dep-card"><h4>WarriorHeroGameplayAbility.cpp</h4><div class="deps"><span>WarriorHeroGameplayAbility.h</span> <span>WarriorHeroCharacter.h</span> <span>WarriorHeroController.h</span></div></div>
+      <div class="dep-card"><h4>WarriorBaseCharacter.cpp</h4><div class="deps"><span>WarriorBaseCharacter.h</span> <span>WarriorAbilitySystemComponent.h</span> <span>WarriorAttributeSet.h</span></div></div>
+      <div class="dep-card"><h4>DataAsset_HeroStartupData.cpp</h4><div class="deps"><span>DataAsset_HeroStartUpData.h</span> <span>WarriorGameplayAbility.h</span> <span>WarriorAbilitySystemComponent.h</span></div></div>
+      <div class="dep-card"><h4>PawnCombatComponent.cpp</h4><div class="deps"><span>PawnCombatComponent.h</span> <span>WarriorWeaponBase.h</span> <span>WarriorDebugHelper.h</span></div></div>
+      <div class="dep-card"><h4>HeroCombatComponent.cpp</h4><div class="deps"><span>HeroCombatComponent.h</span> <span>WarriorHeroWeapon.h</span></div></div>
+    </div>
+    <div class="note">💡 <b>의존성 분석:</b> WarriorHeroCharacter.cpp가 <b>8개 헤더를 참조하는 허브</b>. GAS, Input, Combat, DataAsset을 모두 조율하는 "지휘관" 역할. 나머지 파일들은 2~3개 의존성으로 <b>결합도가 낮음</b>. → 확장 시 WarriorHeroCharacter만 주의하면 됨.</div>
+  </div>
+</div>
+
+</div>
+</div>
+
+<!-- ========== PANEL 3: CLASS TREE ========== -->
+<div class="master-panel" id="p-classtree">
+<div class="ct-inner">
+
+<h2>⚔️ GAS Warrior — 클래스 상속 트리</h2>
+<p class="ct-subtitle">노드 클릭 → 상세 정보 | 계층별 탭 전환</p>
+
+<div class="ct-legend">
+  <div class="ct-legend-item"><div class="ct-legend-box ue"></div>UE5 엔진</div>
+  <div class="ct-legend-item"><div class="ct-legend-box custom"></div>Character</div>
+  <div class="ct-legend-item"><div class="ct-legend-box combat"></div>Combat</div>
+  <div class="ct-legend-item"><div class="ct-legend-box weapon"></div>Weapon</div>
+  <div class="ct-legend-item"><div class="ct-legend-box anim"></div>Animation</div>
+  <div class="ct-legend-item"><div class="ct-legend-box data"></div>Data/Input</div>
+</div>
+
+<div class="ct-tabs" id="ctTabs">
+  <button class="ct-tab active" data-ct="character">🧑 Character</button>
+  <button class="ct-tab" data-ct="gas">⚡ GAS</button>
+  <button class="ct-tab" data-ct="combat">🗡️ Combat &amp; Weapon</button>
+  <button class="ct-tab" data-ct="anim">🎭 Animation</button>
+  <button class="ct-tab" data-ct="data">📦 Data &amp; Input</button>
+</div>
+
+<!-- CT CHARACTER TREE -->
+<div class="ct-panel active" id="ct-character">
+  <div class="ct-tree-wrap">
+    <svg class="ct-tree-svg" width="600" height="400" viewBox="0 0 600 400">
+      <path class="edge" d="M300,56 L300,90"></path>
+      <path class="edge impl" d="M440,56 L370,90"></path>
+      <path class="edge" d="M300,146 L300,180"></path>
+      <g class="ct-node node-iface" data-id="iface-abilitysys"><rect x="355" y="28" width="190" height="32"></rect><text class="type-label" x="450" y="41" text-anchor="middle">Interface</text><text class="name" x="450" y="54" text-anchor="middle">IAbilitySystemInterface</text></g>
+      <g class="ct-node node-ue" data-id="acharacter"><rect x="220" y="28" width="120" height="32"></rect><text class="type-label" x="280" y="41" text-anchor="middle">UE5 Engine</text><text class="name" x="280" y="54" text-anchor="middle">ACharacter</text></g>
+      <g class="ct-node node-custom" data-id="basechar"><rect x="195" y="86" width="210" height="64"></rect><text class="type-label" x="300" y="100" text-anchor="middle">커스텀 Base</text><text class="name" x="300" y="116" text-anchor="middle">AWarriorBaseCharacter</text><text x="300" y="132" text-anchor="middle" font-size="10" fill="#44546f">ASC + AttributeSet + StartUpData</text></g>
+      <g class="ct-node node-hero" data-id="herochar"><rect x="155" y="176" width="290" height="80"></rect><text class="type-label" x="300" y="192" text-anchor="middle">플레이어 캐릭터</text><text class="name" x="300" y="210" text-anchor="middle">AWarriorHeroCharacter</text><text x="300" y="226" text-anchor="middle" font-size="10" fill="#44546f">Camera + HeroCombat + InputConfig</text><text x="300" y="240" text-anchor="middle" font-size="10" fill="#44546f">Input_Move / Look / Ability 바인딩</text></g>
+      <line x1="50" y1="310" x2="90" y2="310" stroke="#B0BEC5" stroke-width="1.5"></line><text x="95" y="314" font-size="11" fill="#8993a4">상속</text>
+      <line x1="50" y1="330" x2="90" y2="330" stroke="#B39DDB" stroke-width="1.5" stroke-dasharray="6,3"></line><text x="95" y="334" font-size="11" fill="#8993a4">인터페이스 구현</text>
+    </svg>
+  </div>
+  <div class="ct-detail" id="detail-character"></div>
+</div>
+
+<!-- CT GAS TREE -->
+<div class="ct-panel" id="ct-gas">
+  <div class="ct-tree-wrap">
+    <svg class="ct-tree-svg" width="720" height="420" viewBox="0 0 720 420">
+      <path class="edge" d="M180,56 L180,100"></path>
+      <g class="ct-node node-ue" data-id="ue-asc"><rect x="70" y="28" width="220" height="32"></rect><text class="type-label" x="180" y="41" text-anchor="middle">UE5 Engine</text><text class="name" x="180" y="54" text-anchor="middle">UAbilitySystemComponent</text></g>
+      <g class="ct-node node-custom" data-id="warrior-asc"><rect x="50" y="96" width="260" height="64"></rect><text class="type-label" x="180" y="110" text-anchor="middle">커스텀 ASC</text><text class="name" x="180" y="128" text-anchor="middle">UWarriorAbilitySystemComponent</text><text x="180" y="144" text-anchor="middle" font-size="10" fill="#44546f">Input→Tag→Ability 매핑 엔진</text></g>
+      <path class="edge" d="M540,56 L540,100"></path><path class="edge" d="M540,160 L540,200"></path>
+      <g class="ct-node node-ue" data-id="ue-ga"><rect x="440" y="28" width="200" height="32"></rect><text class="type-label" x="540" y="41" text-anchor="middle">UE5 Engine</text><text class="name" x="540" y="54" text-anchor="middle">UGameplayAbility</text></g>
+      <g class="ct-node node-custom" data-id="warrior-ga"><rect x="395" y="96" width="290" height="68"></rect><text class="type-label" x="540" y="110" text-anchor="middle">커스텀 Base GA</text><text class="name" x="540" y="128" text-anchor="middle">UWarriorGameplayAbility</text><text x="540" y="144" text-anchor="middle" font-size="10" fill="#44546f">OnGiven 자동활성 + Policy enum</text></g>
+      <g class="ct-node node-hero" data-id="warrior-heroga"><rect x="395" y="196" width="290" height="68"></rect><text class="type-label" x="540" y="210" text-anchor="middle">히어로 전용 GA</text><text class="name" x="540" y="228" text-anchor="middle">UWarriorHeroGameplayAbility</text><text x="540" y="244" text-anchor="middle" font-size="10" fill="#44546f">TWeakObjectPtr 캐싱 패턴</text></g>
+      <path class="edge" d="M180,200 L180,240"></path>
+      <g class="ct-node node-ue" data-id="ue-attrset"><rect x="90" y="196" width="180" height="32"></rect><text class="type-label" x="180" y="209" text-anchor="middle">UE5 Engine</text><text class="name" x="180" y="222" text-anchor="middle">UAttributeSet</text></g>
+      <g class="ct-node node-custom" data-id="warrior-attrset"><rect x="75" y="240" width="210" height="50"></rect><text class="type-label" x="180" y="254" text-anchor="middle">커스텀 (빈 상태)</text><text class="name" x="180" y="272" text-anchor="middle">UWarriorAttributeSet</text></g>
+      <g class="ct-node node-enum" data-id="enum-policy"><rect x="400" y="300" width="280" height="50"></rect><text class="type-label" x="540" y="314" text-anchor="middle">Enum</text><text class="name" x="540" y="332" text-anchor="middle">EWarriorAbilityActivitionPolicy</text></g>
+      <text x="540" y="370" text-anchor="middle" font-size="11" fill="#8993a4">OnTriggered (입력 시 발동) | OnGiven (부여 즉시 발동)</text>
+    </svg>
+  </div>
+  <div class="ct-detail" id="detail-gas"></div>
+</div>
+
+<!-- CT COMBAT & WEAPON TREE -->
+<div class="ct-panel" id="ct-combat">
+  <div class="ct-tree-wrap">
+    <svg class="ct-tree-svg" width="750" height="400" viewBox="0 0 750 400">
+      <path class="edge" d="M200,56 L200,96"></path><path class="edge" d="M200,160 L200,200"></path><path class="edge" d="M200,264 L200,300"></path>
+      <g class="ct-node node-ue" data-id="ue-actorcomp"><rect x="105" y="28" width="190" height="32"></rect><text class="type-label" x="200" y="41" text-anchor="middle">UE5 Engine</text><text class="name" x="200" y="54" text-anchor="middle">UActorComponent</text></g>
+      <g class="ct-node node-combat" data-id="pawn-ext-base"><rect x="70" y="92" width="260" height="68"></rect><text class="type-label" x="200" y="106" text-anchor="middle">확장 베이스</text><text class="name" x="200" y="124" text-anchor="middle">UPawnExtensionComponentBase</text><text x="200" y="142" text-anchor="middle" font-size="10" fill="#44546f">GetOwningPawn&lt;T&gt;() 템플릿</text></g>
+      <g class="ct-node node-combat" data-id="pawn-combat"><rect x="55" y="196" width="290" height="68"></rect><text class="type-label" x="200" y="210" text-anchor="middle">전투 컴포넌트</text><text class="name" x="200" y="228" text-anchor="middle">UPawnCombatComponent</text><text x="200" y="246" text-anchor="middle" font-size="10" fill="#44546f">TMap&lt;Tag, Weapon*&gt; 무기 관리</text></g>
+      <g class="ct-node node-combat" data-id="hero-combat"><rect x="70" y="296" width="260" height="50"></rect><text class="type-label" x="200" y="310" text-anchor="middle">히어로 전투</text><text class="name" x="200" y="330" text-anchor="middle">UHeroCombatComponent</text></g>
+      <path class="edge" d="M555,56 L555,96"></path><path class="edge" d="M555,160 L555,200"></path>
+      <g class="ct-node node-ue" data-id="ue-actor"><rect x="490" y="28" width="130" height="32"></rect><text class="type-label" x="555" y="41" text-anchor="middle">UE5 Engine</text><text class="name" x="555" y="54" text-anchor="middle">AActor</text></g>
+      <g class="ct-node node-weapon" data-id="weapon-base"><rect x="430" y="92" width="250" height="68"></rect><text class="type-label" x="555" y="106" text-anchor="middle">무기 베이스</text><text class="name" x="555" y="124" text-anchor="middle">AWarriorWeaponBase</text><text x="555" y="142" text-anchor="middle" font-size="10" fill="#44546f">Mesh + CollisionBox</text></g>
+      <g class="ct-node node-weapon" data-id="hero-weapon"><rect x="420" y="196" width="270" height="68"></rect><text class="type-label" x="555" y="210" text-anchor="middle">히어로 무기</text><text class="name" x="555" y="228" text-anchor="middle">AWarriorHeroWeapon</text><text x="555" y="246" text-anchor="middle" font-size="10" fill="#44546f">WeaponData + GrantedHandles</text></g>
+      <g class="ct-node node-struct" data-id="struct-weapondata"><rect x="430" y="300" width="250" height="50"></rect><text class="type-label" x="555" y="314" text-anchor="middle">Data Struct</text><text class="name" x="555" y="332" text-anchor="middle">FWarriorHeroWeaponData</text></g>
+      <text x="555" y="370" text-anchor="middle" font-size="11" fill="#8993a4">AnimLayer + InputCtx + Abilities</text>
+    </svg>
+  </div>
+  <div class="ct-detail" id="detail-combat"></div>
+</div>
+
+<!-- CT ANIMATION TREE -->
+<div class="ct-panel" id="ct-anim">
+  <div class="ct-tree-wrap">
+    <svg class="ct-tree-svg" width="700" height="420" viewBox="0 0 700 420">
+      <path class="edge" d="M250,56 L250,96"></path><path class="edge" d="M250,156 L250,196"></path><path class="edge" d="M250,256 L250,296"></path><path class="edge" d="M250,156 L500,196"></path>
+      <g class="ct-node node-ue" data-id="ue-animinst"><rect x="170" y="28" width="160" height="32"></rect><text class="type-label" x="250" y="41" text-anchor="middle">UE5 Engine</text><text class="name" x="250" y="54" text-anchor="middle">UAnimInstance</text></g>
+      <g class="ct-node node-anim" data-id="base-anim"><rect x="115" y="92" width="270" height="64"></rect><text class="type-label" x="250" y="106" text-anchor="middle">애니메이션 베이스</text><text class="name" x="250" y="124" text-anchor="middle">UWarriorBaseAnimInstances</text><text x="250" y="142" text-anchor="middle" font-size="10" fill="#44546f">(빈 베이스 — 공통 기능 확장점)</text></g>
+      <g class="ct-node node-anim" data-id="char-anim"><rect x="100" y="192" width="300" height="64"></rect><text class="type-label" x="250" y="206" text-anchor="middle">🦵 하체 로코모션</text><text class="name" x="250" y="224" text-anchor="middle">UWarriorCharacterAnimInstance</text><text x="250" y="242" text-anchor="middle" font-size="10" fill="#44546f">GroundSpeed + bHasAcceleration</text></g>
+      <g class="ct-node node-hero" data-id="hero-anim"><rect x="100" y="292" width="300" height="64"></rect><text class="type-label" x="250" y="306" text-anchor="middle">🧑 히어로 전용</text><text class="name" x="250" y="324" text-anchor="middle">UWarriorHeroAnimInstance</text><text x="250" y="342" text-anchor="middle" font-size="10" fill="#44546f">5초 Idle → RelaxState 전환</text></g>
+      <g class="ct-node node-weapon" data-id="linked-anim"><rect x="430" y="192" width="250" height="80"></rect><text class="type-label" x="555" y="210" text-anchor="middle">🗡️ 무기별 상체 레이어</text><text class="name" x="555" y="230" text-anchor="middle">UWarriorHeroLinkedAnimLayer</text><text x="555" y="248" text-anchor="middle" font-size="10" fill="#44546f">동적 LinkAnimClassLayers()</text><text x="555" y="262" text-anchor="middle" font-size="10" fill="#44546f">무기 장착 시 교체됨</text></g>
+      <rect x="100" y="380" width="300" height="26" rx="4" fill="#E3F2FD" stroke="#BBDEFB"></rect><text x="250" y="397" text-anchor="middle" font-size="11" fill="#1565C0" font-weight="600">메인 체인: Base → Char → Hero (항상 동작)</text>
+      <rect x="430" y="296" width="250" height="26" rx="4" fill="#FFF3E0" stroke="#FFE0B2"></rect><text x="555" y="313" text-anchor="middle" font-size="11" fill="#E65100" font-weight="600">별개 브랜치: 무기 따라 동적 교체</text>
+    </svg>
+  </div>
+  <div class="ct-detail" id="detail-anim"></div>
+</div>
+
+<!-- CT DATA & INPUT TREE -->
+<div class="ct-panel" id="ct-data">
+  <div class="ct-tree-wrap">
+    <svg class="ct-tree-svg" width="750" height="440" viewBox="0 0 750 440">
+      <path class="edge" d="M200,56 L200,96"></path><path class="edge" d="M200,160 L130,200"></path><path class="edge" d="M200,160 L280,200"></path><path class="edge" d="M125,160 L125,200"></path><path class="edge" d="M130,260 L130,296"></path>
+      <g class="ct-node node-ue" data-id="ue-dataasset"><rect x="130" y="28" width="140" height="32"></rect><text class="type-label" x="200" y="41" text-anchor="middle">UE5 Engine</text><text class="name" x="200" y="54" text-anchor="middle">UDataAsset</text></g>
+      <g class="ct-node node-data" data-id="startup-data-base"><rect x="25" y="92" width="200" height="68"></rect><text class="type-label" x="125" y="106" text-anchor="middle">시작 데이터</text><text class="name" x="125" y="124" text-anchor="middle" font-size="11">UDataAsset_StartUpDataBase</text><text x="125" y="142" text-anchor="middle" font-size="10" fill="#44546f">OnGiven + Reactive 어빌리티</text></g>
+      <g class="ct-node node-data" data-id="hero-startup-data"><rect x="15" y="196" width="220" height="64"></rect><text class="type-label" x="125" y="210" text-anchor="middle">히어로 시작 데이터</text><text class="name" x="125" y="228" text-anchor="middle" font-size="11">UDataAsset_HeroStartUpData</text><text x="125" y="246" text-anchor="middle" font-size="10" fill="#44546f">+ HeroStartUpAbilitySets</text></g>
+      <g class="ct-node node-data" data-id="input-config"><rect x="260" y="92" width="200" height="68"></rect><text class="type-label" x="360" y="106" text-anchor="middle">입력 설정</text><text class="name" x="360" y="124" text-anchor="middle" font-size="11">UDataAsset_InputConfig</text><text x="360" y="142" text-anchor="middle" font-size="10" fill="#44546f">MappingCtx + Actions</text></g>
+      <path class="edge" d="M560,56 L560,96"></path>
+      <g class="ct-node node-ue" data-id="ue-enhancedinput"><rect x="440" y="28" width="240" height="32"></rect><text class="type-label" x="560" y="41" text-anchor="middle">UE5 Engine</text><text class="name" x="560" y="54" text-anchor="middle">UEnhancedInputComponent</text></g>
+      <g class="ct-node node-input" data-id="warrior-input"><rect x="430" y="92" width="260" height="68"></rect><text class="type-label" x="560" y="106" text-anchor="middle">커스텀 입력</text><text class="name" x="560" y="124" text-anchor="middle">UWarriorInputComponent</text><text x="560" y="142" text-anchor="middle" font-size="10" fill="#44546f">BindNative + BindAbility 템플릿</text></g>
+      <g class="ct-node node-struct" data-id="struct-inputconfig"><rect x="255" y="200" width="210" height="44"></rect><text class="type-label" x="360" y="214" text-anchor="middle">Struct</text><text class="name" x="360" y="232" text-anchor="middle" font-size="11">FWarriorInputActionConfig</text></g>
+      <text x="360" y="262" text-anchor="middle" font-size="11" fill="#8993a4">{ InputTag + InputAction }</text>
+      <g class="ct-node node-struct" data-id="struct-abilityset"><rect x="25" y="292" width="210" height="44"></rect><text class="type-label" x="130" y="306" text-anchor="middle">Struct</text><text class="name" x="130" y="324" text-anchor="middle" font-size="11">FWarriorHeroAbilitySet</text></g>
+      <text x="130" y="356" text-anchor="middle" font-size="11" fill="#8993a4">{ InputTag + AbilityToGrant }</text>
+      <g class="ct-node node-input" data-id="gptags"><rect x="430" y="200" width="260" height="64"></rect><text class="type-label" x="560" y="214" text-anchor="middle">네임스페이스</text><text class="name" x="560" y="232" text-anchor="middle">WarriorGameplayTags</text><text x="560" y="250" text-anchor="middle" font-size="10" fill="#44546f">13개 태그 정의 (Input/Ability/Weapon/Event)</text></g>
+      <g class="ct-node node-ue" data-id="ue-playercontroller"><rect x="440" y="310" width="190" height="32"></rect><text class="type-label" x="535" y="323" text-anchor="middle">UE5 Engine</text><text class="name" x="535" y="338" text-anchor="middle">APlayerController</text></g>
+      <path class="edge" d="M535,342 L535,370"></path>
+      <g class="ct-node node-custom" data-id="hero-controller"><rect x="420" y="366" width="230" height="44"></rect><text class="type-label" x="535" y="380" text-anchor="middle">히어로 컨트롤러</text><text class="name" x="535" y="398" text-anchor="middle">AWarriorHeroController</text></g>
+    </svg>
+  </div>
+  <div class="ct-detail" id="detail-data"></div>
+</div>
+
+</div>
+</div>
+
+<!-- ========== PANEL 4: LIFECYCLE ========== -->
+<div class="master-panel" id="p-lifecycle">
+<div class="lc-inner">
+
+<h2>⚔️ GAS Warrior — 전체 생명주기</h2>
+<p class="lc-sub">에디터에서 플레이 버튼 누른 순간부터 공격 입력까지, 네 코드가 실행되는 순서</p>
+
+<!-- PHASE 0 -->
+<div class="phase p0">
+<div class="phase-header"><div class="phase-num">0</div><div><div class="phase-title">컴파일 타임 — 코드가 기계어로 바뀌기 전</div><div class="phase-when">플레이 버튼 누르기 훨씬 전. 빌드할 때.</div></div></div>
+<div class="step"><div class="step-dot"></div><div class="step-body"><div class="step-what">UHT (Unreal Header Tool)가 먼저 실행</div><div class="step-how">컴파일러보다 <b>먼저</b> 실행됨. 너의 .h 파일에서 UCLASS(), UPROPERTY(), UFUNCTION() 매크로를 파싱해서 <b>.generated.h</b> 파일을 자동 생성함.</div><div class="step-code">// WarriorBaseCharacter.h에 네가 쓴 것:<br>UPROPERTY(VisibleAnywhere, BlueprintReadOnly)<br>UWarriorAbilitySystemComponent* WarriorAbilitySystemComponent;<br><br>// → UHT가 .generated.h에 메타데이터 코드 생성<br>// → 런타임에 "이 클래스에 ASC라는 컴포넌트가 있다"를 엔진이 알게 됨</div><div class="step-elden">🎮 엘든링 비유: 게임 설치할 때 "이 보스는 HP가 있고, 이 공격 패턴이 있다"는 정보를 미리 메타데이터로 만들어두는 단계. 아직 게임 실행 전.</div></div></div>
+<div class="step"><div class="step-dot"></div><div class="step-body"><div class="step-what">C++ 컴파일러가 실제 컴파일</div><div class="step-how">UHT가 만든 .generated.h + 너의 코드 → 합쳐서 컴파일. 이때 #include 순서, 상속 관계가 확정됨.</div><div class="step-warn">⚠️ 여기서 결정되는 것: AWarriorHeroCharacter는 AWarriorBaseCharacter의 자식이다. BaseCharacter의 생성자가 Hero보다 <b>반드시 먼저</b> 호출된다. 이건 C++ 언어 규칙.</div></div></div>
+<div class="step"><div class="step-dot"></div><div class="step-body"><div class="step-what">Warrior.Build.cs — 모듈 의존성 결정</div><div class="step-how">네가 사용하는 모듈들이 여기서 링크됨. GAS 쓰려면 이게 있어야 컴파일 됨.</div><div class="step-code">PublicDependencyModuleNames.AddRange(new string[] {<br>  "Core", "CoreUObject", "Engine", "InputCore",<br>  "EnhancedInput", "GamePlayTags", "GameplayTasks"<br>});</div><div class="step-file">📄 Warrior.Build.cs</div></div></div>
+</div>
+
+<!-- PHASE 1 -->
+<div class="phase p1">
+<div class="phase-header"><div class="phase-num">1</div><div><div class="phase-title">CDO 생성 — 엔진 초기화 시 (에디터 켤 때)</div><div class="phase-when">에디터 열릴 때 한 번. 플레이 버튼 전.</div></div></div>
+<div class="step"><div class="step-dot"></div><div class="step-body"><div class="step-what">CDO (Class Default Object) = "설계도 원본" 생성</div><div class="step-how">언리얼이 네 클래스마다 <b>인스턴스 하나를 미리</b> 만들어둠. 이게 "기본값"의 원본이 됨. 이때 <b>생성자가 호출</b>됨.</div><div class="step-elden">🎮 "보스 데이터시트"를 미리 만들어두는 것. 실제 보스가 맵에 나타난 게 아니라, "이 보스는 이런 스펙이다"라는 템플릿.</div></div></div>
+<div class="step"><div class="step-dot"></div><div class="step-body"><div class="step-what">AWarriorBaseCharacter::생성자 실행 (부모 먼저!)</div><div class="step-how">C++ 규칙: 상속 시 <b>부모 생성자가 자식보다 항상 먼저</b>. Base에서 핵심 컴포넌트를 생성.</div><div class="step-code">AWarriorBaseCharacter::AWarriorBaseCharacter() {<br>  PrimaryActorTick.bCanEverTick = false;    // 성능: Tick 끔<br>  <br>  // ★ 여기서 ASC와 AttributeSet이 태어남<br>  WarriorAbilitySystemComponent = <br>    CreateDefaultSubobject&lt;UWarriorAbilitySystemComponent&gt;("WarriorASC");<br>  WarriorAttributeSet = <br>    CreateDefaultSubobject&lt;UWarriorAttributeSet&gt;("WarriorAttributeSet");<br>}</div><div class="step-file">📄 WarriorBaseCharacter.cpp</div><div class="step-ok">✅ CreateDefaultSubobject = "이 액터가 태어날 때 반드시 같이 태어나는 부품". 생성자에서만 호출 가능. 런타임에 동적으로 만드는 건 다른 함수.</div></div></div>
+<div class="step"><div class="step-dot"></div><div class="step-body"><div class="step-what">AWarriorHeroCharacter::생성자 실행 (자식은 뒤에)</div><div class="step-how">Base 생성자가 끝난 <b>직후</b> Hero 생성자가 실행. Base에서 만든 ASC는 이미 존재함.</div><div class="step-code">AWarriorHeroCharacter::AWarriorHeroCharacter() {<br>  // Base에서 ASC, AttributeSet 이미 생성됨 ✅<br>  CameraBoom = CreateDefaultSubobject&lt;USpringArmComponent&gt;("CameraBoom");<br>  CameraBoom-&gt;SetupAttachment(GetRootComponent());<br>  CameraBoom-&gt;TargetArmLength = 200.f;<br>  FollowCamera = CreateDefaultSubobject&lt;UCameraComponent&gt;("FollowCamera");<br>  FollowCamera-&gt;SetupAttachment(CameraBoom, USpringArmComponent::SocketName);<br>  // ★ 전투 컴포넌트도 여기서 태어남<br>  HeroCombatComponent = <br>    CreateDefaultSubobject&lt;UHeroCombatComponent&gt;("HeroCombatComponent");<br>  GetCharacterMovement()-&gt;MaxWalkSpeed = 400.f;<br>}</div><div class="step-file">📄 WarriorHeroCharacter.cpp</div><div class="step-warn">⚠️ 이 시점에서 아직 월드에 배치된 게 아님! "설계도"일 뿐. 포인터들은 유효하지만 게임 로직은 아직 없음.</div></div></div>
+</div>
+
+<!-- PHASE 2 -->
+<div class="phase p2">
+<div class="phase-header"><div class="phase-num">2</div><div><div class="phase-title">스폰 &amp; 빙의 — 플레이 버튼 누른 직후</div><div class="phase-when">플레이 시작. 실제 인스턴스가 월드에 등장.</div></div></div>
+<div class="step"><div class="step-dot"></div><div class="step-body"><div class="step-what">GameMode가 HeroCharacter를 스폰</div><div class="step-how">WarriorGameMode의 DefaultPawnClass에 설정된 BP_HeroCharacter를 월드에 생성. CDO를 복제해서 실제 인스턴스를 만듦.</div><div class="step-elden">🎮 "보스방에 진입" = 데이터시트를 기반으로 실제 보스 액터가 맵에 스폰되는 순간.</div></div></div>
+<div class="step"><div class="step-dot"></div><div class="step-body"><div class="step-what">PossessedBy(Controller) — 컨트롤러가 빙의</div><div class="step-how">PlayerController가 이 캐릭터를 "조종하겠다"고 빙의. <b>이 순간부터 입력이 이 캐릭터로 감</b>.</div></div></div>
+<div class="step"><div class="step-dot"></div><div class="step-body"><div class="step-what">AWarriorBaseCharacter::PossessedBy() — ASC 초기화</div><div class="step-how">부모의 PossessedBy가 먼저 실행. 여기서 ASC를 초기화하고, StartUpData 유효성 검사.</div><div class="step-code">void AWarriorBaseCharacter::PossessedBy(AController* NewController) {<br>  Super::PossessedBy(NewController);<br>  if (WarriorAbilitySystemComponent) {<br>    // ★ ASC에 "나는 이 액터다"를 알려줌<br>    WarriorAbilitySystemComponent-&gt;InitAbilityActorInfo(this, this);<br>    ensureMsgf(!CharacterStartUpData.IsNull(), <br>      TEXT("Forgot to assign start up data to %s"), *GetName());<br>  }<br>}</div><div class="step-file">📄 WarriorBaseCharacter.cpp</div><div class="step-warn">⚠️ InitAbilityActorInfo()가 없으면 ASC가 "누구의 어빌리티인지" 모름 → 모든 GA가 작동 안 함. 반드시 PossessedBy에서 호출.</div></div></div>
+<div class="step"><div class="step-dot"></div><div class="step-body"><div class="step-what">AWarriorHeroCharacter::PossessedBy() — 어빌리티 부여</div><div class="step-how">Super(Base)가 끝난 후 Hero의 PossessedBy. StartUpData를 로드하고 어빌리티를 ASC에 부여.</div><div class="step-code">void AWarriorHeroCharacter::PossessedBy(AController* NewController) {<br>  Super::PossessedBy(NewController);<br>  if (!CharacterStartUpData.IsNull()) {<br>    UDataAsset_StartUpDataBase* LoadedData = <br>      CharacterStartUpData.LoadSynchronous();<br>    // ★ 여기서 모든 기본 어빌리티가 ASC에 부여됨<br>    LoadedData-&gt;GiveToAbilitySystemComponent(WarriorAbilitySystemComponent);<br>  }<br>}</div><div class="step-file">📄 WarriorHeroCharacter.cpp</div></div></div>
+<div class="step"><div class="step-dot"></div><div class="step-body"><div class="step-what">GiveToAbilitySystemComponent() 내부 — 어빌리티 분류</div><div class="step-how">StartUpData 안의 어빌리티들을 정책(Policy)별로 분류해서 ASC에 등록.</div><div class="step-code">// DataAsset_StartUpDataBase.cpp<br>void GiveToAbilitySystemComponent(ASC, Level) {<br>  // OnGiven 어빌리티 → 부여 즉시 자동 실행 (패시브 등)<br>  GrantAbilities(ActivateOnGivenAbilities, ASC, Level);<br>  // OnTriggered 어빌리티 → 등록만. 입력 올 때까지 대기<br>  GrantAbilities(ReactiveAbilities, ASC, Level);<br>}</div><div class="step-ok">✅ OnGiven Policy인 GA는 부여되자마자 OnGiveAbility()에서 자동으로 TryActivateAbility() 호출 → 끝나면 ClearAbility()로 자동 제거. 1회성 초기화용.</div></div></div>
+</div>
+
+<!-- PHASE 3 -->
+<div class="phase p3">
+<div class="phase-header"><div class="phase-num">3</div><div><div class="phase-title">입력 시스템 연결 — PossessedBy 직후</div><div class="phase-when">컨트롤러 빙의 후, 첫 Tick 전.</div></div></div>
+<div class="step"><div class="step-dot"></div><div class="step-body"><div class="step-what">SetupPlayerInputComponent() 호출</div><div class="step-how">언리얼이 자동 호출. "이 캐릭터의 입력을 어떻게 처리할지" 설정하는 곳.</div><div class="step-code">void AWarriorHeroCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) {<br>  checkf(InputConfigDataAsset, TEXT("Forgot to assign data asset"));<br>  ULocalPlayer* LP = GetController&lt;APlayerController&gt;()-&gt;GetLocalPlayer();<br>  auto* Subsystem = ULocalPlayer::GetSubsystem&lt;...&gt;(LP);<br>  Subsystem-&gt;AddMappingContext(InputConfigDataAsset-&gt;DefaultMappingContext, 0);<br>  UWarriorInputComponent* WIC = CastChecked&lt;UWarriorInputComponent&gt;(PlayerInputComponent);</div><div class="step-file">📄 WarriorHeroCharacter.cpp</div></div></div>
+<div class="step"><div class="step-dot"></div><div class="step-body"><div class="step-what">Native 입력 바인딩 (Move, Look) — C++ 직결</div><div class="step-how">이동/카메라는 매 프레임 호출 → Tag를 거치지 않고 C++ 함수에 직접 연결.</div><div class="step-code">WIC-&gt;BindNativeInputAction(<br>  InputConfigDataAsset, <br>  WarriorGameplayTags::InputTag_Move, <br>  ETriggerEvent::Triggered, <br>  this, &amp;ThisClass::Input_Move<br>);</div><div class="step-ok">✅ Move/Look는 성능이 중요 → GAS를 거치지 않고 직접 바인딩. 매 프레임 AddMovementInput() 호출.</div></div></div>
+<div class="step"><div class="step-dot"></div><div class="step-body"><div class="step-what">Ability 입력 바인딩 (장비, 공격) — Tag→ASC 경유</div><div class="step-how">전투 액션은 GAS를 통해야 함 → 입력 시 Tag를 ASC에 전달.</div><div class="step-code">WIC-&gt;BindAbilityInputAction(<br>  InputConfigDataAsset, this, <br>  &amp;ThisClass::Input_AbilityInputPressed, <br>  &amp;ThisClass::Input_AbilityInputReleased<br>);</div><div class="step-elden">🎮 비유: Move는 "아날로그 스틱 → 캐릭터가 바로 움직임". 공격은 "R1 버튼 → '공격하고 싶다'는 요청 → GAS가 "지금 공격 가능한지" 확인 → 실제 공격". 중간에 검증 단계가 있음.</div></div></div>
+</div>
+
+<!-- PHASE 4 -->
+<div class="phase p4">
+<div class="phase-header"><div class="phase-num">4</div><div><div class="phase-title">애니메이션 초기화 — BeginPlay 전후</div><div class="phase-when">캐릭터 스폰 후, 메시 + AnimBP 준비 시점.</div></div></div>
+<div class="step"><div class="step-dot"></div><div class="step-body"><div class="step-what">NativeInitializeAnimation() — AnimInstance가 캐릭터를 찾음</div><div class="step-how">AnimBP가 "나를 소유한 캐릭터가 누구냐"를 캐싱. 이후 매 프레임 속도를 읽어야 하니까.</div><div class="step-code">void UWarriorCharacterAnimInstance::NativeInitializeAnimation() {<br>  OwningCharacter = Cast&lt;AWarriorBaseCharacter&gt;(TryGetPawnOwner());<br>  if (OwningCharacter) {<br>    OwningMovementComponent = OwningCharacter-&gt;GetCharacterMovement();<br>  }<br>}</div><div class="step-file">📄 WarriorCharacterAnimInstance.cpp</div><div class="step-warn">⚠️ TryGetPawnOwner()가 nullptr일 수 있음 — AnimBP가 캐릭터보다 먼저 초기화될 때. 그래서 if(OwningCharacter) 체크가 필수.</div></div></div>
+<div class="step"><div class="step-dot"></div><div class="step-body"><div class="step-what">매 프레임: NativeThreadSafeUpdateAnimation()</div><div class="step-how">워커 스레드에서 안전하게 속도/가속도 업데이트. 이 값으로 AnimBP가 Idle↔Walk 전환.</div><div class="step-code">void UWarriorCharacterAnimInstance::NativeThreadSafeUpdateAnimation(float DeltaSeconds) {<br>  if (!OwningCharacter || !OwningMovementComponent) return;<br>  GroundSpeed = OwningCharacter-&gt;GetVelocity().Size2D();<br>  bHasAcceleration = OwningMovementComponent-&gt;GetCurrentAcceleration()<br>    .SizeSquared2D() &gt; 0.f;<br>}</div><div class="step-ok">✅ NativeThreadSafe = 메인 스레드 부하 없이 애니 변수 업데이트. 성능 좋은 패턴.</div></div></div>
+</div>
+
+<!-- PHASE 5 -->
+<div class="phase p5">
+<div class="phase-header"><div class="phase-num">5</div><div><div class="phase-title">무기 장착 — 플레이어가 장비 키를 누를 때</div><div class="phase-when">런타임. 플레이어의 입력에 의해 트리거.</div></div></div>
+<div class="step"><div class="step-dot"></div><div class="step-body"><div class="step-what">키 입력 → Input_AbilityInputPressed(InputTag.EquipAxe)</div><div class="step-how">Phase 3에서 바인딩한 함수가 호출됨. Tag가 페이로드로 전달.</div><div class="step-code">void AWarriorHeroCharacter::Input_AbilityInputPressed(FGameplayTag InInputTag) {<br>  WarriorAbilitySystemComponent-&gt;OnAbilityInputPressed(InInputTag);<br>}</div></div></div>
+<div class="step"><div class="step-dot"></div><div class="step-body"><div class="step-what">ASC가 Tag 매칭으로 어빌리티 탐색 → 활성화</div><div class="step-how">등록된 모든 어빌리티를 순회. 각 Spec의 DynamicAbilityTags에 InputTag.EquipAxe가 있는 GA를 찾아 실행.</div><div class="step-code">void UWarriorAbilitySystemComponent::OnAbilityInputPressed(const FGameplayTag&amp; InInputTag) {<br>  if (!InInputTag.IsValid()) return;<br>  for (const FGameplayAbilitySpec&amp; Spec : GetActivatableAbilities()) {<br>    // ★ 핵심: DynamicAbilityTags에 이 InputTag가 있는지 확인<br>    if (!Spec.DynamicAbilityTags.HasTagExact(InInputTag)) continue;<br>    TryActivateAbility(Spec.Handle);<br>  }<br>}</div><div class="step-file">📄 WarriorAbilitySystemComponent.cpp</div><div class="step-elden">🎮 비유: "R1 눌렀다"(InputTag) → ASC가 "R1에 연결된 스킬이 뭐지?" 목록에서 찾음 → "약공격이네" → 실행. 스킬 슬롯 시스템과 같음.</div></div></div>
+<div class="step"><div class="step-dot"></div><div class="step-body"><div class="step-what">장착 GA 실행 → 무기 스폰 + 어빌리티 부여 + AnimLayer 링크</div><div class="step-how">BP에서 구현된 GA가 실행되면서 3가지를 순서대로 처리:</div><div class="step-code">// BP에서 실행되는 순서 (C++이 제공하는 함수들을 호출):<br><br>1. 무기 액터 스폰 → CombatComponent에 등록<br>   HeroCombatComponent-&gt;RegisterSpawnedWeapon(Player_Weapon_Axe, SpawnedWeapon)<br><br>2. 무기의 어빌리티를 ASC에 부여<br>   ASC-&gt;GrantHeroWeaponAbilities(WeaponData.DefaultWeaponAbilities, ...)<br>   // → 각 Spec.DynamicAbilityTags에 InputTag 추가됨<br>   // → 이제 공격 키 누르면 공격 GA가 매칭됨!<br><br>3. 무기별 AnimLayer 동적 링크<br>   LinkAnimClassLayers(WeaponData.WeaponAnimLayerToLink)<br>   // → 상체 애니메이션이 도끼 전용으로 교체됨</div><div class="step-ok">✅ 이 3단계가 "무기 장착"의 전부. 해제는 정확히 역순 (Remove → Unlink → Destroy).</div></div></div>
+</div>
+
+<!-- PHASE 6 -->
+<div class="phase p6">
+<div class="phase-header"><div class="phase-num">6</div><div><div class="phase-title">공격 — 무기 장착 후 공격 키 입력</div><div class="phase-when">런타임. Phase 5에서 무기 어빌리티가 부여된 상태여야 함.</div></div></div>
+<div class="step"><div class="step-dot"></div><div class="step-body"><div class="step-what">InputTag.LightAttack.Axe → ASC → 공격 GA 활성화</div><div class="step-how">Phase 5와 동일한 경로. 다만 이번엔 EquipAxe가 아니라 LightAttack.Axe Tag → 공격 GA 매칭.</div><div class="step-warn">⚠️ 무기를 장착하지 않은 상태에서 공격 키 → DynamicAbilityTags에 매칭되는 GA가 없음 → 아무 일도 안 일어남. 이게 Tag 시스템의 안전장치.</div></div></div>
+<div class="step"><div class="step-dot"></div><div class="step-body"><div class="step-what">공격 GA → Montage 재생 → 콜라이더 활성화 → 히트</div><div class="step-how">BP에서 PlayMontageAndWait → AnimNotify로 WeaponCollisionBox 켜기 → 겹침 판정 → 데미지 → 콜라이더 끄기.</div><div class="step-code">// 콤보 플로우 (BP):<br>1. PlayMontageAndWait(AttackMontage)<br>2. AnimNotify → WeaponCollisionBox → SetCollisionEnabled(QueryOnly)<br>3. 적과 Overlap → 데미지 처리<br>4. AnimNotify → SetCollisionEnabled(NoCollision)<br>5. ComboWindow Open → 재입력 감지 → 다음 섹션 점프<br>6. ComboWindow 없이 몽타주 끝 → GA 종료</div></div></div>
+</div>
+
+<!-- SUMMARY -->
+<div class="summary-box">
+<h3>🗺️ 전체 타임라인 한눈에</h3>
+<div class="timeline">
+<span class="t-phase" style="background:#9E9E9E">0</span> <b>컴파일</b>: UHT → .generated.h → C++ 컴파일 → 바이너리<br>
+<span class="t-phase" style="background:#1565C0">1</span> <b>CDO</b>: Base 생성자(<b>ASC, AttributeSet 탄생</b>) → Hero 생성자(<b>Camera, Combat 탄생</b>)<br>
+<span class="t-phase" style="background:#E65100">2</span> <b>스폰</b>: GameMode 스폰 → Base::PossessedBy(<b>ASC 초기화</b>) → Hero::PossessedBy(<b>어빌리티 부여</b>)<br>
+<span class="t-phase" style="background:#2E7D32">3</span> <b>입력</b>: SetupPlayerInputComponent → <b>MappingContext 등록</b> → Move/Look 직결 + Ability Tag 바인딩<br>
+<span class="t-phase" style="background:#7B1FA2">4</span> <b>애니</b>: NativeInitialize(<b>캐릭터 캐싱</b>) → 매 프레임 ThreadSafe 업데이트<br>
+<span class="t-phase" style="background:#C62828">5</span> <b>장착</b>: InputTag → ASC 매칭 → GA실행 → <b>무기 스폰 + 어빌리티 부여 + AnimLayer 링크</b><br>
+<span class="t-phase" style="background:#00695C">6</span> <b>공격</b>: InputTag → ASC 매칭 → GA실행 → <b>Montage + 콜라이더 + 히트 + 콤보</b><br>
+</div>
+</div>
+
+<div class="summary-box" style="margin-top:16px;">
+<h3>💡 면접에서 물어보면 이렇게 답해</h3>
+<div style="font-size:13px;line-height:1.8;color:#172b4d;">
+<b>Q: "GAS 초기화 순서를 설명해주세요"</b><br>
+A: "생성자에서 CreateDefaultSubobject로 ASC와 AttributeSet을 생성하고, PossessedBy에서 InitAbilityActorInfo로 ASC를 초기화합니다. 그 다음 StartUpData에서 기본 어빌리티를 부여하는데, OnGiven Policy면 즉시 실행되고, OnTriggered면 입력 대기 상태로 등록됩니다."<br><br>
+<b>Q: "입력이 어빌리티로 연결되는 과정은?"</b><br>
+A: "Enhanced Input의 InputAction을 GameplayTag와 쌍으로 DataAsset에 정의합니다. 키 입력 시 해당 Tag가 ASC의 OnAbilityInputPressed로 전달되고, ASC는 등록된 어빌리티의 DynamicAbilityTags에서 매칭되는 것을 찾아 TryActivateAbility를 호출합니다. Tag 기반이라 새 스킬 추가 시 C++ 수정이 필요 없습니다."
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- ========== ALL SCRIPTS (NAMESPACED) ========== -->
+<script>
+(function(){
+  // ===== MASTER TAB SWITCHING =====
+  document.getElementById('masterTabs').addEventListener('click', function(e){
+    const tab = e.target.closest('.master-tab');
+    if (!tab) return;
+    document.querySelectorAll('.master-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.master-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('p-' + tab.dataset.master).classList.add('active');
+  });
+
+  // ===== PANEL 1: BLUEPRINT TOOLTIPS =====
+  (function(){
+    const D={
+      "basechar":{t:"AWarriorBaseCharacter",f:"WarriorBaseCharacter.h/.cpp",d:"<span class=\'tc\'>상속</span>ACharacter + IAbilitySystemInterface (UE5) 구현<br><span class=\'tc\'>소유 (CreateDefaultSubobject)</span><code>WarriorAbilitySystemComponent</code> — GAS 핵심<br><code>WarriorAttributeSet</code> — 스탯 (빈 상태)<br><span class=\'tc\'>참조</span><code>TSoftObjectPtr&lt;StartUpData&gt;</code> 필요 시 로드<br><span class=\'tc\'>설계</span>Tick 비활성화 (성능)"},
+      "herochar":{t:"AWarriorHeroCharacter",f:"WarriorHeroCharacter.h/.cpp",d:"<span class=\'tc\'>상속</span>BaseCharacter (ASC, AttributeSet 물려받음)<br><span class=\'tc\'>소유</span>CameraBoom + FollowCamera — 3인칭 카메라<br>HeroCombatComponent — 무기 관리<br><span class=\'tc\'>데이터</span>InputConfigDataAsset 참조<br><span class=\'tc\'>입력</span>Move/Look → 직접 이동/회전<br>AbilityPressed → <b>Tag를 ASC에 전달</b> (핵심 연결)<br><span class=\'tc\'>허브</span>8개 헤더 참조 — GAS, Input, Combat, Data 전부 연결"},
+      "asc":{t:"UWarriorAbilitySystemComponent",f:"WarriorAbilitySystemComponent.h/.cpp",d:"<span class=\'tc\'>핵심</span><code>OnAbilityInputPressed(Tag)</code><br>→ 활성 가능 어빌리티 순회 → DynamicAbilityTags 매칭 → TryActivate<br><span class=\'tc\'>무기 관리</span><code>GrantHeroWeaponAbilities()</code> 부여<br><code>RemovedGrantHeroWeaponAbilities()</code> 제거"},
+      "attrset":{t:"UWarriorAttributeSet",f:"WarriorAttributeSet.h/.cpp",d:"현재 <b>빈 상태</b><br>HP, 스태미나, 공격력 등 추가 예정"},
+      "warrior_ga":{t:"UWarriorGameplayAbility",f:"WarriorGameplayAbility.h/.cpp",d:"<span class=\'tc\'>정책</span>OnTriggered — 입력 시 발동<br>OnGiven — 부여 즉시 + 자동 제거<br><span class=\'tc\'>헬퍼</span>GetPawnCombat / GetASC"},
+      "hero_ga":{t:"UWarriorHeroGameplayAbility",f:"WarriorHeroGameplayAbility.h/.cpp",d:"TWeakObjectPtr&lt;HeroCharacter&gt; 캐싱<br>TWeakObjectPtr&lt;HeroController&gt; 캐싱<br>IsValid() → .Get() 안전 패턴"},
+      "enum_policy":{t:"EWarriorAbilityActivitionPolicy",f:"WarriorStructTypes.h",d:"OnTriggered — 입력 시 발동<br>OnGiven — 부여 즉시 + 자동 제거"},
+      "pawn_combat":{t:"UPawnCombatComponent",f:"PawnCombatComponent.h/.cpp",d:"<span class=\'tc\'>상속</span>PawnExtensionComponentBase (내가 만든 것)<br><span class=\'tc\'>저장소</span>TMap&lt;Tag, Weapon*&gt; O(1) 조회<br>Register / GetByTag / GetCurrentEquipped"},
+      "hero_combat":{t:"UHeroCombatComponent",f:"HeroCombatComponent.h/.cpp",d:"PawnCombat 상속<br>GetHeroCarriedWeaponByTag() 다운캐스트<br>HeroCharacter에 부착됨"},
+      "weapon_base":{t:"AWarriorWeaponBase",f:"WarriorWeaponBase.h/.cpp",d:"WeaponMesh (StaticMesh) — 외형<br>WeaponCollisionBox (Box) — 히트 판정<br>NoCollision → QueryOnly → Off"},
+      "hero_weapon":{t:"AWarriorHeroWeapon",f:"WarriorHeroWeapon.h/.cpp",d:"<code>FWarriorHeroWeaponData</code> 캡슐화<br><code>GrantedAbilitySpecHandles</code> 추적"},
+      "weapon_data":{t:"FWarriorHeroWeaponData",f:"WarriorStructTypes.h",d:"<b>무기 = 이 구조체 하나</b><br>WeaponAnimLayerToLink — 상체 AnimBP<br>WeaponInputMappingContext — 입력 매핑<br>DefaultWeaponAbilities[] — Tag+GA 쌍<br>새 무기 = 이것만 채우면 끝"},
+      "mapping_ctx":{t:"UInputMappingContext",f:"(UE5 엔진)",d:"Enhanced Input 키-액션 매핑 컨테이너<br>장착 시 Add / 해제 시 Remove"},
+      "char_anim":{t:"UWarriorCharacterAnimInstance",f:"WarriorCharacterAnimInstance.h/.cpp",d:"GroundSpeed — Size2D() (z축 제외)<br>bHasAcceleration — SizeSquared2D() > 0<br>NativeThreadSafeUpdateAnimation()"},
+      "hero_anim":{t:"UWarriorHeroAnimInstance",f:"WarriorHeroAnimInstance.h/.cpp",d:"5초 대기 → bShouldEnterRelaxState<br>다시 움직이면 리셋"},
+      "linked_anim":{t:"UWarriorHeroLinkedAnimLayer",f:"WarriorHeroLinkedAnimLayer.h/.cpp",d:"무기별 상체 애니메이션<br>LinkAnimClassLayers() <b>동적 교체</b>"},
+      "startup_base":{t:"UDataAsset_StartUpDataBase",f:"DataAsset_StartUpDataBase.h/.cpp",d:"OnGivenAbilities[] — 즉시 GA<br>ReactiveAbilities[] — 입력 GA<br>GiveToAbilitySystemComponent()"},
+      "hero_startup":{t:"UDataAsset_HeroStartUpData",f:"DataAsset_HeroStartUpData.h/.cpp",d:"부모 + HeroStartUpAbilitySets[]<br>InputTag + AbilityToGrant 쌍"},
+      "input_config":{t:"UDataAsset_InputConfig",f:"DataAsset_InputConfig.h/.cpp",d:"DefaultMappingContext — 기본 입력<br>NativeInputActions[] — Move, Look<br>AbilityInputActions[] — Equip, Attack"},
+      "tags":{t:"WarriorGameplayTags",f:"WarriorGameplayTags.h/.cpp",d:"<b>13개 태그 — 느슨한 연결 고리</b><br>1. 입력 바인딩 페이로드<br>2. ASC DynamicAbilityTags 매칭<br>3. CombatComponent TMap 키"}
+    };
+    const tt=document.getElementById('bpTooltip');
+    document.querySelectorAll('#p-blueprint .bp-node').forEach(function(n){
+      n.addEventListener('mouseenter',function(e){
+        var d=D[n.dataset.id];if(!d)return;
+        tt.innerHTML='<h4>'+d.t+'</h4><div class="tf">📄 '+d.f+'</div>'+d.d;
+        tt.classList.add('show');
+      });
+      n.addEventListener('mousemove',function(e){
+        var x=e.clientX+18,y=e.clientY+12;
+        if(x+410>window.innerWidth)x=e.clientX-420;
+        if(y+280>window.innerHeight)y=e.clientY-290;
+        tt.style.left=x+'px';tt.style.top=y+'px';
+      });
+      n.addEventListener('mouseleave',function(){tt.classList.remove('show');});
+    });
+  })();
+
+  // ===== PANEL 2: ARCHITECTURE INNER TABS =====
+  (function(){
+    document.getElementById('archTabs').addEventListener('click', function(e){
+      var tab = e.target.closest('.arch-tab');
+      if (!tab) return;
+      document.querySelectorAll('#p-architecture .arch-tab').forEach(function(t){t.classList.remove('active');});
+      document.querySelectorAll('#p-architecture .arch-panel').forEach(function(p){p.classList.remove('active');});
+      tab.classList.add('active');
+      document.getElementById('arch-' + tab.dataset.arch).classList.add('active');
+    });
+  })();
+
+  // ===== PANEL 3: CLASS TREE INNER TABS + NODE CLICKS =====
+  (function(){
+    var classInfo = {
+      "acharacter":{name:"ACharacter",type:"UE5 Engine",file:"(엔진 내장)",members:"UE5 Character 기본 클래스. 이동, 점프, 메시 내장."},
+      "iface-abilitysys":{name:"IAbilitySystemInterface",type:"UE5 Interface",file:"(엔진 내장)",members:"GAS 연동 인터페이스. GetAbilitySystemComponent() 구현 필수."},
+      "basechar":{name:"AWarriorBaseCharacter",type:"커스텀 Base",file:"📄 WarriorBaseCharacter.h / .cpp",members:"<span class=\'cat\'>멤버</span><code>UWarriorAbilitySystemComponent* WarriorAbilitySystemComponent</code><br><code>UWarriorAttributeSet* WarriorAttributeSet</code><br><code>TSoftObjectPtr&lt;UDataAsset_StartUpDataBase&gt; StartUpData</code><br><span class=\'cat\'>함수</span><code>PossessedBy()</code> — StartUpData 로드 & 어빌리티 부여<br><code>GetAbilitySystemComponent()</code> — IAbilitySystemInterface 구현"},
+      "herochar":{name:"AWarriorHeroCharacter",type:"플레이어 캐릭터",file:"📄 WarriorHeroCharacter.h / .cpp",members:"<span class=\'cat\'>컴포넌트</span><code>USpringArmComponent* CameraBoom</code><br><code>UCameraComponent* FollowCamera</code><br><code>UHeroCombatComponent* HeroCombatComponent</code><br><span class=\'cat\'>입력</span><code>UDataAsset_InputConfig* InputConfigDataAsset</code><br><code>Input_Move/Look/Ability</code> — 이동, 회전, 어빌리티<br><span class=\'cat\'>특징</span>8개 헤더 참조 — <b>허브 역할</b>"},
+      "ue-asc":{name:"UAbilitySystemComponent",type:"UE5 Engine",file:"(엔진 내장)",members:"GAS의 핵심. 어빌리티 관리, 태그 관리, 이펙트 적용."},
+      "warrior-asc":{name:"UWarriorAbilitySystemComponent",type:"커스텀 ASC",file:"📄 WarriorAbilitySystemComponent.h / .cpp",members:"<span class=\'cat\'>핵심 함수</span><code>OnAbilityInputPressed(FGameplayTag)</code><br>→ 활성 가능 어빌리티 순회 → DynamicAbilityTags 매칭 → TryActivateAbility<br><code>GrantHeroWeaponAbilities()</code> 부여<br><code>RemovedGrantHeroWeaponAbilities()</code> 제거"},
+      "ue-ga":{name:"UGameplayAbility",type:"UE5 Engine",file:"(엔진 내장)",members:"어빌리티(스킬) 기본 클래스. 활성/종료/비용/쿨다운 관리."},
+      "warrior-ga":{name:"UWarriorGameplayAbility",type:"커스텀 Base GA",file:"📄 WarriorGameplayAbility.h / .cpp",members:"<span class=\'cat\'>정책</span><code>EWarriorAbilityActivitionPolicy AbilityActivationPolicy</code><br>→ <b>OnTriggered</b>: 입력 시 발동 | <b>OnGiven</b>: 부여 즉시 + 종료 시 제거<br><span class=\'cat\'>헬퍼</span><code>GetPawnCombat()</code> / <code>GetASC()</code>"},
+      "warrior-heroga":{name:"UWarriorHeroGameplayAbility",type:"히어로 전용 GA",file:"📄 WarriorHeroGameplayAbility.h / .cpp",members:"<span class=\'cat\'>캐싱 패턴</span><code>TWeakObjectPtr&lt;AWarriorHeroCharacter&gt;</code><br><code>TWeakObjectPtr&lt;AWarriorHeroController&gt;</code><br><span class=\'cat\'>접근자</span><code>GetHeroCharacterFromActorInfo()</code> → 캐싱 후 반환<br><code>GetHeroControllerFromActorInfo()</code> → 캐싱 후 반환"},
+      "warrior-attrset":{name:"UWarriorAttributeSet",type:"커스텀 AttributeSet",file:"📄 WarriorAttributeSet.h / .cpp",members:"<b>현재 빈 상태 — HP, 스태미나, 공격력 등 추가 예정</b>"},
+      "enum-policy":{name:"EWarriorAbilityActivitionPolicy",type:"Enum",file:"📄 WarriorStructTypes.h",members:"<code>OnTriggered</code> — 플레이어 입력 시 발동<br><code>OnGiven</code> — 부여 즉시 자동 발동 + 종료 시 제거"},
+      "ue-actorcomp":{name:"UActorComponent",type:"UE5 Engine",file:"(엔진 내장)",members:"언리얼 컴포넌트 베이스. Tick, Lifecycle 제공."},
+      "pawn-ext-base":{name:"UPawnExtensionComponentBase",type:"확장 베이스",file:"📄 PawnExtensionComponentBase.h",members:"<code>template&lt;class T&gt; T* GetOwningPawn() const</code><br>→ GetOwner() → Cast&lt;T&gt;(). <b>FORCEINLINE</b>으로 성능 최적화"},
+      "pawn-combat":{name:"UPawnCombatComponent",type:"전투 컴포넌트",file:"📄 PawnCombatComponent.h / .cpp",members:"<code>TMap&lt;FGameplayTag, AWarriorWeaponBase*&gt; CharacterCarriedWeaponMap</code><br><code>RegisterSpawnedWeapon(Tag, Weapon)</code><br><code>GetCharacterCarriedWeaponByTag(Tag)</code><br><code>GetCurrentEquippedWeapon()</code>"},
+      "hero-combat":{name:"UHeroCombatComponent",type:"히어로 전투",file:"📄 HeroCombatComponent.h / .cpp",members:"<code>GetHeroCarriedWeaponByTag(Tag)</code><br>→ Cast&lt;AWarriorHeroWeapon&gt;(GetCharacterCarriedWeaponByTag(Tag))"},
+      "ue-actor":{name:"AActor",type:"UE5 Engine",file:"(엔진 내장)",members:"언리얼 액터 기본 클래스."},
+      "weapon-base":{name:"AWarriorWeaponBase",type:"무기 베이스",file:"📄 WarriorWeaponBase.h / .cpp",members:"<code>UStaticMeshComponent* WeaponMesh</code><br><code>UBoxComponent* WeaponCollisionBox</code><br>생성자에서 CollisionBox → <b>NoCollision</b> 기본값"},
+      "hero-weapon":{name:"AWarriorHeroWeapon",type:"히어로 무기",file:"📄 WarriorHeroWeapon.h / .cpp",members:"<code>FWarriorHeroWeaponData HeroWeaponData</code><br><code>TArray&lt;FGameplayAbilitySpecHandle&gt; GrantedAbilitySpecHandles</code>"},
+      "struct-weapondata":{name:"FWarriorHeroWeaponData",type:"Struct",file:"📄 WarriorStructTypes.h",members:"<code>WeaponAnimLayerToLink</code><br><code>WeaponInputMappingContext</code><br><code>DefaultWeaponAbilities[]</code><br>무기 = <b>데이터 덩어리</b>. 이 구조체 하나가 어빌리티+애니+입력을 캡슐화."},
+      "ue-animinst":{name:"UAnimInstance",type:"UE5 Engine",file:"(엔진 내장)",members:"애니메이션 블루프린트의 C++ 베이스 클래스."},
+      "base-anim":{name:"UWarriorBaseAnimInstances",type:"애니메이션 베이스",file:"📄 WarriorBaseAnimInstances.h / .cpp",members:"빈 베이스 클래스 — 공통 기능 확장점으로 예약."},
+      "char-anim":{name:"UWarriorCharacterAnimInstance",type:"하체 로코모션",file:"📄 WarriorCharacterAnimInstance.h / .cpp",members:"<code>float GroundSpeed</code> — GetVelocity().<b>Size2D()</b><br><code>bool bHasAcceleration</code><br><code>NativeThreadSafeUpdateAnimation()</code> — 워커스레드 안전"},
+      "hero-anim":{name:"UWarriorHeroAnimInstance",type:"히어로 전용",file:"📄 WarriorHeroAnimInstance.h / .cpp",members:"<code>bool bShouldEnterRelaxState</code><br><code>float IdleElpasedTime</code><br><code>float EnterRelaxStateThreshold = 5.0f</code><br>5초 초과 → 릴렉스 포즈"},
+      "linked-anim":{name:"UWarriorHeroLinkedAnimLayer",type:"무기별 상체 레이어",file:"📄 WarriorHeroLinkedAnimLayer.h / .cpp",members:"<code>GetHeroAnimInstance()</code><br>무기 장착 시 LinkAnimClassLayers()로 <b>동적 교체</b>"},
+      "ue-dataasset":{name:"UDataAsset",type:"UE5 Engine",file:"(엔진 내장)",members:"데이터 에셋 기본 클래스. 에디터에서 인스턴스 생성 가능."},
+      "startup-data-base":{name:"UDataAsset_StartUpDataBase",type:"시작 데이터",file:"📄 DataAsset_StartUpDataBase.h / .cpp",members:"<code>ActivateOnGivenAbilities</code> — 즉시 발동<br><code>ReactiveAbilities</code> — 입력 시 발동<br><code>GiveToAbilitySystemComponent()</code>"},
+      "hero-startup-data":{name:"UDataAsset_HeroStartUpData",type:"히어로 시작 데이터",file:"📄 DataAsset_HeroStartUpData.h / .cpp",members:"부모 + <code>HeroStartUpAbilitySets[]</code><br>InputTag + AbilityToGrant 쌍"},
+      "input-config":{name:"UDataAsset_InputConfig",type:"입력 설정",file:"📄 DataAsset_InputConfig.h / .cpp",members:"<code>DefaultMappingContext</code><br><code>NativeInputActions[]</code> — Move, Look<br><code>AbilityInputActions[]</code> — Equip, Attack<br><code>FindNativeInputActionByTag(Tag)</code>"},
+      "ue-enhancedinput":{name:"UEnhancedInputComponent",type:"UE5 Engine",file:"(엔진 내장)",members:"UE5 Enhanced Input 시스템의 입력 컴포넌트."},
+      "warrior-input":{name:"UWarriorInputComponent",type:"커스텀 입력",file:"📄 WarriorInputComponent.h",members:"<code>BindNativeInputAction(Config, Tag, TriggerEvent, Object, Func)</code><br><code>BindAbilityInputAction(Config, Object, PressedFunc, ReleasedFunc)</code><br>→ InputTag를 페이로드로 콜백에 전달"},
+      "struct-inputconfig":{name:"FWarriorInputActionConfig",type:"Struct",file:"📄 WarriorStructTypes.h",members:"<code>FGameplayTag InputTag</code><br><code>UInputAction* InputAction</code><br><code>IsValid()</code> — 둘 다 유효한지 체크"},
+      "struct-abilityset":{name:"FWarriorHeroAbilitySet",type:"Struct",file:"📄 WarriorStructTypes.h",members:"<code>FGameplayTag InputTag</code><br><code>TSubclassOf&lt;UWarriorGameplayAbility&gt; AbilityToGrant</code><br><code>IsValid()</code>"},
+      "gptags":{name:"WarriorGameplayTags",type:"네임스페이스",file:"📄 WarriorGameplayTags.h / .cpp",members:"<b>Input (6개)</b> Move, Look, EquipAxe, UnequipAxe, LightAttack.Axe, HeavyAttack.Axe<br><b>Ability (4개)</b> Equip/Unequip/Attack.Light/Attack.Heavy<br><b>Weapon (1개)</b> Player.Weapon.Axe<br><b>Event (2개)</b> Equip/Unequip"},
+      "ue-playercontroller":{name:"APlayerController",type:"UE5 Engine",file:"(엔진 내장)",members:"플레이어 컨트롤러 기본 클래스."},
+      "hero-controller":{name:"AWarriorHeroController",type:"히어로 컨트롤러",file:"📄 WarriorHeroController.h / .cpp",members:"현재는 빈 상태 — 히어로 전용 컨트롤러 로직 확장점."}
+    };
+
+    // Class tree inner tab switching
+    document.getElementById('ctTabs').addEventListener('click', function(e){
+      var tab = e.target.closest('.ct-tab');
+      if (!tab) return;
+      document.querySelectorAll('#p-classtree .ct-tab').forEach(function(t){t.classList.remove('active');});
+      document.querySelectorAll('#p-classtree .ct-panel').forEach(function(p){p.classList.remove('active');});
+      tab.classList.add('active');
+      document.getElementById('ct-' + tab.dataset.ct).classList.add('active');
+      // Hide all details when switching tabs
+      document.querySelectorAll('#p-classtree .ct-detail').forEach(function(d){d.classList.remove('show');});
+    });
+
+    // Node click handler
+    document.querySelectorAll('#p-classtree .ct-node').forEach(function(node){
+      node.addEventListener('click', function(){
+        var id = node.dataset.id;
+        var info = classInfo[id];
+        if (!info) return;
+        var panel = node.closest('.ct-panel');
+        var detail = panel.querySelector('.ct-detail');
+        var badge = info.type.includes('UE5') ? 'badge-ue' : info.type.includes('Struct') ? 'badge-struct' : info.type.includes('Enum') ? 'badge-struct' : 'badge-custom';
+        detail.innerHTML = '<h3>' + info.name + ' <span class="badge ' + badge + '">' + info.type + '</span></h3><div class="file">' + info.file + '</div><div class="members">' + info.members + '</div>';
+        detail.classList.add('show');
+      });
+    });
+  })();
+
+})();
+</script>
+
+
+
+</body></html>

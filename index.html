@@ -1,777 +1,516 @@
-<!DOCTYPE html>
-<html lang="ko"><head><style id="qw-theme">:root {
-  --color-bg: #121218;
-  --color-text: #e4e4ed;
-  --color-navbar-bg: #1a1a24;
-  --color-bg-chat-view: #121218;
-  --color-bg-secondary: #1a1a24;
-  --color-bg-tertiary: #1e1e2a;
-  --color-bg-hover: #2a2a38;
-  --color-surface: #1e1e2a;
-  --color-surface-hover: #2a2a38;
-  --color-surface-active: #353546;
-  --color-border: #ffffff1f;
-  --color-border-light: #ffffff0f;
-  --color-border-strong: #3a3a4e;
-  --color-primary: #8575ff;
-  --color-primary-dark: #4200db;
-  --color-primary-light: #8575ff;
-  --color-primary-bg: color-mix(in srgb, #8575ff 15%, transparent);
-  --color-primary-hover-border: #4200db;
-  --color-nav-icon-active: #8575ff;
-  --color-nav-hover-border: #8575ff;
-  --color-primary-alpha-3: color-mix(in srgb, #8575ff 3%, transparent);
-  --color-primary-alpha-5: color-mix(in srgb, #8575ff 5%, transparent);
-  --color-primary-alpha-8: color-mix(in srgb, #8575ff 8%, transparent);
-  --color-primary-alpha-12: color-mix(in srgb, #8575ff 12%, transparent);
-  --color-primary-alpha-15: color-mix(in srgb, #8575ff 15%, transparent);
-  --color-primary-alpha-20: color-mix(in srgb, #8575ff 20%, transparent);
-  --color-primary-alpha-25: color-mix(in srgb, #8575ff 25%, transparent);
-  --color-primary-alpha-30: color-mix(in srgb, #8575ff 30%, transparent);
-  --color-primary-alpha-40: color-mix(in srgb, #8575ff 40%, transparent);
-  --color-primary-alpha-50: color-mix(in srgb, #8575ff 50%, transparent);
-  --color-primary-alpha-60: color-mix(in srgb, #8575ff 60%, transparent);
-  --color-primary-subtle: color-mix(in srgb, #8575ff 25%, transparent);
-  --color-primary-border: color-mix(in srgb, #8575ff 50%, transparent);
-  --color-focus-ring: color-mix(in srgb, #8575ff 60%, transparent);
-  --color-sidebar-hover: color-mix(in srgb, #8575ff 15%, transparent);
-  --block-hover-outline: 1px dashed color-mix(in srgb, #8575ff 50%, transparent);
-  --block-selected-outline: 1px solid #8575ff;
-  --block-selection-outline-offset: 2px;
-  --block-selected-halo: 0 0 8px color-mix(in srgb, #8575ff 40%, transparent);
-  --color-accent: #8575ff;
-  --color-accent-foreground: #8575ff;
-  --color-accent-dark: #4200db;
-  --color-accent-light: color-mix(in srgb, #8575ff 15%, transparent);
-  --color-accent-inverse: #fff;
-  --color-link: #8575ff;
-  --color-primary-gradient-end: color-mix(in srgb, #8575ff 35%, transparent);
-  --color-primary-bg-solid: #1a1530;
-  --color-user-bubble: #333843;
-  --color-user-bubble-text: #e4e4ed;
-  --color-text-secondary: #a0a0b4;
-  --color-text-tertiary: #8a8a9a;
-  --color-text-muted: #6e6e82;
-  --color-text-on-primary: #fff;
-  --color-success: #4ade80;
-  --color-success-dark: #00802f;
-  --color-success-light: #d9ffd6;
-  --color-success-hover: #005c26;
-  --color-success-bg: #1c2c22;
-  --color-success-border: #0e3d1c;
-  --color-success-foreground: #4ade80;
-  --color-success-dark-foreground: #00802f;
-  --color-success-text: #4ade80;
-  --color-error: #ff6b6b;
-  --color-error-dark: #db0000;
-  --color-error-light: #ffe0e0;
-  --color-error-hover: #3b1a24;
-  --color-error-bg: #3b1a24;
-  --color-error-border: #5e1a24;
-  --color-error-active-border: #db0000;
-  --color-error-foreground: #ff6b6b;
-  --color-error-dark-foreground: #db0000;
-  --color-error-inverse: #fff;
-  --color-error-text: #ff6b6b;
-  --color-warning: #fbbf24;
-  --color-warning-dark: #573a00;
-  --color-warning-light: #fffbbd;
-  --color-warning-hover: #db9200;
-  --color-warning-bg: #3d3520;
-  --color-warning-border: #5e4a1a;
-  --color-warning-foreground: #fbbf24;
-  --color-warning-dark-foreground: #573a00;
-  --color-warning-inverse: #573a00;
-  --color-surface-warning: #fffbbd;
-  --color-text-warning: #573a00;
-  --color-info: #60a5fa;
-  --color-info-dark: #006ce0;
-  --color-info-light: #d1f1ff;
-  --color-info-hover: #003b8f;
-  --color-info-bg: #1a2a42;
-  --color-info-border: #0f3d6e;
-  --color-info-foreground: #60a5fa;
-  --color-info-dark-foreground: #002a66;
-  --color-info-inverse: #fff;
-  --color-overlay: #000000b3;
-  --color-shadow: #0000004d;
-  --color-hover: #ffffff0d;
-  --color-tooltip-bg: #1e1e2af2;
-  --color-tooltip-text: #e4e4ed;
-  --color-voice-purple: #8575ff;
-  --color-voice-purple-dark: #4200db;
-  --color-voice-purple-light: #8575ff;
-  --color-voice-red: #ff6b6b;
-  --color-voice-red-dark: #db0000;
-  --color-voice-amber: #fbbf24;
-  --color-voice-purple-glow: #8575ff66;
-  --color-voice-red-glow: #db000066;
-  --font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-mono: "SF Mono", "Monaco", "Menlo", "Consolas", monospace;
-  --text-2xs: .5625rem;
-  --text-xs: .625rem;
-  --text-sm: .6875rem;
-  --text-base: .75rem;
-  --text-md: .8125rem;
-  --text-lg: .875rem;
-  --text-xl: 1rem;
-  --text-2xl: 1.125rem;
-  --text-3xl: 1.25rem;
-  --text-4xl: 1.5rem;
-  --text-5xl: 2rem;
-  --spacing-1: calc(.25rem * 1);
-  --spacing-1-5: calc(.25rem * 1.5);
-  --spacing-2: calc(.25rem * 2);
-  --spacing-3: calc(.25rem * 3);
-  --spacing-4: calc(.25rem * 4);
-  --spacing-5: calc(.25rem * 5);
-  --spacing-6: calc(.25rem * 6);
-  --spacing-7: calc(.25rem * 7);
-  --spacing-8: calc(.25rem * 8);
-  --spacing-9: calc(.25rem * 9);
-  --spacing-10: calc(.25rem * 10);
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-card: 12px;
-  --radius-lg: 16px;
-  --radius-pill: 8px;
-  --shadow-sm: 0 1px 2px #0003;
-  --shadow-md: 0 4px 12px #0000004d;
-  --color-success-bg-solid: #1a3d28;
-  --color-error-bg-solid: #4a2028;
-  --color-error-border-solid: #5e1a24;
-  --color-warning-bg-solid: #4a3a1e;
-  --color-warning-text: #fbbf24;
-  --color-info-bg-solid: #1a3050;
-  --color-info-bg-solid-alt: #222240;
-  --color-info-text: #60a5fa;
-  --color-info-text-alt: #818cf8;
-  --color-emerald: #34d399;
-  --color-teal: #5eead4;
-  --color-code-bg: #1e1e2a;
-  --color-code-header-bg: #252535;
-  --color-code-text: #e4e4ed;
-  --color-code-border: #2e2e3e;
-  --color-code-muted: #6e6e82;
-  --color-inline-code-bg: #1e1e2a;
-  --color-inline-code-text: #e4e4ed;
-  --color-inline-code-border: #2e2e3e;
-  --color-scrollbar-thumb: #3a3a4e;
-  --color-scrollbar-track: transparent;
-  --color-graph-node-text: #e4e4ed;
-  --color-graph-node-text-dim: #6e6e82;
-  --color-graph-edge-default: #6e6e82;
-  --color-graph-edge-cross: #f39c12;
-  --color-graph-edge-text: #a0a0b4;
-  --color-graph-edge-stroke: #1a1a24;
-  --color-graph-highlight-bg: #ff6b6b;
-  --color-graph-highlight-border: #e74c3c;
-  --color-graph-search-bg: gold;
-  --color-graph-search-border: orange;
-  --color-graph-focus-border: #f44;
-  --color-graph-external-border: #6e6e82;
-  --color-graph-cat-file: #5dade2;
-  --color-graph-cat-folder: #aab7b8;
-  --color-graph-cat-file-aggregate: #5499c7;
-  --color-graph-cat-class: #bb8fce;
-  --color-graph-cat-function: #58d68d;
-  --color-graph-cat-method: #48c9b0;
-  --color-graph-cat-variable: #f5b041;
-  --color-graph-cat-import: #eb984e;
-  --color-graph-cat-module: #7e8ce0;
-  --color-graph-cat-concept: #ec7063;
-  --color-graph-cat-person: #ff8a8a;
-  --color-graph-cat-org: #76d7c4;
-  --color-graph-cat-organization: #76d7c4;
-  --color-graph-cat-product: #b8b0fe;
-  --color-graph-cat-metric: #fea0c0;
-  --color-graph-cat-location: #7e9bb5;
-  --color-graph-cat-date: #f092c0;
-  --color-graph-cat-code: #5dade2;
-  --color-graph-cat-doc: #aab7b8;
-  --color-graph-cat-url: #45d6b5;
-  --color-graph-cat-email: #8e7cf7;
-  --color-graph-cat-unknown: #d5dbdb;
-  --color-graph-rel-contains: #d5dbdb;
-  --color-graph-rel-extends: #bb8fce;
-  --color-graph-rel-implements: #5dade2;
-  --color-graph-rel-imports: #eb984e;
-  --color-graph-rel-uses: #58d68d;
-  --color-graph-rel-calls: #52be80;
-  --color-graph-rel-references: #f5b041;
-  --color-graph-rel-related-to: #aab7b8;
-  --color-graph-rel-works-on: #ec7063;
-  --color-graph-rel-owns: #48c9b0;
-  --color-graph-rel-depends-on: #eb984e;
-  --color-graph-rel-parent-of: #d5dbdb;
-  --qs-content: #fff;
-  --qs-main: #fff;
-  --qs-primary-foreground: #131920;
-  --qs-secondary-foreground: #656871;
-  --qs-tertiary-foreground: #6e6e82;
-  --qs-placeholder-foreground: #8c8c94;
-  --qs-divider: #dedee3;
-  --qs-default-border: #8c8c94;
-  --qs-neutral-soft: #b4b4bb;
-  --qs-neutral-gray-50: #1e1e2a;
-  --qs-tertiary-background: #1e1e2a;
-  --qs-action-hover: #f3f3f7;
-  --qs-primary-default: #4200db;
-  --qs-primary-dark: #35009e;
-  --qs-primary-light: #e8e6ff;
-  --qs-success-default: #00802f;
-  --qs-error-default: #db0000;
-  --qs-font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
-  --safe-top: 0px;
-  --safe-bottom: 0px;
-  --safe-left: 0px;
-  --safe-right: 0px;
-  --qs-font-family: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
-  --qs-font-base-letter-spacing: .15px;
-  --qs-shadow-sm: 0 0 2px 0 #00000029, 0 0 4px 0 #00000029;
-  --qs-shadow-md: 0 0 2px 0 #00000029, 0 2px 8px 1px #00000029;
-  --qs-shadow-lg: 0 4px 16px 4px #00000029, 0 2px 6px 1px #00000029;
-  --qs-shadow-xl: 0 4px 8px 2px #00000029, 0 6px 20px 4px #00000029;
-  --qs-width-modal-sm: 384px;
-  --qs-width-modal-md: 600px;
-  --qs-width-modal-lg: 1136px;
-  --qs-grid-gap: 16px;
-  --qs-grid-gap-xl: 24px;
-  --qs-primary-medium: #8575ff;
-  --qs-primary-inverse: #fff;
-  --qs-neutral-lightest: #f9f9fb;
-  --qs-neutral-light: #f3f3f7;
-  --qs-neutral-default: #dedee3;
-  --qs-neutral-medium: #8c8c94;
-  --qs-neutral-deep: #656871;
-  --qs-neutral-dark: #333843;
-  --qs-neutral-strong: #131920;
-  --qs-neutral-white: #fff;
-  --qs-neutral-black: #000;
-  --qs-success-medium: #005c26;
-  --qs-success-dark: #00471e;
-  --qs-success-light: #d9ffd6;
-  --qs-success-inverse: #fff;
-  --qs-info-default: #006ce0;
-  --qs-info-medium: #003b8f;
-  --qs-info-dark: #002a66;
-  --qs-info-light: #d1f1ff;
-  --qs-info-inverse: #fff;
-  --qs-warning-default: #f2b100;
-  --qs-warning-medium: #db9200;
-  --qs-warning-dark: #573a00;
-  --qs-warning-light: #fffbbd;
-  --qs-warning-inverse: #573a00;
-  --qs-warning-experimental: #f2b100;
-  --qs-warning-experimental-light: #fffbbd;
-  --qs-warning-experimental-light-foreground: #fffbbd;
-  --qs-error-medium: #900;
-  --qs-error-dark: #700000;
-  --qs-error-light: #ffe0e0;
-  --qs-error-inverse: #fff;
-  --qs-connection-default: #db3300;
-  --qs-connection-soft: #ff997a;
-  --qs-connection-light: #ffe0d6;
-  --qs-connection-dark: #661800;
-  --qs-automation-default: #b3008f;
-  --qs-automation-medium: #d600ba;
-  --qs-automation-soft: #ff94f1;
-  --qs-automation-light: #ffe0fb;
-  --qs-automation-dark: #660052;
-  --qs-insight-default: #a000b8;
-  --qs-insight-soft: #f299ff;
-  --qs-insight-light: #fce6ff;
-  --qs-insight-dark: #590066;
-  --qs-visualization-default: #7300e5;
-  --qs-visualization-soft: #d4a8ff;
-  --qs-visualization-light: #f2e5ff;
-  --qs-visualization-dark: #45008a;
-  --qs-spice: #ff9800;
-  --qs-coachmark: #006ce0;
-  --qs-brand: #fff;
-  --qs-brand-foreground: #131920;
-  --qs-brand-navbar: #131920;
-  --qs-brand-navbar-foreground: #fff;
-  --qs-brand-navbar-light: #dedee3;
-  --qs-brand-navbar-dark: #000;
-  --qs-application-navbar: #4200db;
-  --qs-application-navbar-foreground: #fff;
-  --qs-application-navbar-light: #e8e6ff;
-  --qs-application-navbar-dark: #35009e;
-  --qs-dimension: #4200db;
-  --qs-dimension-foreground: #fff;
-  --qs-dimension-experimental: #4200db;
-  --qs-dimension-experimental-foreground: #4200db;
-  --qs-measure: #00802f;
-  --qs-measure-foreground: #fff;
-  --qs-measure-experimental: #f2b100;
-  --qs-measure-experimental-foreground: #f2b100;
-  --qs-content-inverse: #333843;
-  --qs-content-inverse-active: #131920;
-  --qs-secondary: #dedee3;
-  --qs-disabled: #8c8c94;
-  --qs-divider-light: #f3f3f7;
-  --qs-hover-border: #333843;
-  --qs-active-border: #4200db;
-  --qs-disabled-border: #dedee3;
-  --qs-error-border: #ffe0e0;
-  --qs-error-active-border: #db0000;
-  --qs-disabled-foreground: #b4b4bb;
-  --qs-primary-inverse-foreground: #fff;
-  --qs-error-foreground: #db0000;
-  --qs-contrast-foreground: #131920;
-  --qs-main-foreground: #131920;
-  --qs-main-secondary-foreground: #656871;
-  --qs-action-disabled: #f3f3f7;
-  --qs-action-active: #e8e6ff;
-  --qs-default-badge: #dedee3;
-  --qs-tag-default: #dedee3;
-  --qs-tag-soft-border: #b4b4bb;
-  --qs-focus-offset: 1px;
-  --qs-toggle-tile-sm: calc(.25rem * 8);
-  --qs-toggle-tile-md: calc(.25rem * 12);
-  --qs-toggle-tile-lg: calc(.25rem * 15);
-  --qs-shadow-pin-right: inset 4px 0 4px -4px #00000029;
-  --qs-shadow-pin-left: inset -4px 0 4px -4px #00000029;
-  --react-pdf-text-layer: 1;
-  --highlight-bg-color: #b400aa;
-  --highlight-selected-bg-color: #006400;
-  --react-pdf-annotation-layer: 1;
-  --annotation-unfocused-field-background: url("data:image/svg+xml;charset=UTF-8,<svg width='1px' height='1px' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill:rgba(0, 54, 255, 0.13);'/></svg>");
-  --input-focus-border-color: Highlight;
-  --input-focus-outline: 1px solid Canvas;
-  --input-unfocused-border-color: transparent;
-  --input-disabled-border-color: transparent;
-  --input-hover-border-color: black;
-  --link-outline: none;
-  color-scheme: dark;
-}
-body { background: var(--color-bg); color: var(--color-text); }
-a { color: var(--color-link, var(--color-primary)); }</style>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>우신희 — CS &amp; UE5 학습 대시보드</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+```xml
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>우신희 — CS & UE5 학습 대시보드</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap");
 
-    :root {
-      --bg: #0a0a0f;
-      --bg-card: #12121a;
-      --bg-card-hover: #1a1a26;
-      --border: rgba(255,255,255,0.06);
-      --border-hover: rgba(255,255,255,0.12);
-      --text: #e8e8ed;
-      --text-secondary: #9898a8;
-      --text-muted: #5a5a6e;
-      --accent-blue: #6c8cff;
-      --accent-green: #4ade80;
-      --accent-purple: #a78bfa;
-      --accent-orange: #fb923c;
-      --accent-blue-bg: rgba(108,140,255,0.08);
-      --accent-green-bg: rgba(74,222,128,0.08);
-      --accent-purple-bg: rgba(167,139,250,0.08);
-      --accent-orange-bg: rgba(251,146,60,0.08);
-      --font-sans: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
-      --radius: 16px;
-      --radius-sm: 10px;
-    }
+      :root {
+        --bg: #0a0a0f;
+        --bg-card: #12121a;
+        --bg-card-hover: #1a1a26;
+        --border: rgba(255, 255, 255, 0.06);
+        --border-hover: rgba(255, 255, 255, 0.12);
+        --text: #e8e8ed;
+        --text-secondary: #9898a8;
+        --text-muted: #5a5a6e;
+        --accent-blue: #6c8cff;
+        --accent-green: #4ade80;
+        --accent-purple: #a78bfa;
+        --accent-orange: #fb923c;
+        --accent-blue-bg: rgba(108, 140, 255, 0.08);
+        --accent-green-bg: rgba(74, 222, 128, 0.08);
+        --accent-purple-bg: rgba(167, 139, 250, 0.08);
+        --accent-orange-bg: rgba(251, 146, 60, 0.08);
+        --font-sans:
+          "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        --font-mono: "JetBrains Mono", "SF Mono", Consolas, monospace;
+        --radius: 16px;
+        --radius-sm: 10px;
+      }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font-sans);
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
 
-    /* ─── Background Glow ─── */
-    .bg-glow {
-      position: fixed;
-      top: -30%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 800px;
-      height: 600px;
-      background: radial-gradient(ellipse, rgba(108,140,255,0.06) 0%, transparent 70%);
-      pointer-events: none;
-      z-index: 0;
-    }
+      /* ─── Background Glow ─── */
+      .bg-glow {
+        position: fixed;
+        top: -30%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 800px;
+        height: 600px;
+        background: radial-gradient(
+          ellipse,
+          rgba(108, 140, 255, 0.06) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+        z-index: 0;
+      }
 
-    /* ─── Container ─── */
-    .container {
-      position: relative;
-      z-index: 1;
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 60px 24px 80px;
-    }
+      /* ─── Container ─── */
+      .container {
+        position: relative;
+        z-index: 1;
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 60px 24px 80px;
+      }
 
-    /* ─── Header ─── */
-    .header {
-      text-align: center;
-      margin-bottom: 56px;
-    }
-    .header-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent-blue);
-      background: var(--accent-blue-bg);
-      border: 1px solid rgba(108,140,255,0.15);
-      padding: 6px 16px;
-      border-radius: 100px;
-      margin-bottom: 24px;
-    }
-    .header h1 {
-      font-size: 40px;
-      font-weight: 900;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      margin-bottom: 12px;
-    }
-    .header h1 .gradient {
-      background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .header p {
-      font-size: 16px;
-      color: var(--text-secondary);
-      line-height: 1.6;
-      max-width: 520px;
-      margin: 0 auto;
-    }
+      /* ─── Header ─── */
+      .header {
+        text-align: center;
+        margin-bottom: 56px;
+      }
+      .header-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent-blue);
+        background: var(--accent-blue-bg);
+        border: 1px solid rgba(108, 140, 255, 0.15);
+        padding: 6px 16px;
+        border-radius: 100px;
+        margin-bottom: 24px;
+      }
+      .header h1 {
+        font-size: 40px;
+        font-weight: 900;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        margin-bottom: 12px;
+      }
+      .header h1 .gradient {
+        background: linear-gradient(
+          135deg,
+          var(--accent-blue) 0%,
+          var(--accent-purple) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .header p {
+        font-size: 16px;
+        color: var(--text-secondary);
+        line-height: 1.6;
+        max-width: 520px;
+        margin: 0 auto;
+      }
 
-    /* ─── Stats Bar ─── */
-    .stats-bar {
-      display: flex;
-      justify-content: center;
-      gap: 32px;
-      margin-bottom: 48px;
-      flex-wrap: wrap;
-    }
-    .stat {
-      text-align: center;
-    }
-    .stat-value {
-      font-family: var(--font-mono);
-      font-size: 28px;
-      font-weight: 700;
-      color: var(--text);
-    }
-    .stat-label {
-      font-size: 12px;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-top: 4px;
-    }
+      /* ─── Stats Bar ─── */
+      .stats-bar {
+        display: flex;
+        justify-content: center;
+        gap: 32px;
+        margin-bottom: 48px;
+        flex-wrap: wrap;
+      }
+      .stat {
+        text-align: center;
+      }
+      .stat-value {
+        font-family: var(--font-mono);
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--text);
+      }
+      .stat-label {
+        font-size: 12px;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-top: 4px;
+      }
 
-    /* ─── Cards Grid ─── */
-    .cards {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
+      /* ─── Cards Grid ─── */
+      .cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
 
-    .card {
-      display: block;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px 32px;
-      text-decoration: none;
-      color: inherit;
-      transition: all 0.25s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      opacity: 0;
-      transition: opacity 0.25s ease;
-    }
-    .card:hover {
-      background: var(--bg-card-hover);
-      border-color: var(--border-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-    }
-    .card:hover::before { opacity: 1; }
-
-    .card-blue::before { background: linear-gradient(90deg, var(--accent-blue), transparent); }
-    .card-green::before { background: linear-gradient(90deg, var(--accent-green), transparent); }
-    .card-purple::before { background: linear-gradient(90deg, var(--accent-purple), transparent); }
-
-    .card-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      margin-bottom: 16px;
-    }
-    .card-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: var(--radius-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      flex-shrink: 0;
-    }
-    .card-blue .card-icon { background: var(--accent-blue-bg); color: var(--accent-blue); }
-    .card-green .card-icon { background: var(--accent-green-bg); color: var(--accent-green); }
-    .card-purple .card-icon { background: var(--accent-purple-bg); color: var(--accent-purple); }
-
-    .card-arrow {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-muted);
-      transition: all 0.25s ease;
-      font-size: 14px;
-    }
-    .card:hover .card-arrow {
-      color: var(--text);
-      transform: translateX(4px);
-    }
-
-    .card h2 {
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 6px;
-      line-height: 1.3;
-    }
-    .card .card-desc {
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.5;
-      margin-bottom: 16px;
-    }
-
-    .card-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .tag {
-      font-size: 11px;
-      font-weight: 500;
-      padding: 4px 10px;
-      border-radius: 100px;
-      letter-spacing: 0.02em;
-    }
-    .card-blue .tag { background: var(--accent-blue-bg); color: var(--accent-blue); }
-    .card-green .tag { background: var(--accent-green-bg); color: var(--accent-green); }
-    .card-purple .tag { background: var(--accent-purple-bg); color: var(--accent-purple); }
-
-    .card-meta {
-      display: flex;
-      gap: 16px;
-      margin-top: 16px;
-      padding-top: 16px;
-      border-top: 1px solid var(--border);
-    }
-    .meta-item {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .meta-item i { font-size: 12px; }
-
-    /* ─── Footer ─── */
-    .footer {
-      text-align: center;
-      margin-top: 56px;
-      padding-top: 32px;
-      border-top: 1px solid var(--border);
-    }
-    .footer p {
-      font-size: 13px;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-    .footer a {
-      color: var(--accent-blue);
-      text-decoration: none;
-    }
-    .footer a:hover { text-decoration: underline; }
-    .footer .name {
-      font-weight: 600;
-      color: var(--text-secondary);
-    }
-
-    /* ─── Responsive ─── */
-    @media (max-width: 640px) {
-      .container { padding: 40px 16px 60px; }
-      .header h1 { font-size: 28px; }
-      .stats-bar { gap: 20px; }
-      .stat-value { font-size: 22px; }
-      .card { padding: 20px 20px; }
-      .card h2 { font-size: 17px; }
-    }
-
-    /* ─── Animations ─── */
-    @media (prefers-reduced-motion: no-preference) {
-      .animate {
+      .card {
+        display: block;
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 28px 32px;
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.25s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
         opacity: 0;
-        transform: translateY(16px);
-        transition: opacity 0.5s ease, transform 0.5s ease;
+        transition: opacity 0.25s ease;
       }
-      .animate.visible {
+      .card:hover {
+        background: var(--bg-card-hover);
+        border-color: var(--border-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      }
+      .card:hover::before {
         opacity: 1;
-        transform: translateY(0);
       }
-    }
-  </style>
-</head>
-<body>
 
-<div class="bg-glow"></div>
+      .card-blue::before {
+        background: linear-gradient(90deg, var(--accent-blue), transparent);
+      }
+      .card-green::before {
+        background: linear-gradient(90deg, var(--accent-green), transparent);
+      }
+      .card-purple::before {
+        background: linear-gradient(90deg, var(--accent-purple), transparent);
+      }
 
-<div class="container">
+      .card-top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-bottom: 16px;
+      }
+      .card-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: var(--radius-sm);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        flex-shrink: 0;
+      }
+      .card-blue .card-icon {
+        background: var(--accent-blue-bg);
+        color: var(--accent-blue);
+      }
+      .card-green .card-icon {
+        background: var(--accent-green-bg);
+        color: var(--accent-green);
+      }
+      .card-purple .card-icon {
+        background: var(--accent-purple-bg);
+        color: var(--accent-purple);
+      }
 
-  <!-- Header -->
-  <div class="header animate">
-    <div class="header-label">
-      <i class="fa-solid fa-graduation-cap"></i>
-      Self-Directed Learning
+      .card-arrow {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-muted);
+        transition: all 0.25s ease;
+        font-size: 14px;
+      }
+      .card:hover .card-arrow {
+        color: var(--text);
+        transform: translateX(4px);
+      }
+
+      .card h2 {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 6px;
+        line-height: 1.3;
+      }
+      .card .card-desc {
+        font-size: 14px;
+        color: var(--text-secondary);
+        line-height: 1.5;
+        margin-bottom: 16px;
+      }
+
+      .card-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .tag {
+        font-size: 11px;
+        font-weight: 500;
+        padding: 4px 10px;
+        border-radius: 100px;
+        letter-spacing: 0.02em;
+      }
+      .card-blue .tag {
+        background: var(--accent-blue-bg);
+        color: var(--accent-blue);
+      }
+      .card-green .tag {
+        background: var(--accent-green-bg);
+        color: var(--accent-green);
+      }
+      .card-purple .tag {
+        background: var(--accent-purple-bg);
+        color: var(--accent-purple);
+      }
+
+      .card-meta {
+        display: flex;
+        gap: 16px;
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px solid var(--border);
+      }
+      .meta-item {
+        font-family: var(--font-mono);
+        font-size: 12px;
+        color: var(--text-muted);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .meta-item i {
+        font-size: 12px;
+      }
+
+      /* ─── Footer ─── */
+      .footer {
+        text-align: center;
+        margin-top: 56px;
+        padding-top: 32px;
+        border-top: 1px solid var(--border);
+      }
+      .footer p {
+        font-size: 13px;
+        color: var(--text-muted);
+        line-height: 1.6;
+      }
+      .footer a {
+        color: var(--accent-blue);
+        text-decoration: none;
+      }
+      .footer a:hover {
+        text-decoration: underline;
+      }
+      .footer .name {
+        font-weight: 600;
+        color: var(--text-secondary);
+      }
+
+      /* ─── Responsive ─── */
+      @media (max-width: 640px) {
+        .container {
+          padding: 40px 16px 60px;
+        }
+        .header h1 {
+          font-size: 28px;
+        }
+        .stats-bar {
+          gap: 20px;
+        }
+        .stat-value {
+          font-size: 22px;
+        }
+        .card {
+          padding: 20px 20px;
+        }
+        .card h2 {
+          font-size: 17px;
+        }
+      }
+
+      /* ─── Animations ─── */
+      @media (prefers-reduced-motion: no-preference) {
+        .animate {
+          opacity: 0;
+          transform: translateY(16px);
+          transition:
+            opacity 0.5s ease,
+            transform 0.5s ease;
+        }
+        .animate.visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-glow"></div>
+
+    <div class="container">
+      <!-- Header -->
+      <div class="header animate">
+        <div class="header-label">
+          <i class="fa-solid fa-graduation-cap"></i>
+          Self-Directed Learning
+        </div>
+        <h1>CS & UE5 <span class="gradient">학습 대시보드</span></h1>
+        <p>
+          강의를 타이핑만 하는 게 아니라, 개념을 구조화하고 인터랙티브
+          대시보드로 정리합니다.
+        </p>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-bar animate">
+        <div class="stat">
+          <div class="stat-value">20+</div>
+          <div class="stat-label">Topics</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">155+</div>
+          <div class="stat-label">Code Blocks</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">30+</div>
+          <div class="stat-label">Tables</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">50</div>
+          <div class="stat-label">Source Files Analyzed</div>
+        </div>
+      </div>
+
+      <!-- Cards -->
+      <div class="cards">
+        <a href="cs_basic.html" class="card card-blue animate">
+          <div class="card-top">
+            <div class="card-icon"><i class="fa-solid fa-microchip"></i></div>
+            <div class="card-arrow">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+          <h2>📘 CS 기초 — 엘든링 비유 시리즈</h2>
+          <div class="card-desc">
+            게임 개발자를 위한 CS 핵심 개념 10편 통합. 컴퓨터 동작부터
+            네트워크까지, 모든 개념을 엘든링 보스전 상황으로 풀어낸 인터랙티브
+            대시보드.
+          </div>
+          <div class="card-tags">
+            <span class="tag">컴퓨터 구조</span>
+            <span class="tag">자료구조</span>
+            <span class="tag">운영체제</span>
+            <span class="tag">C++ 핵심</span>
+            <span class="tag">네트워크</span>
+            <span class="tag">게임 설계</span>
+          </div>
+          <div class="card-meta">
+            <div class="meta-item">
+              <i class="fa-solid fa-layer-group"></i> 9 Chapters
+            </div>
+            <div class="meta-item">
+              <i class="fa-solid fa-code"></i> 155 Code Blocks
+            </div>
+            <div class="meta-item">
+              <i class="fa-solid fa-table"></i> 30 Tables
+            </div>
+          </div>
+        </a>
+
+        <a href="cs_advanced.html" class="card card-green animate">
+          <div class="card-top">
+            <div class="card-icon"><i class="fa-solid fa-brain"></i></div>
+            <div class="card-arrow">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+          <h2>📗 CS 심화 — 면접 대비 & 게임 수학</h2>
+          <div class="card-desc">
+            모의면접 약점 보강 + 게임 수학(벡터·내적) + 캐시 효율(AoS vs SoA) +
+            상태 패턴. 면접 킬러 질문에 대한 30초 답변 템플릿까지.
+          </div>
+          <div class="card-tags">
+            <span class="tag">우선순위 큐 & 힙</span>
+            <span class="tag">벡터 연산</span>
+            <span class="tag">AoS vs SoA</span>
+            <span class="tag">상태 패턴</span>
+            <span class="tag">면접 킬러 용어</span>
+          </div>
+          <div class="card-meta">
+            <div class="meta-item">
+              <i class="fa-solid fa-layer-group"></i> 5 Chapters
+            </div>
+            <div class="meta-item">
+              <i class="fa-solid fa-bullseye"></i> 9 Interview Topics
+            </div>
+          </div>
+        </a>
+
+        <a href="gas_warrior.html" class="card card-purple animate">
+          <div class="card-top">
+            <div class="card-icon"><i class="fa-solid fa-khanda"></i></div>
+            <div class="card-arrow">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+          <h2>⚔️ GAS Warrior — 프로젝트 아키텍처</h2>
+          <div class="card-desc">
+            UE5 GAS(Gameplay Ability System) 기반 액션 게임 프로젝트. 50개 소스
+            파일의 전체 구조를 분석하고, 클래스 상속 트리 · 생명주기 · #include
+            관계까지 시각화.
+          </div>
+          <div class="card-tags">
+            <span class="tag">24 Classes</span>
+            <span class="tag">13 GameplayTags</span>
+            <span class="tag">61 #include</span>
+            <span class="tag">GAS Architecture</span>
+          </div>
+          <div class="card-meta">
+            <div class="meta-item">
+              <i class="fa-solid fa-file-code"></i> 50 Source Files
+            </div>
+            <div class="meta-item">
+              <i class="fa-solid fa-sitemap"></i> Full Class Tree
+            </div>
+            <div class="meta-item">
+              <i class="fa-solid fa-clock-rotate-left"></i> Lifecycle Map
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer animate">
+        <p>
+          <span class="name">우신희</span> — Game Programmer Candidate<br />
+          AI 활용 자기주도 학습 · 구조 분석 · 인터랙티브 정리
+        </p>
+      </div>
     </div>
-    <h1>CS &amp; UE5 <span class="gradient">학습 대시보드</span></h1>
-    <p>강의를 타이핑만 하는 게 아니라, 개념을 구조화하고 인터랙티브 대시보드로 정리합니다.</p>
-  </div>
 
-  <!-- Stats -->
-  <div class="stats-bar animate">
-    <div class="stat">
-      <div class="stat-value">20+</div>
-      <div class="stat-label">Topics</div>
-    </div>
-    <div class="stat">
-      <div class="stat-value">155+</div>
-      <div class="stat-label">Code Blocks</div>
-    </div>
-    <div class="stat">
-      <div class="stat-value">30+</div>
-      <div class="stat-label">Tables</div>
-    </div>
-    <div class="stat">
-      <div class="stat-value">50</div>
-      <div class="stat-label">Source Files Analyzed</div>
-    </div>
-  </div>
-
-  <!-- Cards -->
-  <div class="cards">
-
-    <a href="cs-basic.html" class="card card-blue animate">
-      <div class="card-top">
-        <div class="card-icon"><i class="fa-solid fa-microchip"></i></div>
-        <div class="card-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-      </div>
-      <h2>📘 CS 기초 — 엘든링 비유 시리즈</h2>
-      <div class="card-desc">
-        게임 개발자를 위한 CS 핵심 개념 10편 통합. 컴퓨터 동작부터 네트워크까지, 모든 개념을 엘든링 보스전 상황으로 풀어낸 인터랙티브 대시보드.
-      </div>
-      <div class="card-tags">
-        <span class="tag">컴퓨터 구조</span>
-        <span class="tag">자료구조</span>
-        <span class="tag">운영체제</span>
-        <span class="tag">C++ 핵심</span>
-        <span class="tag">네트워크</span>
-        <span class="tag">게임 설계</span>
-      </div>
-      <div class="card-meta">
-        <div class="meta-item"><i class="fa-solid fa-layer-group"></i> 9 Chapters</div>
-        <div class="meta-item"><i class="fa-solid fa-code"></i> 155 Code Blocks</div>
-        <div class="meta-item"><i class="fa-solid fa-table"></i> 30 Tables</div>
-      </div>
-    </a>
-
-    <a href="cs-advanced.html" class="card card-green animate">
-      <div class="card-top">
-        <div class="card-icon"><i class="fa-solid fa-brain"></i></div>
-        <div class="card-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-      </div>
-      <h2>📗 CS 심화 — 면접 대비 &amp; 게임 수학</h2>
-      <div class="card-desc">
-        모의면접 약점 보강 + 게임 수학(벡터·내적) + 캐시 효율(AoS vs SoA) + 상태 패턴. 면접 킬러 질문에 대한 30초 답변 템플릿까지.
-      </div>
-      <div class="card-tags">
-        <span class="tag">우선순위 큐 &amp; 힙</span>
-        <span class="tag">벡터 연산</span>
-        <span class="tag">AoS vs SoA</span>
-        <span class="tag">상태 패턴</span>
-        <span class="tag">면접 킬러 용어</span>
-      </div>
-      <div class="card-meta">
-        <div class="meta-item"><i class="fa-solid fa-layer-group"></i> 5 Chapters</div>
-        <div class="meta-item"><i class="fa-solid fa-bullseye"></i> 9 Interview Topics</div>
-      </div>
-    </a>
-
-    <a href="gas-warrior.html" class="card card-purple animate">
-      <div class="card-top">
-        <div class="card-icon"><i class="fa-solid fa-sword"></i></div>
-        <div class="card-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-      </div>
-      <h2>⚔️ GAS Warrior — 프로젝트 아키텍처</h2>
-      <div class="card-desc">
-        UE5 GAS(Gameplay Ability System) 기반 액션 게임 프로젝트. 50개 소스 파일의 전체 구조를 분석하고, 클래스 상속 트리 · 생명주기 · #include 관계까지 시각화.
-      </div>
-      <div class="card-tags">
-        <span class="tag">24 Classes</span>
-        <span class="tag">13 GameplayTags</span>
-        <span class="tag">61 #include</span>
-        <span class="tag">GAS Architecture</span>
-      </div>
-      <div class="card-meta">
-        <div class="meta-item"><i class="fa-solid fa-file-code"></i> 50 Source Files</div>
-        <div class="meta-item"><i class="fa-solid fa-sitemap"></i> Full Class Tree</div>
-        <div class="meta-item"><i class="fa-solid fa-clock-rotate-left"></i> Lifecycle Map</div>
-      </div>
-    </a>
-
-  </div>
-
-  <!-- Footer -->
-  <div class="footer animate">
-    <p>
-      <span class="name">우신희</span> — Game Programmer Candidate<br>
-      AI 활용 자기주도 학습 · 구조 분석 · 인터랙티브 정리
-    </p>
-  </div>
-
-</div>
-
-<script>
-  // Entrance animations
-  const els = document.querySelectorAll('.animate');
-  els.forEach((el, i) => {
-    setTimeout(() => el.classList.add('visible'), 100 + i * 120);
-  });
-</script>
-
-
-
-</body></html>
+    <script>
+      // Entrance animations
+      const els = document.querySelectorAll(".animate");
+      els.forEach((el, i) => {
+        setTimeout(() => el.classList.add("visible"), 100 + i * 120);
+      });
+    </script>
+  </body>
+</html>
+```
