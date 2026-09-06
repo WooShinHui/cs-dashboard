@@ -586,7 +586,7 @@ body{
 <!-- ========== MASTER HEADER ========== -->
 <div class="master-header">
   <h1>⚔️ GAS Warrior — 프로젝트 아키텍처</h1>
-  <p>Source/Warrior 전체 소스코드 분석 · 50 files · 24 classes · 13 GameplayTags · 61 #include</p>
+  <p>Source/Warrior 전체 소스코드 분석 · 50 files · 24 classes · 14 GameplayTags · 61 #include</p>
   <div class="master-stats">
     <div class="ms">📁 <b>50</b> files</div>
     <div class="ms">🏛️ <b>24</b> classes</div>
@@ -756,7 +756,7 @@ body{
 </g>
 <g class="bp-node" data-id="tags">
 <rect x="100" y="1010" width="1720" height="160" rx="12" fill="#EDE7F6" stroke="#7E57C2" stroke-width="2"></rect>
-<text x="960" y="1042" text-anchor="middle" font-size="16" fill="#4527A0" font-weight="700">🏷️ WarriorGameplayTags (13개) — 시스템 간 느슨한 연결 고리</text>
+<text x="960" y="1042" text-anchor="middle" font-size="16" fill="#4527A0" font-weight="700">🏷️ WarriorGameplayTags (14개) — 시스템 간 느슨한 연결 고리</text>
 <text x="960" y="1064" text-anchor="middle" font-size="12" fill="#7B1FA2">독립적으로 정의됨 — 이벤트와 매칭으로만 시스템과 연결</text>
 <rect x="130" y="1080" width="440" height="75" rx="6" fill="#E8F5E9" stroke="#A5D6A7" stroke-width="1"></rect>
 <text x="145" y="1100" font-size="11" fill="#2E7D32" font-weight="700">INPUT TAGS (6개)</text>
@@ -1030,6 +1030,11 @@ body{
       <tr><td>InputTag_UnequipAxe</td><td><span class="tag input">InputTag.UnequipAxe</span></td><td>도끼 해제 (Ability 바인딩)</td></tr>
       <tr><td>InputTag_LightAttack_Axe</td><td><span class="tag input">InputTag.LightAttack.Axe</span></td><td>약공격 (Ability 바인딩)</td></tr>
       <tr><td>InputTag_HeavyAttack_Axe</td><td><span class="tag input">InputTag.HeavyAttack.Axe</span></td><td>강공격 (Ability 바인딩)</td></tr>
+    </tbody></table>
+    <div class="section-label">Status Tags (1개) — 상태 플래그</div>
+    <table>
+      <tbody><tr><th>변수명</th><th>태그 문자열</th><th>용도</th></tr>
+      <tr><td>Player_Status_JumpToFinisher</td><td><span class="tag ability">Player.Status.JumpToFinisher</span></td><td>콤보 피니셔 전환 가능 상태 플래그</td></tr>
     </tbody></table>
     <div class="section-label">Ability Tags (4개) — GA와 매핑</div>
     <table>
@@ -1383,7 +1388,7 @@ A: "Enhanced Input의 InputAction을 GameplayTag와 쌍으로 DataAsset에 정�
       "startup_base":{t:"UDataAsset_StartUpDataBase",f:"DataAsset_StartUpDataBase.h/.cpp",d:"OnGivenAbilities[] — 즉시 GA<br>ReactiveAbilities[] — 입력 GA<br>GiveToAbilitySystemComponent()"},
       "hero_startup":{t:"UDataAsset_HeroStartUpData",f:"DataAsset_HeroStartUpData.h/.cpp",d:"부모 + HeroStartUpAbilitySets[]<br>InputTag + AbilityToGrant 쌍"},
       "input_config":{t:"UDataAsset_InputConfig",f:"DataAsset_InputConfig.h/.cpp",d:"DefaultMappingContext — 기본 입력<br>NativeInputActions[] — Move, Look<br>AbilityInputActions[] — Equip, Attack"},
-      "tags":{t:"WarriorGameplayTags",f:"WarriorGameplayTags.h/.cpp",d:"<b>13개 태그 — 느슨한 연결 고리</b><br>1. 입력 바인딩 페이로드<br>2. ASC DynamicAbilityTags 매칭<br>3. CombatComponent TMap 키"}
+      "tags":{t:"WarriorGameplayTags",f:"WarriorGameplayTags.h/.cpp",d:"<b>14개 태그 — 느슨한 연결 고리</b><br>1. 입력 바인딩 페이로드<br>2. ASC DynamicAbilityTags 매칭<br>3. CombatComponent TMap 키<br>4. Status 플래그 (JumpToFinisher)"}
     };
     const tt=document.getElementById('bpTooltip');
     document.querySelectorAll('#p-blueprint .bp-node').forEach(function(n){
