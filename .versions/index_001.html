@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>우신희 — CS & UE5 학습 대시보드 + 면접 연구소</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+      :root {
+        --bg: #0a0a0f;
+        --bg-card: #12121a;
+        --bg-card-hover: #1a1a26;
+        --border: rgba(255, 255, 255, 0.06);
+        --border-hover: rgba(255, 255, 255, 0.12);
+        --text: #e8e8ed;
+        --text-secondary: #9898a8;
+        --text-muted: #5a5a6e;
+        --accent-blue: #6c8cff;
+        --accent-green: #4ade80;
+        --accent-purple: #a78bfa;
+        --accent-orange: #fb923c;
+        --accent-blue-bg: rgba(108, 140, 255, 0.08);
+        --accent-green-bg: rgba(74, 222, 128, 0.08);
+        --accent-purple-bg: rgba(167, 139, 250, 0.08);
+        --accent-orange-bg: rgba(251, 146, 60, 0.08);
+        --font-sans:
+          "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        --font-mono: "JetBrains Mono", "SF Mono", Consolas, monospace;
+        --radius: 16px;
+        --radius-sm: 10px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      /* ─── Background Glow ─── */
+      .bg-glow {
+        position: fixed;
+        top: -30%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 800px;
+        height: 600px;
+        background: radial-gradient(
+          ellipse,
+          rgba(108, 140, 255, 0.06) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      /* ─── Container ─── */
+      .container {
+        position: relative;
+        z-index: 1;
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 60px 24px 80px;
+      }
+
+      /* ─── Header ─── */
+      .header {
+        text-align: center;
+        margin-bottom: 56px;
+      }
+      .header-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent-blue);
+        background: var(--accent-blue-bg);
+        border: 1px solid rgba(108, 140, 255, 0.15);
+        padding: 6px 16px;
+        border-radius: 100px;
+        margin-bottom: 24px;
+      }
+      .header h1 {
+        font-size: 40px;
+        font-weight: 900;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        margin-bottom: 12px;
+      }
+      .header h1 .gradient {
+        background: linear-gradient(
+          135deg,
+          var(--accent-blue) 0%,
+          var(--accent-purple) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .header p {
+        font-size: 16px;
+        color: var(--text-secondary);
+        line-height: 1.6;
+        max-width: 520px;
+        margin: 0 auto;
+      }
+
+      /* ─── Stats Bar ─── */
+      .stats-bar {
+        display: flex;
+        justify-content: center;
+        gap: 32px;
+        margin-bottom: 48px;
+        flex-wrap: wrap;
+      }
+      .stat {
+        text-align: center;
+      }
+      .stat-value {
+        font-family: var(--font-mono);
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--text);
+      }
+      .stat-label {
+        font-size: 12px;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-top: 4px;
+      }
+
+      /* ─── Cards Grid ─── */
+      .cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .card {
+        display: block;
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 28px 32px;
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.25s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        opacity: 0;
+        transition: opacity 0.25s ease;
+      }
+      .card:hover {
+        background: var(--bg-card-hover);
+        border-color: var(--border-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      }
+      .card:hover::before {
+        opacity: 1;
+      }
+
+      .card-blue::before {
+        background: linear-gradient(90deg, var(--accent-blue), transparent);
+      }
+      .card-green::before {
+        background: linear-gradient(90deg, var(--accent-green), transparent);
+      }
+      .card-purple::before {
+        background: linear-gradient(90deg, var(--accent-purple), transparent);
+      }
+      .card-orange::before {
+        background: linear-gradient(90deg, var(--accent-orange), transparent);
+      }
+
+      .card-top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-bottom: 16px;
+      }
+      .card-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: var(--radius-sm);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        flex-shrink: 0;
+      }
+      .card-blue .card-icon {
+        background: var(--accent-blue-bg);
+        color: var(--accent-blue);
+      }
+      .card-green .card-icon {
+        background: var(--accent-green-bg);
+        color: var(--accent-green);
+      }
+      .card-purple .card-icon {
+        background: var(--accent-purple-bg);
+        color: var(--accent-purple);
+      }
+
+      .card-arrow {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-muted);
+        transition: all 0.25s ease;
+        font-size: 14px;
+      }
+      .card:hover .card-arrow {
+        color: var(--text);
+        transform: translateX(4px);
+      }
+
+      .card h2 {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 6px;
+        line-height: 1.3;
+      }
+      .card .card-desc {
+        font-size: 14px;
+        color: var(--text-secondary);
+        line-height: 1.5;
+        margin-bottom: 16px;
+      }
+
+      .card-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .tag {
+        font-size: 11px;
+        font-weight: 500;
+        padding: 4px 10px;
+        border-radius: 100px;
+        letter-spacing: 0.02em;
+      }
+      .card-blue .tag {
+        background: var(--accent-blue-bg);
+        color: var(--accent-blue);
+      }
+      .card-green .tag {
+        background: var(--accent-green-bg);
+        color: var(--accent-green);
+      }
+      .card-purple .tag {
+        background: var(--accent-purple-bg);
+        color: var(--accent-purple);
+      }
+
+      .card-meta {
+        display: flex;
+        gap: 16px;
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px solid var(--border);
+      }
+      .meta-item {
+        font-family: var(--font-mono);
+        font-size: 12px;
+        color: var(--text-muted);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .meta-item i {
+        font-size: 12px;
+      }
+
+      /* ─── Footer ─── */
+      .footer {
+        text-align: center;
+        margin-top: 56px;
+        padding-top: 32px;
+        border-top: 1px solid var(--border);
+      }
+      .footer p {
+        font-size: 13px;
+        color: var(--text-muted);
+        line-height: 1.6;
+      }
+      .footer a {
+        color: var(--accent-blue);
+        text-decoration: none;
+      }
+      .footer a:hover {
+        text-decoration: underline;
+      }
+      .footer .name {
+        font-weight: 600;
+        color: var(--text-secondary);
+      }
+
+      /* ─── Responsive ─── */
+      @media (max-width: 640px) {
+        .container {
+          padding: 40px 16px 60px;
+        }
+        .header h1 {
+          font-size: 28px;
+        }
+        .stats-bar {
+          gap: 20px;
+        }
+        .stat-value {
+          font-size: 22px;
+        }
+        .card {
+          padding: 20px 20px;
+        }
+        .card h2 {
+          font-size: 17px;
+        }
+      }
+
+      /* ─── Animations ─── */
+      @media (prefers-reduced-motion: no-preference) {
+        .animate {
+          opacity: 0;
+          transform: translateY(16px);
+          transition:
+            opacity 0.5s ease,
+            transform 0.5s ease;
+        }
+        .animate.visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-glow"></div>
+
+    <div class="container">
+      <!-- Header -->
+      <div class="header animate">
+        <div class="header-label">
+          <i class="fa-solid fa-graduation-cap"></i>
+          Self-Directed Learning
+        </div>
+        <h1>CS & UE5 <span class="gradient">학습 대시보드</span></h1>
+        <p>
+          강의를 타이핑만 하는 게 아니라, 개념을 구조화하고 인터랙티브
+          대시보드로 정리합니다.
+        </p>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-bar animate">
+        <div class="stat">
+          <div class="stat-value">20+</div>
+          <div class="stat-label">Topics</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">155+</div>
+          <div class="stat-label">Code Blocks</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">30+</div>
+          <div class="stat-label">Tables</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">50</div>
+          <div class="stat-label">Source Files Analyzed</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">35</div>
+          <div class="stat-label">3D Simulations</div>
+        </div>
+      </div>
+
+      <!-- Cards -->
+      <div class="cards">
+        <a href="cs_basic.html" class="card card-blue animate">
+          <div class="card-top">
+            <div class="card-icon"><i class="fa-solid fa-microchip"></i></div>
+            <div class="card-arrow">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+          <h2>📘 CS 기초 — 엘든링 비유 시리즈</h2>
+          <div class="card-desc">
+            게임 개발자를 위한 CS 핵심 개념 10편 통합. 컴퓨터 동작부터
+            네트워크까지, 모든 개념을 엘든링 보스전 상황으로 풀어낸 인터랙티브
+            대시보드.
+          </div>
+          <div class="card-tags">
+            <span class="tag">컴퓨터 구조</span>
+            <span class="tag">자료구조</span>
+            <span class="tag">운영체제</span>
+            <span class="tag">C++ 핵심</span>
+            <span class="tag">네트워크</span>
+            <span class="tag">게임 설계</span>
+          </div>
+          <div class="card-meta">
+            <div class="meta-item">
+              <i class="fa-solid fa-layer-group"></i> 9 Chapters
+            </div>
+            <div class="meta-item">
+              <i class="fa-solid fa-code"></i> 155 Code Blocks
+            </div>
+            <div class="meta-item">
+              <i class="fa-solid fa-table"></i> 30 Tables
+            </div>
+          </div>
+        </a>
+
+        <a href="cs_advanced.html" class="card card-green animate">
+          <div class="card-top">
+            <div class="card-icon"><i class="fa-solid fa-brain"></i></div>
+            <div class="card-arrow">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+          <h2>📗 CS 심화 — 면접 대비 & 게임 수학</h2>
+          <div class="card-desc">
+            모의면접 약점 보강 + 게임 수학(벡터·내적) + 캐시 효율(AoS vs SoA) +
+            상태 패턴. 면접 킬러 질문에 대한 30초 답변 템플릿까지.
+          </div>
+          <div class="card-tags">
+            <span class="tag">우선순위 큐 & 힙</span>
+            <span class="tag">벡터 연산</span>
+            <span class="tag">AoS vs SoA</span>
+            <span class="tag">상태 패턴</span>
+            <span class="tag">면접 킬러 용어</span>
+          </div>
+          <div class="card-meta">
+            <div class="meta-item">
+              <i class="fa-solid fa-layer-group"></i> 5 Chapters
+            </div>
+            <div class="meta-item">
+              <i class="fa-solid fa-bullseye"></i> 9 Interview Topics
+            </div>
+          </div>
+        </a>
+
+        <a href="gas_warrior.html" class="card card-purple animate">
+          <div class="card-top">
+            <div class="card-icon"><i class="fa-solid fa-khanda"></i></div>
+            <div class="card-arrow">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+          <h2>⚔️ GAS Warrior — 프로젝트 아키텍처</h2>
+          <div class="card-desc">
+            UE5 GAS(Gameplay Ability System) 기반 액션 게임 프로젝트. 50개 소스
+            파일의 전체 구조를 분석하고, 클래스 상속 트리 · 생명주기 · #include
+            관계까지 시각화.
+          </div>
+          <div class="card-tags">
+            <span class="tag">24 Classes</span>
+            <span class="tag">13 GameplayTags</span>
+            <span class="tag">61 #include</span>
+            <span class="tag">GAS Architecture</span>
+          </div>
+          <div class="card-meta">
+            <div class="meta-item">
+              <i class="fa-solid fa-file-code"></i> 50 Source Files
+            </div>
+            <div class="meta-item">
+              <i class="fa-solid fa-sitemap"></i> Full Class Tree
+            </div>
+            <div class="meta-item">
+              <i class="fa-solid fa-clock-rotate-left"></i> Lifecycle Map
+            </div>
+          </div>
+        </a>
+
+        <a href="reference.htm" class="card card-orange animate">
+          <div class="card-top">
+            <div class="card-icon" style="background: var(--accent-orange-bg); color: var(--accent-orange);"><i class="fa-solid fa-flask"></i></div>
+            <div class="card-arrow">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+          <h2>🧪 GAME / INSIDE — 면접 연구소</h2>
+          <div class="card-desc">
+            포트폴리오 기반 약점 분석 + CS 35개 주제를 3D 인터랙티브 시뮬레이션으로 시각화.
+            면접 예상 질문과 답변 틀, 오개념 경고까지 포함된 종합 학습 도구.
+          </div>
+          <div class="card-tags">
+            <span class="tag" style="background: var(--accent-orange-bg); color: var(--accent-orange);">35 3D Simulations</span>
+            <span class="tag" style="background: var(--accent-orange-bg); color: var(--accent-orange);">7 Weakness Analysis</span>
+            <span class="tag" style="background: var(--accent-orange-bg); color: var(--accent-orange);">Interview Prep</span>
+            <span class="tag" style="background: var(--accent-orange-bg); color: var(--accent-orange);">AI-Powered</span>
+          </div>
+          <div class="card-meta">
+            <div class="meta-item">
+              <i class="fa-solid fa-cube"></i> 35 Interactive Labs
+            </div>
+            <div class="meta-item">
+              <i class="fa-solid fa-bullseye"></i> 7 Portfolio Reviews
+            </div>
+            <div class="meta-item">
+              <i class="fa-solid fa-robot"></i> AI-Generated
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Footer -->
+      <div class="footer animate">
+        <p>
+          <span class="name">우신희</span> — Game Programmer Candidate<br />
+          AI 활용 자기주도 학습 · 구조 분석 · 인터랙티브 정리
+        </p>
+      </div>
+    </div>
+
+    <script>
+      // Entrance animations
+      const els = document.querySelectorAll(".animate");
+      els.forEach((el, i) => {
+        setTimeout(() => el.classList.add("visible"), 100 + i * 120);
+      });
+    </script>
+  </body>
+</html>
+```
